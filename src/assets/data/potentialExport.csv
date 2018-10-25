@@ -1,0 +1,65 @@
+Reporter,Partner,Group_Code,Description,ExportValue,ExportGrowth,RCA,Quadrant
+Thailand,Cambodia,1,Animal,72926295.43,-27.45,0.95,3
+Thailand,Cambodia,2,Vegetable,34464361.35,12.00,0.14,4
+Thailand,Cambodia,3,Food Products,916333029.03,5.89,2.24,2
+Thailand,Cambodia,4,Minerals,163609209.48,0.31,7.70,2
+Thailand,Cambodia,5,Fuels,953846886.20,23.40,5.18,1
+Thailand,Cambodia,6,Chemicals,323403574.18,15.69,1.32,1
+Thailand,Cambodia,7,Plastic or Rubber,299177465.28,10.76,0.46,4
+Thailand,Cambodia,8,Hides and Skins,23715104.75,13.99,0.92,4
+Thailand,Cambodia,9,Wood,211092689.97,9.49,0.87,3
+Thailand,Cambodia,10,Textiles and Clothing,31198104.13,1.32,1.09,2
+Thailand,Cambodia,11,Footwear,936505293.25,26.36,2.83,1
+Thailand,Cambodia,12,Stone and Glass,142472456.10,19.76,0.59,4
+Thailand,Cambodia,13,Metals,658091491.06,3.97,0.40,3
+Thailand,Cambodia,14,Machinery/Electrical,441954682.29,14.14,0.63,4
+Thailand,Cambodia,15,Transportation,61192450.05,17.56,0.31,4
+Thailand,Cambodia,16,Miscellaneous,0.00,Infinity,infinity,1
+Thailand,Lao PDR,1,Animal,256995248.52,-16.63,4.48,2
+Thailand,Lao PDR,2,Vegetable,75891974.76,-35.64,0.40,3
+Thailand,Lao PDR,3,Food Products,480446851.25,13.18,1.56,1
+Thailand,Lao PDR,4,Minerals,69245366.45,-15.85,4.35,2
+Thailand,Lao PDR,5,Fuels,709802608.27,12.75,5.14,1
+Thailand,Lao PDR,6,Chemicals,334230464.49,14.05,1.82,1
+Thailand,Lao PDR,7,Plastic or Rubber,220166477.21,30.23,0.45,4
+Thailand,Lao PDR,8,Hides and Skins,2093365.75,25.20,0.11,4
+Thailand,Lao PDR,9,Wood,110678396.75,31.35,0.61,4
+Thailand,Lao PDR,10,Textiles and Clothing,19050590.34,7.12,0.89,4
+Thailand,Lao PDR,11,Footwear,138381330.70,-21.62,0.56,3
+Thailand,Lao PDR,12,Stone and Glass,238404990.97,-38.17,1.31,2
+Thailand,Lao PDR,13,Metals,658305863.39,3.93,0.53,4
+Thailand,Lao PDR,14,Machinery/Electrical,552159001.42,-7.75,1.04,2
+Thailand,Lao PDR,15,Transportation,84520962.43,17.89,0.56,4
+Thailand,Lao PDR,16,Miscellaneous,0.00,Infinity,infinity,1
+Thailand,Myanmar,1,Animal,49369497.53,40.06,0.79,4
+Thailand,Myanmar,2,Vegetable,136906874.39,6.61,0.66,4
+Thailand,Myanmar,3,Food Products,1022772644.75,-4.92,3.05,2
+Thailand,Myanmar,4,Minerals,84029566.30,-51.82,4.84,2
+Thailand,Myanmar,5,Fuels,414004312.12,39.03,2.75,1
+Thailand,Myanmar,6,Chemicals,447070420.56,11.34,2.23,1
+Thailand,Myanmar,7,Plastic or Rubber,276809790.77,7.12,0.52,4
+Thailand,Myanmar,8,Hides and Skins,4799904.32,-17.85,0.23,3
+Thailand,Myanmar,9,Wood,268412095.62,0.89,1.36,2
+Thailand,Myanmar,10,Textiles and Clothing,108158066.26,-8.37,4.63,2
+Thailand,Myanmar,11,Footwear,114545562.32,4.51,0.42,3
+Thailand,Myanmar,12,Stone and Glass,313181469.33,31.94,1.58,1
+Thailand,Myanmar,13,Metals,656510773.59,-7.98,0.48,3
+Thailand,Myanmar,14,Machinery/Electrical,297605525.88,14.56,0.52,4
+Thailand,Myanmar,15,Transportation,114611234.27,21.50,0.70,4
+Thailand,Myanmar,16,Miscellaneous,0.00,Infinity,infinity,1
+Thailand,Viet Nam,1,Animal,224011277.66,6.04,1.32,2
+Thailand,Viet Nam,2,Vegetable,1160137336.54,99.96,2.07,1
+Thailand,Viet Nam,3,Food Products,825015530.09,1.46,0.91,3
+Thailand,Viet Nam,4,Minerals,64325101.79,-6.77,1.37,2
+Thailand,Viet Nam,5,Fuels,1114485904.92,56.49,2.73,1
+Thailand,Viet Nam,6,Chemicals,889927723.58,26.19,1.64,1
+Thailand,Viet Nam,7,Plastic or Rubber,1319126275.46,23.72,0.92,4
+Thailand,Viet Nam,8,Hides and Skins,229406715.20,43.63,4.01,1
+Thailand,Viet Nam,9,Wood,789174424.61,12.02,1.47,2
+Thailand,Viet Nam,10,Textiles and Clothing,49994112.93,-2.33,0.79,3
+Thailand,Viet Nam,11,Footwear,141823628.31,3.13,0.19,3
+Thailand,Viet Nam,12,Stone and Glass,732154197.38,24.41,1.36,1
+Thailand,Viet Nam,13,Metals,2969989425.84,22.72,0.81,4
+Thailand,Viet Nam,14,Machinery/Electrical,998369095.68,-5.02,0.64,3
+Thailand,Viet Nam,15,Transportation,153989054.65,-2.60,0.35,3
+Thailand,Viet Nam,16,Miscellaneous,0.00,Infinity,infinity,1

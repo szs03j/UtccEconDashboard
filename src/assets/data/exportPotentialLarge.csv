@@ -1,0 +1,382 @@
+Reporter,Partner,HS2_Code,Description,Amount,Growth,RCA,AverageGrowth,Quadrant,QuadrantName,x,y
+Thailand,Cambodia,1,Animals: live,8484740.83,-77.79175425,2.344427185,966.2757586,2,INTRO,-1,1
+Thailand,Lao PDR,1,Animals: live,125083562.7,-20.43518377,46.10727688,13100.54497,2,INTRO,-1,2
+Thailand,Myanmar,1,Animals: live,11109006.9,109.4502661,3.754287486,21960.84136,2,INTRO,-2,1
+Thailand,Viet Nam,1,Animals: live,493410.45,-45.16498311,0.061609163,57.03312703,3,DOG,-1,-1
+Thailand,Cambodia,2,Meat and edible meat offal,3314265.47,-7.930455337,0.185224883,966.2757586,3,DOG,-1,-1
+Thailand,Lao PDR,2,Meat and edible meat offal,98555023.52,-18.1157419,7.347876796,13100.54497,2,INTRO,-1,1
+Thailand,Myanmar,2,Meat and edible meat offal,4617469.44,71.12733788,0.315624122,39.0109998,4,COW,1,-1
+Thailand,Viet Nam,2,Meat and edible meat offal,3200405.43,27.25173611,0.080826884,57.03312703,3,DOG,-2,-1
+Thailand,Cambodia,3,Fish and crustaceans; molluscs and other aquatic invertebrates,12238492.96,90.32538788,0.257658295,966.2757586,3,DOG,-1,-1
+Thailand,Lao PDR,3,Fish and crustaceans; molluscs and other aquatic invertebrates,1025222.79,-22.50461585,0.028794232,13100.54497,3,DOG,-2,-1
+Thailand,Myanmar,3,Fish and crustaceans; molluscs and other aquatic invertebrates,12303898.67,117.0218747,0.316820339,39.0109998,4,COW,1,-1
+Thailand,Viet Nam,3,Fish and crustaceans; molluscs and other aquatic invertebrates,206455603.6,7.419944334,1.964181699,57.03312703,2,INTRO,-1,1
+Thailand,Cambodia,4,Dairy produce: birds' eggs: natural honey: edible products of animal origin; not elsewhere specified or included,48884789.53,-6.464446787,7.661514991,966.2757586,2,INTRO,-1,1
+Thailand,Lao PDR,4,Dairy produce: birds' eggs: natural honey: edible products of animal origin; not elsewhere specified or included,30874835.4,6.286705201,6.455302826,13100.54497,2,INTRO,-1,2
+Thailand,Myanmar,4,Dairy produce: birds' eggs: natural honey: edible products of animal origin; not elsewhere specified or included,21312552.76,-1.138717132,4.085361569,39.0109998,2,INTRO,-2,1
+Thailand,Viet Nam,4,Dairy produce: birds' eggs: natural honey: edible products of animal origin; not elsewhere specified or included,3549994.74,14.69605695,0.251424395,57.03312703,3,DOG,-1,-1
+Thailand,Cambodia,5,Animal originated products: not elsewhere specified or included,4006.64,-71.02449579,0.003598854,966.2757586,3,DOG,-1,-1
+Thailand,Lao PDR,5,Animal originated products: not elsewhere specified or included,1456604.16,372.0698864,1.745405975,13100.54497,2,INTRO,-1,1
+Thailand,Myanmar,5,Animal originated products: not elsewhere specified or included,26569.76,39.73853879,0.029189429,39.0109998,4,COW,1,-1
+Thailand,Viet Nam,5,Animal originated products: not elsewhere specified or included,10311863.45,-17.87300079,4.185620037,57.03312703,2,INTRO,-1,2
+Thailand,Cambodia,6,Trees and other plants; live: bulbs; roots and the like: cut flowers and ornamental foliage,362920.48,-40.24228845,0.131360409,966.2757586,3,DOG,-1,-1
+Thailand,Lao PDR,6,Trees and other plants; live: bulbs; roots and the like: cut flowers and ornamental foliage,728109.12,-63.05588101,0.351577075,13100.54497,3,DOG,-2,-1
+Thailand,Myanmar,6,Trees and other plants; live: bulbs; roots and the like: cut flowers and ornamental foliage,512376.2,-18.03632008,0.226827698,39.0109998,3,DOG,-1,-2
+Thailand,Viet Nam,6,Trees and other plants; live: bulbs; roots and the like: cut flowers and ornamental foliage,5796926.36,18.94337416,0.948177394,57.03312703,3,DOG,-2,-2
+Thailand,Cambodia,7,Vegetables and certain roots and tubers: edible,1967899.45,27.06743403,0.063497009,966.2757586,3,DOG,-1,-1
+Thailand,Lao PDR,7,Vegetables and certain roots and tubers: edible,10017647.88,203.1420269,0.431208379,13100.54497,3,DOG,-2,-1
+Thailand,Myanmar,7,Vegetables and certain roots and tubers: edible,10052450.6,462.0691623,0.396713002,39.0109998,4,COW,1,-1
+Thailand,Viet Nam,7,Vegetables and certain roots and tubers: edible,16601231.39,116.4053662,0.242063589,57.03312703,4,COW,2,-1
+Thailand,Cambodia,8,Fruit and nuts; edible: peel of citrus fruit or melons,426795.39,-30.58553329,0.008219086,966.2757586,3,DOG,-1,-1
+Thailand,Lao PDR,8,Fruit and nuts; edible: peel of citrus fruit or melons,10420892.19,-24.38166207,0.26771937,13100.54497,3,DOG,-2,-1
+Thailand,Myanmar,8,Fruit and nuts; edible: peel of citrus fruit or melons,35777841.6,0.399755133,0.842698239,39.0109998,3,DOG,-1,-2
+Thailand,Viet Nam,8,Fruit and nuts; edible: peel of citrus fruit or melons,1040680514,102.9677487,9.056492862,57.03312703,1,STAR,1,1
+Thailand,Cambodia,9,Coffee; tea; mate and spices,2539958.01,10.24981667,0.762316959,966.2757586,3,DOG,-1,-1
+Thailand,Lao PDR,9,Coffee; tea; mate and spices,1014431.74,28.32807838,0.406165412,13100.54497,3,DOG,-2,-1
+Thailand,Myanmar,9,Coffee; tea; mate and spices,8785074.13,38.62060496,3.224843154,39.0109998,2,INTRO,-1,1
+Thailand,Viet Nam,9,Coffee; tea; mate and spices,963922.32,-35.51463644,0.130734401,57.03312703,3,DOG,-1,-2
+Thailand,Cambodia,10,Cereals,5569292.01,17.09197991,0.046665448,966.2757586,3,DOG,-1,-1
+Thailand,Lao PDR,10,Cereals,29978807.12,-61.12870742,0.335104961,13100.54497,3,DOG,-2,-1
+Thailand,Myanmar,10,Cereals,14691846.92,-33.80847679,0.15056567,39.0109998,3,DOG,-1,-2
+Thailand,Viet Nam,10,Cereals,60478136.43,122.5141286,0.228998504,57.03312703,4,COW,1,-1
+Thailand,Cambodia,11,Products of the milling industry: malt; starches; inulin; wheat gluten,4191536.76,30.44893064,0.155839777,966.2757586,3,DOG,-1,-1
+Thailand,Lao PDR,11,Products of the milling industry: malt; starches; inulin; wheat gluten,8590814.68,1.709836417,0.42609894,13100.54497,3,DOG,-2,-1
+Thailand,Myanmar,11,Products of the milling industry: malt; starches; inulin; wheat gluten,6150380.93,16.41920348,0.279679849,39.0109998,3,DOG,-1,-2
+Thailand,Viet Nam,11,Products of the milling industry: malt; starches; inulin; wheat gluten,6771230.43,-23.23220359,0.113765723,57.03312703,3,DOG,-2,-2
+Thailand,Cambodia,12,Oil seeds and oleaginous fruits: miscellaneous grains; seeds and fruit; industrial or medicinal plants: straw and fodder,1697157.33,31.12153357,0.367747078,966.2757586,3,DOG,-1,-1
+Thailand,Lao PDR,12,Oil seeds and oleaginous fruits: miscellaneous grains; seeds and fruit; industrial or medicinal plants: straw and fodder,3094170.23,9.915697309,0.894421836,13100.54497,3,DOG,-2,-1
+Thailand,Myanmar,12,Oil seeds and oleaginous fruits: miscellaneous grains; seeds and fruit; industrial or medicinal plants: straw and fodder,10526669.95,25.30025466,2.789794764,39.0109998,2,INTRO,-1,1
+Thailand,Viet Nam,12,Oil seeds and oleaginous fruits: miscellaneous grains; seeds and fruit; industrial or medicinal plants: straw and fodder,13376701.19,5.653132475,1.309830055,57.03312703,2,INTRO,-1,2
+Thailand,Cambodia,13,Lac: gums; resins and other vegetable saps and extracts,209906.03,-34.43689927,0.349646444,966.2757586,3,DOG,-1,-1
+Thailand,Lao PDR,13,Lac: gums; resins and other vegetable saps and extracts,86032.96,-31.73105612,0.191178975,13100.54497,3,DOG,-2,-1
+Thailand,Myanmar,13,Lac: gums; resins and other vegetable saps and extracts,3014640.76,11.05580393,6.141774817,39.0109998,2,INTRO,-1,1
+Thailand,Viet Nam,13,Lac: gums; resins and other vegetable saps and extracts,675984.36,16.28946749,0.50883813,57.03312703,3,DOG,-1,-2
+Thailand,Cambodia,14,Vegetable plaiting materials: vegetable products not elsewhere specified or included,39246.99,17.8155944,0.246237218,966.2757586,3,DOG,-1,-1
+Thailand,Lao PDR,14,Vegetable plaiting materials: vegetable products not elsewhere specified or included,8035.71,-87.79216458,0.0672578,13100.54497,3,DOG,-2,-1
+Thailand,Myanmar,14,Vegetable plaiting materials: vegetable products not elsewhere specified or included,3.35,-98.38764018,0.0000257,39.0109998,3,DOG,-1,-2
+Thailand,Viet Nam,14,Vegetable plaiting materials: vegetable products not elsewhere specified or included,1902.01,-77.29539703,0.005392609,57.03312703,3,DOG,-2,-2
+Thailand,Cambodia,15,Animal or vegetable fats and oils and their cleavage products: prepared animal fats: animal or vegetable waxes,17459648.9,8.584488455,1.392293244,966.2757586,2,INTRO,-1,1
+Thailand,Lao PDR,15,Animal or vegetable fats and oils and their cleavage products: prepared animal fats: animal or vegetable waxes,11953033.13,25.79416971,1.271582072,13100.54497,2,INTRO,-1,2
+Thailand,Myanmar,15,Animal or vegetable fats and oils and their cleavage products: prepared animal fats: animal or vegetable waxes,47395589.95,4.316195764,4.62261011,39.0109998,2,INTRO,-2,1
+Thailand,Viet Nam,15,Animal or vegetable fats and oils and their cleavage products: prepared animal fats: animal or vegetable waxes,14790788.52,255.1670235,0.532997701,57.03312703,4,COW,1,-1
+Thailand,Cambodia,16,Meat; fish or crustaceans; molluscs or other aquatic invertebrates: preparations thereof,36529367.12,-5.497702384,0.260598599,966.2757586,3,DOG,-1,-1
+Thailand,Lao PDR,16,Meat; fish or crustaceans; molluscs or other aquatic invertebrates: preparations thereof,9087828.26,5.464502776,0.086489045,13100.54497,3,DOG,-2,-1
+Thailand,Myanmar,16,Meat; fish or crustaceans; molluscs or other aquatic invertebrates: preparations thereof,20514716.99,-8.594839216,0.178998578,39.0109998,3,DOG,-1,-2
+Thailand,Viet Nam,16,Meat; fish or crustaceans; molluscs or other aquatic invertebrates: preparations thereof,7101080.04,35.24448428,0.022892495,57.03312703,3,DOG,-2,-2
+Thailand,Cambodia,17,Sugars and sugar confectionery,307359074.7,-0.498162583,4.805594443,966.2757586,2,INTRO,-1,1
+Thailand,Lao PDR,17,Sugars and sugar confectionery,99183958.24,41.72885083,2.068776509,13100.54497,2,INTRO,-1,2
+Thailand,Myanmar,17,Sugars and sugar confectionery,286109756.8,-9.931112341,5.471266465,39.0109998,2,INTRO,-2,1
+Thailand,Viet Nam,17,Sugars and sugar confectionery,83136566.77,-37.22668732,0.587397321,57.03312703,3,DOG,-1,-1
+Thailand,Cambodia,18,Cocoa and cocoa preparations,1007266.41,-6.697936915,1.333492247,966.2757586,2,INTRO,-1,1
+Thailand,Lao PDR,18,Cocoa and cocoa preparations,1686455.24,-27.40319609,2.978461743,13100.54497,2,INTRO,-1,2
+Thailand,Myanmar,18,Cocoa and cocoa preparations,6024234.94,-5.452689527,9.754436052,39.0109998,2,INTRO,-2,1
+Thailand,Viet Nam,18,Cocoa and cocoa preparations,161194.67,99.46796472,0.096435208,57.03312703,4,COW,1,-1
+Thailand,Cambodia,19,Preparations of cereals; flour; starch or milk: pastrycooks' products,65051292.66,9.124996378,2.228667085,966.2757586,2,INTRO,-1,1
+Thailand,Lao PDR,19,Preparations of cereals; flour; starch or milk: pastrycooks' products,110409953.2,12.04989376,5.046247618,13100.54497,2,INTRO,-1,2
+Thailand,Myanmar,19,Preparations of cereals; flour; starch or milk: pastrycooks' products,125436937.5,1.608387844,5.256163089,39.0109998,2,INTRO,-2,1
+Thailand,Viet Nam,19,Preparations of cereals; flour; starch or milk: pastrycooks' products,69469671.73,-3.968802751,1.075531944,57.03312703,2,INTRO,-2,2
+Thailand,Cambodia,20,Preparations of vegetables; fruit; nuts or other parts of plants,27418408.5,-17.1803133,0.53755926,966.2757586,3,DOG,-1,-1
+Thailand,Lao PDR,20,Preparations of vegetables; fruit; nuts or other parts of plants,26524967.38,-3.065652832,0.693761231,13100.54497,3,DOG,-2,-1
+Thailand,Myanmar,20,Preparations of vegetables; fruit; nuts or other parts of plants,22210174.89,-12.45027562,0.532586563,39.0109998,3,DOG,-1,-2
+Thailand,Viet Nam,20,Preparations of vegetables; fruit; nuts or other parts of plants,37778355.67,30.5507605,0.334707894,57.03312703,3,DOG,-2,-2
+Thailand,Cambodia,21,Miscellaneous edible preparations,98952512.71,21.27907049,2.003268227,966.2757586,2,INTRO,-1,1
+Thailand,Lao PDR,21,Miscellaneous edible preparations,89477569.4,11.23428618,2.416559639,13100.54497,2,INTRO,-1,2
+Thailand,Myanmar,21,Miscellaneous edible preparations,190187596.8,-4.162929836,4.709215759,39.0109998,2,INTRO,-2,1
+Thailand,Viet Nam,21,Miscellaneous edible preparations,66703418.15,-8.246743387,0.610237883,57.03312703,3,DOG,-1,-1
+Thailand,Cambodia,22,Beverages; spirits and vinegar,343607837.5,10.73941614,9.411670288,966.2757586,2,INTRO,-1,1
+Thailand,Lao PDR,22,Beverages; spirits and vinegar,88166656.99,8.464171867,3.221655368,13100.54497,2,INTRO,-1,2
+Thailand,Myanmar,22,Beverages; spirits and vinegar,347861440.4,-3.724990169,11.65370595,39.0109998,2,INTRO,-2,1
+Thailand,Viet Nam,22,Beverages; spirits and vinegar,445885651.2,14.19516596,5.519070462,57.03312703,2,INTRO,-2,2
+Thailand,Cambodia,23,Food industries; residues and wastes thereof: prepared animal fodder,36361257.2,14.45732696,1.032292341,966.2757586,2,INTRO,-1,1
+Thailand,Lao PDR,23,Food industries; residues and wastes thereof: prepared animal fodder,49177530.42,8.95637228,1.862522781,13100.54497,2,INTRO,-1,2
+Thailand,Myanmar,23,Food industries; residues and wastes thereof: prepared animal fodder,18857295.61,8.679783066,0.654782924,39.0109998,3,DOG,-1,-1
+Thailand,Viet Nam,23,Food industries; residues and wastes thereof: prepared animal fodder,54555402.15,-33.74031504,0.699907061,57.03312703,3,DOG,-2,-1
+Thailand,Cambodia,24,Tobacco and manufactured tobacco substitutes,46012.18,-87.59310293,0.013575241,966.2757586,3,DOG,-1,-1
+Thailand,Lao PDR,24,Tobacco and manufactured tobacco substitutes,6731932.11,-37.77451423,2.649631792,13100.54497,2,INTRO,-1,1
+Thailand,Myanmar,24,Tobacco and manufactured tobacco substitutes,5570490.8,68.94388314,2.010121544,39.0109998,1,STAR,1,1
+Thailand,Viet Nam,24,Tobacco and manufactured tobacco substitutes,60224189.76,110.5076033,8.029425998,57.03312703,1,STAR,2,1
+Thailand,Cambodia,25,Salt: sulphur: earths; stone: plastering materials; lime and cement,163609209.5,0.309845139,8.377832439,966.2757586,2,INTRO,-1,1
+Thailand,Lao PDR,25,Salt: sulphur: earths; stone: plastering materials; lime and cement,65921588.2,-16.3422601,4.503214656,13100.54497,2,INTRO,-1,2
+Thailand,Myanmar,25,Salt: sulphur: earths; stone: plastering materials; lime and cement,84022615.38,-51.78368471,5.262283496,39.0109998,2,INTRO,-2,1
+Thailand,Viet Nam,25,Salt: sulphur: earths; stone: plastering materials; lime and cement,63603435.86,-4.859564957,1.471781364,57.03312703,2,INTRO,-2,2
+Thailand,Lao PDR,26,Ores; slag and ash,3323778.25,-4.737835895,2.582344336,13100.54497,2,INTRO,-1,1
+Thailand,Myanmar,26,Ores; slag and ash,6950.92,-95.14280669,0.004951166,39.0109998,3,DOG,-1,-1
+Thailand,Viet Nam,26,Ores; slag and ash,721665.93,-66.29293921,0.189926711,57.03312703,3,DOG,-2,-1
+Thailand,Cambodia,27,Mineral fuels; mineral oils and products of their distillation: bituminous substances: mineral waxes,953846886.2,23.39599684,5.175269937,966.2757586,2,INTRO,-1,1
+Thailand,Lao PDR,27,Mineral fuels; mineral oils and products of their distillation: bituminous substances: mineral waxes,709802608.3,12.74604154,5.137632022,13100.54497,2,INTRO,-1,2
+Thailand,Myanmar,27,Mineral fuels; mineral oils and products of their distillation: bituminous substances: mineral waxes,414004312.1,39.02731521,2.747345806,39.0109998,1,STAR,1,1
+Thailand,Viet Nam,27,Mineral fuels; mineral oils and products of their distillation: bituminous substances: mineral waxes,1114485905,56.48878174,2.732547499,57.03312703,2,INTRO,-2,1
+Thailand,Cambodia,28,Inorganic chemicals: organic and inorganic compounds of precious metals: of rare earth metals; of radio-active elements and of isotopes,7459596.39,21.61290552,0.495006058,966.2757586,3,DOG,-1,-1
+Thailand,Lao PDR,28,Inorganic chemicals: organic and inorganic compounds of precious metals: of rare earth metals; of radio-active elements and of isotopes,26109472.94,42.22819662,2.311342751,13100.54497,2,INTRO,-1,1
+Thailand,Myanmar,28,Inorganic chemicals: organic and inorganic compounds of precious metals: of rare earth metals; of radio-active elements and of isotopes,10724768.49,-6.416081207,0.870436775,39.0109998,3,DOG,-2,-1
+Thailand,Viet Nam,28,Inorganic chemicals: organic and inorganic compounds of precious metals: of rare earth metals; of radio-active elements and of isotopes,79488368.85,27.90888634,2.383623001,57.03312703,2,INTRO,-1,2
+Thailand,Cambodia,29,Organic chemicals,43775869.62,6.529780161,0.41959363,966.2757586,3,DOG,-1,-1
+Thailand,Lao PDR,29,Organic chemicals,43531032.51,13.80758026,0.556626831,13100.54497,3,DOG,-2,-1
+Thailand,Myanmar,29,Organic chemicals,49315253.94,1.642194334,0.578135317,39.0109998,3,DOG,-1,-2
+Thailand,Viet Nam,29,Organic chemicals,307318501.1,31.97033149,1.33113349,57.03312703,2,INTRO,-1,1
+Thailand,Cambodia,30,Pharmaceutical products,46496621,15.67498775,4.079915759,966.2757586,2,INTRO,-1,1
+Thailand,Lao PDR,30,Pharmaceutical products,21691534.8,5.481320963,2.539166317,13100.54497,2,INTRO,-1,2
+Thailand,Myanmar,30,Pharmaceutical products,84043296.05,15.5326967,9.019594252,39.0109998,2,INTRO,-2,1
+Thailand,Viet Nam,30,Pharmaceutical products,97672505.35,10.82396236,3.872941433,57.03312703,2,INTRO,-2,2
+Thailand,Cambodia,31,Fertilizers,53164908.97,36.44057487,11.4878599,966.2757586,2,INTRO,-1,1
+Thailand,Lao PDR,31,Fertilizers,47220464.02,-8.892947609,13.61179406,13100.54497,2,INTRO,-1,2
+Thailand,Myanmar,31,Fertilizers,79441257.36,55.68835187,20.99492304,39.0109998,1,STAR,1,1
+Thailand,Viet Nam,31,Fertilizers,5529027.71,-24.39299647,0.539885448,57.03312703,3,DOG,-1,-1
+Thailand,Cambodia,32,Tanning or dyeing extracts: tannins and their derivatives: dyes; pigments and other colouring matter: paints; varnishes: putty; other mastics: inks,27114764.55,19.63498088,1.934420995,966.2757586,2,INTRO,-1,1
+Thailand,Lao PDR,32,Tanning or dyeing extracts: tannins and their derivatives: dyes; pigments and other colouring matter: paints; varnishes: putty; other mastics: inks,15567898.53,12.98034687,1.481652012,13100.54497,2,INTRO,-1,2
+Thailand,Myanmar,32,Tanning or dyeing extracts: tannins and their derivatives: dyes; pigments and other colouring matter: paints; varnishes: putty; other mastics: inks,41437036.26,11.5552391,3.615663179,39.0109998,2,INTRO,-2,1
+Thailand,Viet Nam,32,Tanning or dyeing extracts: tannins and their derivatives: dyes; pigments and other colouring matter: paints; varnishes: putty; other mastics: inks,59477617.16,11.31411841,1.917509479,57.03312703,2,INTRO,-2,2
+Thailand,Cambodia,33,Essential oils and resinoids: perfumery; cosmetic or toilet preparations,69915126.99,7.110982096,1.768729207,966.2757586,2,INTRO,-1,1
+Thailand,Lao PDR,33,Essential oils and resinoids: perfumery; cosmetic or toilet preparations,79124568.36,29.59084983,2.670377216,13100.54497,2,INTRO,-1,2
+Thailand,Myanmar,33,Essential oils and resinoids: perfumery; cosmetic or toilet preparations,80334801.65,-4.295679956,2.485696176,39.0109998,2,INTRO,-2,1
+Thailand,Viet Nam,33,Essential oils and resinoids: perfumery; cosmetic or toilet preparations,72421085.03,52.48564472,0.827930769,57.03312703,3,DOG,-1,-1
+Thailand,Cambodia,34,Soap; organic surface-active agents: washing; lubricating; polishing or scouring preparations: artificial or prepared waxes; candles and similar articles; modelling pastes; dental waxes and dental preparations with a basis of plaster,50424501.35,10.21533273,3.081474805,966.2757586,2,INTRO,-1,1
+Thailand,Lao PDR,34,Soap; organic surface-active agents: washing; lubricating; polishing or scouring preparations: artificial or prepared waxes; candles and similar articles; modelling pastes; dental waxes and dental preparations with a basis of plaster,76129240.65,17.45667244,6.206397258,13100.54497,2,INTRO,-1,2
+Thailand,Myanmar,34,Soap; organic surface-active agents: washing; lubricating; polishing or scouring preparations: artificial or prepared waxes; candles and similar articles; modelling pastes; dental waxes and dental preparations with a basis of plaster,61017740.23,2.189754059,4.560655315,39.0109998,2,INTRO,-2,1
+Thailand,Viet Nam,34,Soap; organic surface-active agents: washing; lubricating; polishing or scouring preparations: artificial or prepared waxes; candles and similar articles; modelling pastes; dental waxes and dental preparations with a basis of plaster,86061724.35,20.74380954,2.376653403,57.03312703,2,INTRO,-2,2
+Thailand,Cambodia,35,Albuminoidal substances: modified starches: glues: enzymes,2711994.33,19.44660405,0.163158993,966.2757586,3,DOG,-1,-1
+Thailand,Lao PDR,35,Albuminoidal substances: modified starches: glues: enzymes,2796505.86,-3.838421405,0.224444535,13100.54497,3,DOG,-2,-1
+Thailand,Myanmar,35,Albuminoidal substances: modified starches: glues: enzymes,5236585.28,18.24646089,0.385322652,39.0109998,3,DOG,-1,-2
+Thailand,Viet Nam,35,Albuminoidal substances: modified starches: glues: enzymes,23234589.48,18.04249685,0.63167842,57.03312703,3,DOG,-2,-2
+Thailand,Cambodia,36,Explosives: pyrotechnic products: matches: pyrophoric alloys: certain combustible preparations,161334.26,28.92364267,0.638926205,966.2757586,3,DOG,-1,-1
+Thailand,Lao PDR,36,Explosives: pyrotechnic products: matches: pyrophoric alloys: certain combustible preparations,2746134.91,40.69588424,14.50831685,13100.54497,2,INTRO,-1,1
+Thailand,Myanmar,36,Explosives: pyrotechnic products: matches: pyrophoric alloys: certain combustible preparations,169914.95,-6.538958082,0.823018908,39.0109998,3,DOG,-2,-1
+Thailand,Viet Nam,36,Explosives: pyrotechnic products: matches: pyrophoric alloys: certain combustible preparations,1017.16,-91.12971514,0.001820339,57.03312703,3,DOG,-1,-2
+Thailand,Cambodia,37,Photographic or cinematographic goods,30699.32,-67.90208728,0.105935581,966.2757586,3,DOG,-1,-1
+Thailand,Lao PDR,37,Photographic or cinematographic goods,1087124.8,-16.96687169,5.004533057,13100.54497,2,INTRO,-1,1
+Thailand,Myanmar,37,Photographic or cinematographic goods,441113.64,-28.86269087,1.861734319,39.0109998,2,INTRO,-1,2
+Thailand,Viet Nam,37,Photographic or cinematographic goods,355386.54,26.25851269,0.554182579,57.03312703,3,DOG,-2,-1
+Thailand,Cambodia,38,Chemical products n.e.c.,22148157.4,30.47185509,0.981485811,966.2757586,3,DOG,-1,-1
+Thailand,Lao PDR,38,Chemical products n.e.c.,18226487.11,-0.098515162,1.077507894,13100.54497,2,INTRO,-1,1
+Thailand,Myanmar,38,Chemical products n.e.c.,34908652.71,9.854351931,1.892054464,39.0109998,2,INTRO,-1,2
+Thailand,Viet Nam,38,Chemical products n.e.c.,158367900.8,29.1695391,3.171409943,57.03312703,2,INTRO,-2,1
+Thailand,Cambodia,39,Plastics and articles thereof,210901745.7,10.06230554,0.743746897,966.2757586,3,DOG,-1,-1
+Thailand,Lao PDR,39,Plastics and articles thereof,119736478.4,-1.978870324,0.563303613,13100.54497,3,DOG,-2,-1
+Thailand,Myanmar,39,Plastics and articles thereof,166427958,7.46772768,0.717836271,39.0109998,3,DOG,-1,-2
+Thailand,Viet Nam,39,Plastics and articles thereof,954790478.7,20.30211831,1.521569768,57.03312703,2,INTRO,-1,1
+Thailand,Cambodia,40,Rubber and articles thereof,88275719.6,12.4707344,0.243412144,966.2757586,3,DOG,-1,-1
+Thailand,Lao PDR,40,Rubber and articles thereof,100429998.9,114.1228183,0.369432838,13100.54497,3,DOG,-2,-1
+Thailand,Myanmar,40,Rubber and articles thereof,110381832.8,6.607284724,0.372265421,39.0109998,3,DOG,-1,-2
+Thailand,Viet Nam,40,Rubber and articles thereof,364335796.8,33.65753659,0.453985119,57.03312703,3,DOG,-2,-2
+Thailand,Cambodia,41,Raw hides and skins (other than furskins) and leather,19240232.2,29.57452813,1.546544572,966.2757586,2,INTRO,-1,1
+Thailand,Lao PDR,41,Raw hides and skins (other than furskins) and leather,948337.89,91.62980202,0.101691885,13100.54497,3,DOG,-1,-1
+Thailand,Myanmar,41,Raw hides and skins (other than furskins) and leather,1879430.71,-18.58413611,0.184770474,39.0109998,3,DOG,-2,-1
+Thailand,Viet Nam,41,Raw hides and skins (other than furskins) and leather,161869494.8,5.708430984,5.879710487,57.03312703,2,INTRO,-1,2
+Thailand,Cambodia,42,Articles of leather: saddlery and harness: travel goods; handbags and similar containers: articles of animal gut (other than silk-worm gut),4461143.27,-25.02740021,0.42097733,966.2757586,3,DOG,-1,-1
+Thailand,Lao PDR,42,Articles of leather: saddlery and harness: travel goods; handbags and similar containers: articles of animal gut (other than silk-worm gut),1098739.34,28.16681877,0.138317865,13100.54497,3,DOG,-2,-1
+Thailand,Myanmar,42,Articles of leather: saddlery and harness: travel goods; handbags and similar containers: articles of animal gut (other than silk-worm gut),2891545.34,-17.20039437,0.33373109,39.0109998,3,DOG,-1,-2
+Thailand,Viet Nam,42,Articles of leather: saddlery and harness: travel goods; handbags and similar containers: articles of animal gut (other than silk-worm gut),67194105.72,965.5632825,2.865381916,57.03312703,1,STAR,1,1
+Thailand,Cambodia,43,Furskins and artificial fur: manufactures thereof,13729.28,189.1360843,0.004867058,966.2757586,3,DOG,-1,-1
+Thailand,Lao PDR,43,Furskins and artificial fur: manufactures thereof,46288.52,-85.52679764,0.021890874,13100.54497,3,DOG,-2,-1
+Thailand,Myanmar,43,Furskins and artificial fur: manufactures thereof,28928.27,-31.30541993,0.012542824,39.0109998,3,DOG,-1,-2
+Thailand,Viet Nam,43,Furskins and artificial fur: manufactures thereof,343114.71,17.58913807,0.054966349,57.03312703,3,DOG,-2,-2
+Thailand,Cambodia,44,Wood and articles of wood: wood charcoal,6558410.59,21.55376573,0.102736857,966.2757586,3,DOG,-1,-1
+Thailand,Lao PDR,44,Wood and articles of wood: wood charcoal,3776484.22,-2.303941384,0.078919879,13100.54497,3,DOG,-2,-1
+Thailand,Myanmar,44,Wood and articles of wood: wood charcoal,7712324.81,-15.05934058,0.147763478,39.0109998,3,DOG,-1,-2
+Thailand,Viet Nam,44,Wood and articles of wood: wood charcoal,95571525.79,20.09558545,0.676542353,57.03312703,3,DOG,-2,-2
+Thailand,Cambodia,45,Cork and articles of cork,,-100,0,966.2757586,3,DOG,-1,-1
+Thailand,Lao PDR,45,Cork and articles of cork,136889.86,1227611.749,27.59167138,13100.54497,1,STAR,1,1
+Thailand,Myanmar,45,Cork and articles of cork,9968.49,502.7955325,1.842125292,39.0109998,1,STAR,2,1
+Thailand,Viet Nam,45,Cork and articles of cork,2881.24,137.4380908,0.196722439,57.03312703,4,COW,1,-1
+Thailand,Cambodia,46,Manufactures of straw; esparto or other plaiting materials: basketware and wickerwork,6894.45,6.38975861,0.037878591,966.2757586,3,DOG,-1,-1
+Thailand,Lao PDR,46,Manufactures of straw; esparto or other plaiting materials: basketware and wickerwork,362717.82,-4.243471624,2.658484564,13100.54497,2,INTRO,-1,1
+Thailand,Myanmar,46,Manufactures of straw; esparto or other plaiting materials: basketware and wickerwork,3773068.56,2.659192912,25.35379681,39.0109998,2,INTRO,-1,2
+Thailand,Viet Nam,46,Manufactures of straw; esparto or other plaiting materials: basketware and wickerwork,2001.61,-85.47607766,0.004969497,57.03312703,3,DOG,-2,-1
+Thailand,Cambodia,47,Pulp of wood or other fibrous cellulosic material: recovered (waste and scrap) paper or paperboard,20929.24,1792.439011,0.005775448,966.2757586,4,COW,1,-1
+Thailand,Lao PDR,47,Pulp of wood or other fibrous cellulosic material: recovered (waste and scrap) paper or paperboard,7159.38,-85.61696798,0.002635595,13100.54497,3,DOG,-1,-1
+Thailand,Myanmar,47,Pulp of wood or other fibrous cellulosic material: recovered (waste and scrap) paper or paperboard,57548.01,778.0874883,0.019423017,39.0109998,4,COW,2,-1
+Thailand,Viet Nam,47,Pulp of wood or other fibrous cellulosic material: recovered (waste and scrap) paper or paperboard,1287620.87,91.9798812,0.160568022,57.03312703,4,COW,1,-2
+Thailand,Cambodia,48,Paper and paperboard: articles of paper pulp; of paper or paperboard,61883417.01,8.854118158,1.840097247,966.2757586,2,INTRO,-1,1
+Thailand,Lao PDR,48,Paper and paperboard: articles of paper pulp; of paper or paperboard,38669195,29.35809512,1.533919908,13100.54497,2,INTRO,-1,2
+Thailand,Myanmar,48,Paper and paperboard: articles of paper pulp; of paper or paperboard,48299612.17,25.29391967,1.75656512,39.0109998,2,INTRO,-2,1
+Thailand,Viet Nam,48,Paper and paperboard: articles of paper pulp; of paper or paperboard,263459297.5,2.355109318,3.5401268,57.03312703,2,INTRO,-2,2
+Thailand,Cambodia,49,Printed books; newspapers; pictures and other products of the printing industry: manuscripts; typescripts and plans,3356342.02,0.354699173,2.217640092,966.2757586,2,INTRO,-1,1
+Thailand,Lao PDR,49,Printed books; newspapers; pictures and other products of the printing industry: manuscripts; typescripts and plans,1164452.96,-40.80924909,1.026402892,13100.54497,2,INTRO,-1,2
+Thailand,Myanmar,49,Printed books; newspapers; pictures and other products of the printing industry: manuscripts; typescripts and plans,1678678.1,-2.371185176,1.356583095,39.0109998,2,INTRO,-2,1
+Thailand,Viet Nam,49,Printed books; newspapers; pictures and other products of the printing industry: manuscripts; typescripts and plans,3045488.21,-8.58874621,0.909328024,57.03312703,3,DOG,-1,-1
+Thailand,Cambodia,50,Silk,49385.36,1991.580798,0.273410173,966.2757586,4,COW,1,-1
+Thailand,Lao PDR,50,Silk,57971.7,1301.782584,0.428157489,13100.54497,3,DOG,-1,-1
+Thailand,Myanmar,50,Silk,,-100,0,39.0109998,3,DOG,-2,-1
+Thailand,Viet Nam,50,Silk,23898.23,-14.25530419,0.059788957,57.03312703,3,DOG,-1,-2
+Thailand,Cambodia,51,Wool; fine or coarse animal hair: horsehair yarn and woven fabric,63081.31,-46.18494319,0.058636817,966.2757586,3,DOG,-1,-1
+Thailand,Myanmar,51,Wool; fine or coarse animal hair: horsehair yarn and woven fabric,47649.48,-45.63822109,0.054172886,39.0109998,3,DOG,-2,-1
+Thailand,Viet Nam,51,Wool; fine or coarse animal hair: horsehair yarn and woven fabric,385421.76,-50.46837386,0.161899205,57.03312703,3,DOG,-1,-2
+Thailand,Cambodia,52,Cotton,18839871.26,-5.253547078,1.755128408,966.2757586,2,INTRO,-1,1
+Thailand,Lao PDR,52,Cotton,10971466.34,-2.924174904,1.363536298,13100.54497,2,INTRO,-1,2
+Thailand,Myanmar,52,Cotton,61375926.49,-8.540460892,6.993315919,39.0109998,2,INTRO,-2,1
+Thailand,Viet Nam,52,Cotton,37645015.42,-7.418265982,1.584810147,57.03312703,2,INTRO,-2,2
+Thailand,Cambodia,53,Vegetable textile fibres: paper yarn and woven fabrics of paper yarn,60336.03,248.3801624,0.149511226,966.2757586,3,DOG,-1,-1
+Thailand,Lao PDR,53,Vegetable textile fibres: paper yarn and woven fabrics of paper yarn,12955.43,52.51012384,0.042827228,13100.54497,3,DOG,-2,-1
+Thailand,Myanmar,53,Vegetable textile fibres: paper yarn and woven fabrics of paper yarn,252539.95,111.9744432,0.765387354,39.0109998,4,COW,1,-1
+Thailand,Viet Nam,53,Vegetable textile fibres: paper yarn and woven fabrics of paper yarn,2506.2,-87.37438999,0.002806413,57.03312703,3,DOG,-1,-2
+Thailand,Cambodia,54,Man-made filaments: strip and the like of man-made textile materials,11432318.62,60.91918548,0.619390353,966.2757586,3,DOG,-1,-1
+Thailand,Lao PDR,54,Man-made filaments: strip and the like of man-made textile materials,7318005.09,69.51211337,0.528924748,13100.54497,3,DOG,-2,-1
+Thailand,Myanmar,54,Man-made filaments: strip and the like of man-made textile materials,56871239.59,45.09865208,3.768573008,39.0109998,1,STAR,1,1
+Thailand,Viet Nam,54,Man-made filaments: strip and the like of man-made textile materials,126478427.7,20.87145055,3.096601885,57.03312703,2,INTRO,-1,1
+Thailand,Cambodia,55,Man-made staple fibres,4708075.36,17.0682777,0.169823395,966.2757586,3,DOG,-1,-1
+Thailand,Lao PDR,55,Man-made staple fibres,6065002.08,92.18800913,0.291847603,13100.54497,3,DOG,-2,-1
+Thailand,Myanmar,55,Man-made staple fibres,33706951.57,-25.43396213,1.487057328,39.0109998,2,INTRO,-1,1
+Thailand,Viet Nam,55,Man-made staple fibres,102525239.2,9.260218858,1.67118182,57.03312703,2,INTRO,-1,2
+Thailand,Cambodia,56,Wadding; felt and nonwovens; special yarns: twine; cordage; ropes and cables and articles thereof,18776264.42,20.44301772,1.586857246,966.2757586,2,INTRO,-1,1
+Thailand,Lao PDR,56,Wadding; felt and nonwovens; special yarns: twine; cordage; ropes and cables and articles thereof,3844142.24,-1.227737982,0.433410251,13100.54497,3,DOG,-1,-1
+Thailand,Myanmar,56,Wadding; felt and nonwovens; special yarns: twine; cordage; ropes and cables and articles thereof,40435842.84,-12.83218272,4.179740201,39.0109998,2,INTRO,-1,2
+Thailand,Viet Nam,56,Wadding; felt and nonwovens; special yarns: twine; cordage; ropes and cables and articles thereof,43443305,12.29481358,1.659167846,57.03312703,2,INTRO,-2,1
+Thailand,Cambodia,57,Carpets and other textile floor coverings,1717987.98,26.74170305,0.467484095,966.2757586,3,DOG,-1,-1
+Thailand,Lao PDR,57,Carpets and other textile floor coverings,285912.37,-26.58153643,0.103788857,13100.54497,3,DOG,-2,-1
+Thailand,Myanmar,57,Carpets and other textile floor coverings,979174.97,-38.59340677,0.325882579,39.0109998,3,DOG,-1,-2
+Thailand,Viet Nam,57,Carpets and other textile floor coverings,6357904.46,13.51629866,0.781806929,57.03312703,3,DOG,-2,-2
+Thailand,Cambodia,58,Fabrics: special woven fabrics; tufted textile fabrics; lace; tapestries; trimmings; embroidery,8938212.13,4.976831466,1.830347652,966.2757586,2,INTRO,-1,1
+Thailand,Lao PDR,58,Fabrics: special woven fabrics; tufted textile fabrics; lace; tapestries; trimmings; embroidery,3355460.42,35.51688813,0.916655425,13100.54497,3,DOG,-1,-1
+Thailand,Myanmar,58,Fabrics: special woven fabrics; tufted textile fabrics; lace; tapestries; trimmings; embroidery,9702706.72,19.64756265,2.430132508,39.0109998,2,INTRO,-1,2
+Thailand,Viet Nam,58,Fabrics: special woven fabrics; tufted textile fabrics; lace; tapestries; trimmings; embroidery,22425704.71,14.64293476,2.075237598,57.03312703,2,INTRO,-2,1
+Thailand,Cambodia,59,Textile fabrics: impregnated; coated; covered or laminated: textile articles of a kind suitable for industrial use,4378206.27,86.6267154,1.170432068,966.2757586,2,INTRO,-1,1
+Thailand,Lao PDR,59,Textile fabrics: impregnated; coated; covered or laminated: textile articles of a kind suitable for industrial use,3668691.92,539.6750171,1.308375191,13100.54497,2,INTRO,-1,2
+Thailand,Myanmar,59,Textile fabrics: impregnated; coated; covered or laminated: textile articles of a kind suitable for industrial use,1192142.65,-4.382046669,0.389791479,39.0109998,3,DOG,-1,-1
+Thailand,Viet Nam,59,Textile fabrics: impregnated; coated; covered or laminated: textile articles of a kind suitable for industrial use,8125019.2,16.6732684,0.98155172,57.03312703,3,DOG,-2,-1
+Thailand,Cambodia,60,Fabrics: knitted or crocheted,64438971.11,1.698620812,8.278365616,966.2757586,2,INTRO,-1,1
+Thailand,Lao PDR,60,Fabrics: knitted or crocheted,13811454.96,10.21964722,2.367044925,13100.54497,2,INTRO,-1,2
+Thailand,Myanmar,60,Fabrics: knitted or crocheted,12028272.1,66.87587486,1.889963302,39.0109998,1,STAR,1,1
+Thailand,Viet Nam,60,Fabrics: knitted or crocheted,92721633.77,30.81093741,5.382894647,57.03312703,2,INTRO,-2,1
+Thailand,Cambodia,61,Apparel and clothing accessories: knitted or crocheted,2824685.4,-31.78474988,0.078440755,966.2757586,3,DOG,-1,-1
+Thailand,Lao PDR,61,Apparel and clothing accessories: knitted or crocheted,2319746.3,6.781862097,0.085937602,13100.54497,3,DOG,-2,-1
+Thailand,Myanmar,61,Apparel and clothing accessories: knitted or crocheted,14415392.79,-8.026736526,0.489612256,39.0109998,3,DOG,-1,-2
+Thailand,Viet Nam,61,Apparel and clothing accessories: knitted or crocheted,6532685.29,-14.40805127,0.081978924,57.03312703,3,DOG,-2,-2
+Thailand,Cambodia,62,Apparel and clothing accessories: not knitted or crocheted,4613623.88,-13.87566948,0.268214533,966.2757586,3,DOG,-1,-1
+Thailand,Lao PDR,62,Apparel and clothing accessories: not knitted or crocheted,2480037.56,-9.938458358,0.192339924,13100.54497,3,DOG,-2,-1
+Thailand,Myanmar,62,Apparel and clothing accessories: not knitted or crocheted,12329617.55,0.40964039,0.876685547,39.0109998,3,DOG,-1,-2
+Thailand,Viet Nam,62,Apparel and clothing accessories: not knitted or crocheted,11404937.09,10.88915021,0.299620699,57.03312703,3,DOG,-2,-2
+Thailand,Cambodia,63,Textiles; made up articles: sets: worn clothing and worn textile articles: rags,17438351.49,13.15675977,2.179828977,966.2757586,2,INTRO,-1,1
+Thailand,Lao PDR,63,Textiles; made up articles: sets: worn clothing and worn textile articles: rags,23413044.57,47.72997383,3.904324893,13100.54497,2,INTRO,-1,2
+Thailand,Myanmar,63,Textiles; made up articles: sets: worn clothing and worn textile articles: rags,25219554.7,-30.17909568,3.855747007,39.0109998,2,INTRO,-2,1
+Thailand,Viet Nam,63,Textiles; made up articles: sets: worn clothing and worn textile articles: rags,5790753.03,7.290662534,0.327107752,57.03312703,3,DOG,-1,-1
+Thailand,Cambodia,64,Footwear: gaiters and the like: parts of such articles,9887675.36,16.96957023,0.709295272,966.2757586,3,DOG,-1,-1
+Thailand,Lao PDR,64,Footwear: gaiters and the like: parts of such articles,5719502.12,40.16501265,0.54734626,13100.54497,3,DOG,-2,-1
+Thailand,Myanmar,64,Footwear: gaiters and the like: parts of such articles,40903176.32,-10.29898173,3.588756749,39.0109998,2,INTRO,-1,1
+Thailand,Viet Nam,64,Footwear: gaiters and the like: parts of such articles,11465725.54,25.82166833,0.371683436,57.03312703,3,DOG,-1,-2
+Thailand,Cambodia,65,Headgear and parts thereof,2163874.47,1.343626553,1.430640732,966.2757586,2,INTRO,-1,1
+Thailand,Lao PDR,65,Headgear and parts thereof,1363827.8,-11.52061995,1.202898892,13100.54497,2,INTRO,-1,2
+Thailand,Myanmar,65,Headgear and parts thereof,4457068.59,3.871452002,3.604142569,39.0109998,2,INTRO,-2,1
+Thailand,Viet Nam,65,Headgear and parts thereof,211354.28,-2.034657476,0.063146367,57.03312703,3,DOG,-1,-1
+Thailand,Cambodia,66,Umbrellas; sun umbrellas; walking-sticks; seat sticks; whips; riding crops: and parts thereof,125535.5,-30.9826154,1.360457867,966.2757586,2,INTRO,-1,1
+Thailand,Lao PDR,66,Umbrellas; sun umbrellas; walking-sticks; seat sticks; whips; riding crops: and parts thereof,99078.98,-26.04428073,1.432422486,13100.54497,2,INTRO,-1,2
+Thailand,Myanmar,66,Umbrellas; sun umbrellas; walking-sticks; seat sticks; whips; riding crops: and parts thereof,587917.36,-13.8806697,7.792717731,39.0109998,2,INTRO,-2,1
+Thailand,Viet Nam,66,Umbrellas; sun umbrellas; walking-sticks; seat sticks; whips; riding crops: and parts thereof,226829.77,-14.67254205,1.110855043,57.03312703,2,INTRO,-2,2
+Thailand,Cambodia,67,Feathers and down; prepared: and articles made of feather or of down: artificial flowers: articles of human hair,8344.84,1959.793153,0.013209069,966.2757586,4,COW,1,-1
+Thailand,Lao PDR,67,Feathers and down; prepared: and articles made of feather or of down: artificial flowers: articles of human hair,824125.99,15.5256843,1.740278907,13100.54497,2,INTRO,-1,1
+Thailand,Myanmar,67,Feathers and down; prepared: and articles made of feather or of down: artificial flowers: articles of human hair,533788.07,261.1469398,1.033420726,39.0109998,1,STAR,1,1
+Thailand,Viet Nam,67,Feathers and down; prepared: and articles made of feather or of down: artificial flowers: articles of human hair,33361.73,-68.31941603,0.023863907,57.03312703,3,DOG,-1,-1
+Thailand,Cambodia,68,Stone; plaster; cement; asbestos; mica or similar materials: articles thereof,42864987.08,12.57739441,3.466147704,966.2757586,2,INTRO,-1,1
+Thailand,Lao PDR,68,Stone; plaster; cement; asbestos; mica or similar materials: articles thereof,41706526.15,-6.994608195,4.499035806,13100.54497,2,INTRO,-1,2
+Thailand,Myanmar,68,Stone; plaster; cement; asbestos; mica or similar materials: articles thereof,47225992,32.34039862,4.670674253,39.0109998,2,INTRO,-2,1
+Thailand,Viet Nam,68,Stone; plaster; cement; asbestos; mica or similar materials: articles thereof,58515688.47,9.379282143,2.138235257,57.03312703,2,INTRO,-2,2
+Thailand,Cambodia,69,Ceramic products,26857843.34,9.229632199,1.564377225,966.2757586,2,INTRO,-1,1
+Thailand,Lao PDR,69,Ceramic products,44797160.23,-4.264293537,3.480902797,13100.54497,2,INTRO,-1,2
+Thailand,Myanmar,69,Ceramic products,34637711.33,5.156124855,2.467593733,39.0109998,2,INTRO,-2,1
+Thailand,Viet Nam,69,Ceramic products,12943411.36,-1.334188765,0.340688835,57.03312703,3,DOG,-1,-1
+Thailand,Cambodia,70,Glass and glassware,11844137.01,52.87151098,0.757203828,966.2757586,3,DOG,-1,-1
+Thailand,Lao PDR,70,Glass and glassware,14006251.92,3.44481241,1.194544616,13100.54497,2,INTRO,-1,1
+Thailand,Myanmar,70,Glass and glassware,17222455.36,-18.45021009,1.346661883,39.0109998,2,INTRO,-1,2
+Thailand,Viet Nam,70,Glass and glassware,54359592.46,-9.437953817,1.570450924,57.03312703,2,INTRO,-2,1
+Thailand,Cambodia,71,Natural; cultured pearls: precious; semi-precious stones: precious metals; metals clad with precious metal; and articles thereof: imitation jewellery: coin,854938325.8,27.46126349,2.990067858,966.2757586,2,INTRO,-1,1
+Thailand,Lao PDR,71,Natural; cultured pearls: precious; semi-precious stones: precious metals; metals clad with precious metal; and articles thereof: imitation jewellery: coin,37871392.4,-46.93329143,0.176696763,13100.54497,3,DOG,-1,-1
+Thailand,Myanmar,71,Natural; cultured pearls: precious; semi-precious stones: precious metals; metals clad with precious metal; and articles thereof: imitation jewellery: coin,15459403.63,-22.17306914,0.066129177,39.0109998,3,DOG,-2,-1
+Thailand,Viet Nam,71,Natural; cultured pearls: precious; semi-precious stones: precious metals; metals clad with precious metal; and articles thereof: imitation jewellery: coin,16004936.02,47.1854587,0.025295251,57.03312703,3,DOG,-1,-2
+Thailand,Cambodia,72,Iron and steel,18255282.27,16.5290186,0.599109183,966.2757586,3,DOG,-1,-1
+Thailand,Lao PDR,72,Iron and steel,94056144.68,30.17537644,4.117898718,13100.54497,2,INTRO,-1,1
+Thailand,Myanmar,72,Iron and steel,55670305.99,27.80692459,2.234576124,39.0109998,2,INTRO,-1,2
+Thailand,Viet Nam,72,Iron and steel,83768521.74,-22.92698666,1.242330291,57.03312703,2,INTRO,-2,1
+Thailand,Cambodia,73,Iron or steel articles,76223842.9,22.60803291,0.786763694,966.2757586,3,DOG,-1,-1
+Thailand,Lao PDR,73,Iron or steel articles,109757555.7,-60.28225057,1.511328806,13100.54497,2,INTRO,-1,1
+Thailand,Myanmar,73,Iron or steel articles,182362494.9,43.70143799,2.302200357,39.0109998,1,STAR,1,1
+Thailand,Viet Nam,73,Iron or steel articles,222458648.3,-6.788032043,1.037627715,57.03312703,2,INTRO,-1,2
+Thailand,Cambodia,74,Copper and articles thereof,4818666.94,321.7103273,0.113722144,966.2757586,3,DOG,-1,-1
+Thailand,Lao PDR,74,Copper and articles thereof,2078619.95,32.92590266,0.065443163,13100.54497,3,DOG,-2,-1
+Thailand,Myanmar,74,Copper and articles thereof,5499163.07,58.32743966,0.158733594,39.0109998,4,COW,1,-1
+Thailand,Viet Nam,74,Copper and articles thereof,238858241.4,132.9505801,2.547400087,57.03312703,1,STAR,1,1
+Thailand,Cambodia,75,Nickel and articles thereof,3210.72,37233.95349,0.014349288,966.2757586,4,COW,1,-1
+Thailand,Lao PDR,75,Nickel and articles thereof,193376.16,907.0327045,1.152927297,13100.54497,2,INTRO,-1,1
+Thailand,Myanmar,75,Nickel and articles thereof,340298.41,552.3585662,1.860124308,39.0109998,1,STAR,1,1
+Thailand,Viet Nam,75,Nickel and articles thereof,293788.73,157.3882414,0.593337582,57.03312703,4,COW,2,-1
+Thailand,Cambodia,76,Aluminium and articles thereof,25925977.21,11.50294658,0.752227451,966.2757586,3,DOG,-1,-1
+Thailand,Lao PDR,76,Aluminium and articles thereof,12954225.33,-5.989764292,0.501414113,13100.54497,3,DOG,-2,-1
+Thailand,Myanmar,76,Aluminium and articles thereof,22891059.54,23.24450091,0.812332932,39.0109998,3,DOG,-1,-2
+Thailand,Viet Nam,76,Aluminium and articles thereof,82841083.46,45.74214291,1.086172023,57.03312703,2,INTRO,-1,1
+Thailand,Cambodia,78,Lead and articles thereof,318831.01,196.9798282,0.237187365,966.2757586,3,DOG,-1,-1
+Thailand,Lao PDR,78,Lead and articles thereof,778224.83,-18.12155266,0.772337535,13100.54497,3,DOG,-2,-1
+Thailand,Myanmar,78,Lead and articles thereof,100089.91,282.3853855,0.091070017,39.0109998,4,COW,1,-1
+Thailand,Viet Nam,78,Lead and articles thereof,1910961.98,149.2509059,0.642424123,57.03312703,4,COW,2,-1
+Thailand,Cambodia,79,Zinc and articles thereof,147440.37,-14.87048498,0.122521202,966.2757586,3,DOG,-1,-1
+Thailand,Lao PDR,79,Zinc and articles thereof,2110032.71,-4.926164506,2.339133927,13100.54497,2,INTRO,-1,1
+Thailand,Myanmar,79,Zinc and articles thereof,1025804.32,-34.86020009,1.042589825,39.0109998,2,INTRO,-1,2
+Thailand,Viet Nam,79,Zinc and articles thereof,1020074.75,23.20363691,0.383058967,57.03312703,3,DOG,-2,-1
+Thailand,Cambodia,80,Tin: articles thereof,648619.68,-18.01404544,0.156442163,966.2757586,3,DOG,-1,-1
+Thailand,Lao PDR,80,Tin: articles thereof,68706.7,7.603792296,0.022107205,13100.54497,3,DOG,-2,-1
+Thailand,Myanmar,80,Tin: articles thereof,81233.71,139.905938,0.023963713,39.0109998,4,COW,1,-1
+Thailand,Viet Nam,80,Tin: articles thereof,2891936.73,25.46584956,0.315203678,57.03312703,3,DOG,-1,-2
+Thailand,Cambodia,81,Metals: n.e.c.; cermets and articles thereof,57418.34,-38.15350675,0.028993928,966.2757586,3,DOG,-1,-1
+Thailand,Lao PDR,81,Metals: n.e.c.; cermets and articles thereof,104729.76,9.998790042,0.070550095,13100.54497,3,DOG,-2,-1
+Thailand,Myanmar,81,Metals: n.e.c.; cermets and articles thereof,127894.07,198.2303093,0.078987971,39.0109998,4,COW,1,-1
+Thailand,Viet Nam,81,Metals: n.e.c.; cermets and articles thereof,9903733.89,2439.73244,2.259925854,57.03312703,1,STAR,1,1
+Thailand,Cambodia,82,Tools; implements; cutlery; spoons and forks; of base metal: parts thereof; of base metal,4635731.35,14.28958064,0.431219092,966.2757586,3,DOG,-1,-1
+Thailand,Lao PDR,82,Tools; implements; cutlery; spoons and forks; of base metal: parts thereof; of base metal,7829698.36,-2.014125925,0.971618591,13100.54497,3,DOG,-2,-1
+Thailand,Myanmar,82,Tools; implements; cutlery; spoons and forks; of base metal: parts thereof; of base metal,23437317.87,16.90975144,2.666501015,39.0109998,2,INTRO,-1,1
+Thailand,Viet Nam,82,Tools; implements; cutlery; spoons and forks; of base metal: parts thereof; of base metal,33679067.99,99.63544569,1.415723969,57.03312703,1,STAR,1,1
+Thailand,Cambodia,83,Metal: miscellaneous products of base metal,11437435.31,-0.674229833,0.593645306,966.2757586,3,DOG,-1,-1
+Thailand,Lao PDR,83,Metal: miscellaneous products of base metal,8473676.84,-17.76980146,0.586734126,13100.54497,3,DOG,-2,-1
+Thailand,Myanmar,83,Metal: miscellaneous products of base metal,21645807.59,-6.19454687,1.374125196,39.0109998,2,INTRO,-1,1
+Thailand,Viet Nam,83,Metal: miscellaneous products of base metal,54528138.41,-9.905991529,1.278962637,57.03312703,2,INTRO,-1,2
+Thailand,Cambodia,84,Nuclear reactors; boilers; machinery and mechanical appliances: parts thereof,384071770.9,3.285581569,0.427825364,966.2757586,3,DOG,-1,-1
+Thailand,Lao PDR,84,Nuclear reactors; boilers; machinery and mechanical appliances: parts thereof,244104409.3,-2.843515134,0.362744493,13100.54497,3,DOG,-2,-1
+Thailand,Myanmar,84,Nuclear reactors; boilers; machinery and mechanical appliances: parts thereof,373135365.1,-0.677366733,0.508363867,39.0109998,3,DOG,-1,-2
+Thailand,Viet Nam,84,Nuclear reactors; boilers; machinery and mechanical appliances: parts thereof,1551056184,-0.730238095,0.780765238,57.03312703,3,DOG,-2,-2
+Thailand,Cambodia,85,Electrical machinery and equipment and parts thereof: sound recorders and reproducers: television image and sound recorders and reproducers; parts and accessories of such articles,274019720.1,4.951539195,0.360585696,966.2757586,3,DOG,-1,-1
+Thailand,Lao PDR,85,Electrical machinery and equipment and parts thereof: sound recorders and reproducers: television image and sound recorders and reproducers; parts and accessories of such articles,414201454.1,8.383474597,0.727125473,13100.54497,3,DOG,-2,-1
+Thailand,Myanmar,85,Electrical machinery and equipment and parts thereof: sound recorders and reproducers: television image and sound recorders and reproducers; parts and accessories of such articles,283375408.5,-16.10376868,0.456082026,39.0109998,3,DOG,-1,-2
+Thailand,Viet Nam,85,Electrical machinery and equipment and parts thereof: sound recorders and reproducers: television image and sound recorders and reproducers; parts and accessories of such articles,1418933241,65.44514347,0.843776525,57.03312703,4,COW,1,-1
+Thailand,Cambodia,86,Railway; tramway locomotives; rolling-stock and parts thereof: railway or tramway track fixtures and fittings and parts thereof: mechanical (including electro-mechanical) traffic signalling equipment of all kinds,211624.66,7.922126634,0.046245369,966.2757586,3,DOG,-1,-1
+Thailand,Lao PDR,86,Railway; tramway locomotives; rolling-stock and parts thereof: railway or tramway track fixtures and fittings and parts thereof: mechanical (including electro-mechanical) traffic signalling equipment of all kinds,175737339,119.7787889,51.23150156,13100.54497,2,INTRO,-1,1
+Thailand,Myanmar,86,Railway; tramway locomotives; rolling-stock and parts thereof: railway or tramway track fixtures and fittings and parts thereof: mechanical (including electro-mechanical) traffic signalling equipment of all kinds,9363221.04,132.3345528,2.50254199,39.0109998,1,STAR,1,1
+Thailand,Viet Nam,86,Railway; tramway locomotives; rolling-stock and parts thereof: railway or tramway track fixtures and fittings and parts thereof: mechanical (including electro-mechanical) traffic signalling equipment of all kinds,1084041.34,-5.427018851,0.107049987,57.03312703,3,DOG,-2,-1
+Thailand,Cambodia,87,Vehicles: other than railway or tramway rolling stock; and parts and accessories thereof,437594872.1,18.87441526,0.68662702,966.2757586,3,DOG,-1,-1
+Thailand,Lao PDR,87,Vehicles: other than railway or tramway rolling stock; and parts and accessories thereof,375784445.2,-27.4875463,0.786608307,13100.54497,3,DOG,-2,-1
+Thailand,Myanmar,87,Vehicles: other than railway or tramway rolling stock; and parts and accessories thereof,286423519.3,12.39822193,0.549681935,39.0109998,3,DOG,-1,-2
+Thailand,Viet Nam,87,Vehicles: other than railway or tramway rolling stock; and parts and accessories thereof,977688534.7,-5.842194335,0.693246981,57.03312703,3,DOG,-2,-2
+Thailand,Cambodia,88,Aircraft; spacecraft and parts thereof,1645289.39,46416.52219,0.058445594,966.2757586,4,COW,1,-1
+Thailand,Lao PDR,88,Aircraft; spacecraft and parts thereof,64943.33,92.57548949,0.003077621,13100.54497,3,DOG,-1,-1
+Thailand,Myanmar,88,Aircraft; spacecraft and parts thereof,376464.24,68.51640803,0.016356385,39.0109998,4,COW,2,-1
+Thailand,Viet Nam,88,Aircraft; spacecraft and parts thereof,19349297.28,334.9895917,0.310608601,57.03312703,4,COW,1,-2
+Thailand,Cambodia,89,Ships; boats and floating structures,2502896.18,-86.74636771,0.070863307,966.2757586,3,DOG,-1,-1
+Thailand,Lao PDR,89,Ships; boats and floating structures,572273.89,66.33081404,0.021614917,13100.54497,3,DOG,-2,-1
+Thailand,Myanmar,89,Ships; boats and floating structures,1442321.34,107.9800429,0.049945312,39.0109998,4,COW,1,-1
+Thailand,Viet Nam,89,Ships; boats and floating structures,247222.38,-96.54420756,0.003163043,57.03312703,3,DOG,-1,-2
+Thailand,Cambodia,90,Optical; photographic; cinematographic; measuring; checking; medical or surgical instruments and apparatus: parts and accessories,20107170.3,-11.42952727,0.158790004,966.2757586,3,DOG,-1,-1
+Thailand,Lao PDR,90,Optical; photographic; cinematographic; measuring; checking; medical or surgical instruments and apparatus: parts and accessories,34642541.03,15.68974483,0.364966504,13100.54497,3,DOG,-2,-1
+Thailand,Myanmar,90,Optical; photographic; cinematographic; measuring; checking; medical or surgical instruments and apparatus: parts and accessories,32445625.58,38.85481582,0.313388083,39.0109998,3,DOG,-1,-2
+Thailand,Viet Nam,90,Optical; photographic; cinematographic; measuring; checking; medical or surgical instruments and apparatus: parts and accessories,82495998.99,18.86129964,0.294404124,57.03312703,3,DOG,-2,-2
+Thailand,Cambodia,91,Clocks and watches and parts thereof,448556.54,-26.68558185,0.036437243,966.2757586,3,DOG,-1,-1
+Thailand,Lao PDR,91,Clocks and watches and parts thereof,240197.01,-49.03583165,0.026029569,13100.54497,3,DOG,-2,-1
+Thailand,Myanmar,91,Clocks and watches and parts thereof,544217.07,-23.75688107,0.054069779,39.0109998,3,DOG,-1,-2
+Thailand,Viet Nam,91,Clocks and watches and parts thereof,244019.8,-18.22013461,0.008957611,57.03312703,3,DOG,-2,-2
+Thailand,Cambodia,92,Musical instruments: parts and accessories of such articles,3842.39,-84.44275743,0.008086968,966.2757586,3,DOG,-1,-1
+Thailand,Lao PDR,92,Musical instruments: parts and accessories of such articles,44539.23,-6.513933737,0.12505414,13100.54497,3,DOG,-2,-1
+Thailand,Myanmar,92,Musical instruments: parts and accessories of such articles,49491.03,-25.25034346,0.127398678,39.0109998,3,DOG,-1,-2
+Thailand,Viet Nam,92,Musical instruments: parts and accessories of such articles,28610.1,39.27103236,0.027210873,57.03312703,3,DOG,-2,-2
+Thailand,Cambodia,93,Arms and ammunition: parts and accessories thereof,642,1398.949335,0.000742829,966.2757586,4,COW,1,-1
+Thailand,Lao PDR,93,Arms and ammunition: parts and accessories thereof,8571.76,-75.91370052,0.013231059,13100.54497,3,DOG,-1,-1
+Thailand,Myanmar,93,Arms and ammunition: parts and accessories thereof,5449.63,16.16460256,0.007712136,39.0109998,3,DOG,-2,-1
+Thailand,Viet Nam,93,Arms and ammunition: parts and accessories thereof,2.99,-99.75439259,0.00000156,57.03312703,3,DOG,-1,-2
+Thailand,Cambodia,94,Furniture: bedding; mattresses; mattress supports; cushions and similar stuffed furnishings: lamps and lighting fittings; n.e.c.: illuminated signs; illuminated name-plates and the like: prefabricated buildings,19913463.3,40.3100868,0.716286592,966.2757586,3,DOG,-1,-1
+Thailand,Lao PDR,94,Furniture: bedding; mattresses; mattress supports; cushions and similar stuffed furnishings: lamps and lighting fittings; n.e.c.: illuminated signs; illuminated name-plates and the like: prefabricated buildings,21206398.73,8.137839992,1.017602137,13100.54497,2,INTRO,-1,1
+Thailand,Myanmar,94,Furniture: bedding; mattresses; mattress supports; cushions and similar stuffed furnishings: lamps and lighting fittings; n.e.c.: illuminated signs; illuminated name-plates and the like: prefabricated buildings,26302377.84,25.69747778,1.157148663,39.0109998,2,INTRO,-1,2
+Thailand,Viet Nam,94,Furniture: bedding; mattresses; mattress supports; cushions and similar stuffed furnishings: lamps and lighting fittings; n.e.c.: illuminated signs; illuminated name-plates and the like: prefabricated buildings,37159893.7,-35.00679819,0.604022735,57.03312703,3,DOG,-2,-1
+Thailand,Cambodia,95,Toys; games and sports requisites: parts and accessories thereof,1841749.42,-20.41220041,0.114263018,966.2757586,3,DOG,-1,-1
+Thailand,Lao PDR,95,Toys; games and sports requisites: parts and accessories thereof,2277631.41,203.170734,0.188507943,13100.54497,3,DOG,-2,-1
+Thailand,Myanmar,95,Toys; games and sports requisites: parts and accessories thereof,6038149.24,2.900992915,0.458176819,39.0109998,3,DOG,-1,-2
+Thailand,Viet Nam,95,Toys; games and sports requisites: parts and accessories thereof,3749284.98,5.554135418,0.105114444,57.03312703,3,DOG,-2,-2
+Thailand,Cambodia,96,Miscellaneous manufactured articles,18875884.64,54.77072576,1.290222172,966.2757586,2,INTRO,-1,1
+Thailand,Lao PDR,96,Miscellaneous manufactured articles,26100610.2,25.28622583,2.380010704,13100.54497,2,INTRO,-1,2
+Thailand,Myanmar,96,Miscellaneous manufactured articles,49224092.2,13.56869038,4.115181774,39.0109998,2,INTRO,-2,1
+Thailand,Viet Nam,96,Miscellaneous manufactured articles,30080545.44,9.024179556,0.929141144,57.03312703,3,DOG,-1,-1
+Thailand,Cambodia,97,Works of art: collectors' pieces and antiques,1141.46,-89.32604443,0.000891535,966.2757586,3,DOG,-1,-1
+Thailand,Myanmar,97,Works of art: collectors' pieces and antiques,1831.68,-95.62920914,0.001749772,39.0109998,3,DOG,-2,-1
+Thailand,Viet Nam,97,Works of art: collectors' pieces and antiques,230698.65,286.7321595,0.081425701,57.03312703,4,COW,1,-1

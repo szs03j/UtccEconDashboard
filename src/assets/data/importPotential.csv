@@ -1,0 +1,60 @@
+Reporter,Partner,Group_Code,Description,Amount,Growth,RCA,AverageGrowth,Quadrant,QuadrantName
+Thailand,Cambodia,1,Animal,17307352.73,126.4,1.04,58.25,1,STAR
+Thailand,Cambodia,2,Vegetable,307297474.83,15.36,15.28,58.25,2,INTRO
+Thailand,Cambodia,3,Food Products,22906928.43,16.2,1.14,58.25,2,INTRO
+Thailand,Cambodia,4,Minerals,1425378.72,-28.52,0.61,58.25,3,DOG
+Thailand,Cambodia,6,Chemicals,142775.71,300.02,0,58.25,4,COW
+Thailand,Cambodia,7,Plastic or Rubber,2779573.22,7.02,0.06,58.25,3,DOG
+Thailand,Cambodia,8,Hides and Skins,9550792.69,-4.7,1.63,58.25,2,INTRO
+Thailand,Cambodia,9,Wood,82599639.37,40.53,2.93,58.25,2,INTRO
+Thailand,Cambodia,10,Textiles and Clothing,6272448.17,3.58,1.14,58.25,2,INTRO
+Thailand,Cambodia,11,Footwear,165407339.8,-52.03,2.42,58.25,2,INTRO
+Thailand,Cambodia,12,Stone and Glass,115350257.22,80.09,1.02,58.25,1,STAR
+Thailand,Cambodia,13,Metals,140464773.43,-1.64,0.51,58.25,3,DOG
+Thailand,Cambodia,14,Machinery/Electrical,7532748.49,243.91,0.13,58.25,4,COW
+Thailand,Cambodia,15,Transportation,15802630.33,69.31,0.47,58.25,4,COW
+Thailand,Lao PDR,1,Animal,7598.2,-91.82,0,69.02,3,DOG
+Thailand,Lao PDR,2,Vegetable,142519334.11,21.16,2.86,69.02,2,INTRO
+Thailand,Lao PDR,3,Food Products,27177003.62,5.84,0.54,69.02,3,DOG
+Thailand,Lao PDR,4,Minerals,52920395.84,809.31,9.07,69.02,1,STAR
+Thailand,Lao PDR,5,Fuels,1157124176.16,15,3.71,69.02,2,INTRO
+Thailand,Lao PDR,6,Chemicals,25695221.5,80.81,0.14,69.02,4,COW
+Thailand,Lao PDR,7,Plastic or Rubber,2417694.35,-88.03,0.02,69.02,3,DOG
+Thailand,Lao PDR,8,Hides and Skins,163374.75,24.01,0.01,69.02,3,DOG
+Thailand,Lao PDR,9,Wood,20898143.21,-13.7,0.3,69.02,3,DOG
+Thailand,Lao PDR,10,Textiles and Clothing,13636720.16,25.18,1,69.02,2,INTRO
+Thailand,Lao PDR,11,Footwear,4654176.13,199.24,0.03,69.02,4,COW
+Thailand,Lao PDR,12,Stone and Glass,318201030.57,18.41,1.13,69.02,2,INTRO
+Thailand,Lao PDR,13,Metals,428714366.31,17.79,0.62,69.02,3,DOG
+Thailand,Lao PDR,14,Machinery/Electrical,626107.75,-39.63,0,69.02,3,DOG
+Thailand,Lao PDR,15,Transportation,25389223.61,51.66,0.3,69.02,3,DOG
+Thailand,Myanmar,1,Animal,191129436.9,37.52,4.13,58.89,2,INTRO
+Thailand,Myanmar,2,Vegetable,68371271.53,-12.37,1.23,58.89,2,INTRO
+Thailand,Myanmar,3,Food Products,30890626.77,9.53,0.55,58.89,3,DOG
+Thailand,Myanmar,4,Minerals,7528656.66,18.5,1.16,58.89,2,INTRO
+Thailand,Myanmar,5,Fuels,1893166600.79,-3.02,5.44,58.89,2,INTRO
+Thailand,Myanmar,6,Chemicals,12155637.16,-2.94,0.06,58.89,3,DOG
+Thailand,Myanmar,7,Plastic or Rubber,2631687.47,398.28,0.02,58.89,4,COW
+Thailand,Myanmar,8,Hides and Skins,1170608.94,-8.79,0.07,58.89,3,DOG
+Thailand,Myanmar,9,Wood,46424888.46,7.04,0.6,58.89,3,DOG
+Thailand,Myanmar,10,Textiles and Clothing,1763779.8,-15.92,0.12,58.89,3,DOG
+Thailand,Myanmar,11,Footwear,4801549.85,132.63,0.03,58.89,4,COW
+Thailand,Myanmar,12,Stone and Glass,171224028.2,256.01,0.55,58.89,4,COW
+Thailand,Myanmar,13,Metals,27416358.64,6.22,0.04,58.89,3,DOG
+Thailand,Myanmar,14,Machinery/Electrical,1463937.09,43.83,0.01,58.89,3,DOG
+Thailand,Myanmar,15,Transportation,15299100.17,16.8,0.16,58.89,3,DOG
+Thailand,Viet Nam,1,Animal,208577529.32,4.32,2.25,13.24,2,INTRO
+Thailand,Viet Nam,2,Vegetable,263854636.6,9.92,2.36,13.24,2,INTRO
+Thailand,Viet Nam,3,Food Products,214920567.38,-0.47,1.92,13.24,2,INTRO
+Thailand,Viet Nam,4,Minerals,3491494.67,17.39,0.27,13.24,4,COW
+Thailand,Viet Nam,5,Fuels,378668618.54,34.23,0.54,13.24,4,COW
+Thailand,Viet Nam,6,Chemicals,126390677.41,13.84,0.31,13.24,4,COW
+Thailand,Viet Nam,7,Plastic or Rubber,147999537.66,17.77,0.6,13.24,4,COW
+Thailand,Viet Nam,8,Hides and Skins,46206481.82,-12.49,1.42,13.24,2,INTRO
+Thailand,Viet Nam,9,Wood,292919098.25,25.75,1.87,13.24,1,STAR
+Thailand,Viet Nam,10,Textiles and Clothing,121721906.03,15.72,4,13.24,1,STAR
+Thailand,Viet Nam,11,Footwear,53895106.21,16.9,0.14,13.24,4,COW
+Thailand,Viet Nam,12,Stone and Glass,470694583.02,45.03,0.75,13.24,4,COW
+Thailand,Viet Nam,13,Metals,2251623050.18,7.18,1.46,13.24,2,INTRO
+Thailand,Viet Nam,14,Machinery/Electrical,214963244.78,6.74,0.65,13.24,3,DOG
+Thailand,Viet Nam,15,Transportation,177134936.03,-3.3,0.95,13.24,3,DOG

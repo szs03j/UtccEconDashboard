@@ -1,0 +1,30 @@
+button.resetFiltersBtn {
+  padding: 2px 0 2px 0;
+}
+
+.chartLoadingSpinner {
+
+  margin: 75px auto;
+}
+
+.mat-card-title .mat-select {
+  text-align: right;
+  font-size: 14px;
+}
+.mat-card-subtitle button {
+  text-align: left;
+  padding: 0;
+  margin: 0;
+  line-height: inherit;
+  height: inherit;
+  width: inherit;
+}
+
+.mat-card-subtitle .mat-form-field-infix {
+  width: inherit;
+}
+
+.mat-card-header-text, .mat-card-title, .mat-card-subtitle {
+  width: 100%;
+}
+
