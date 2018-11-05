@@ -106,6 +106,7 @@ export class DcChartComponent implements AfterViewInit, OnChanges {
         this.chart.redrawGroup();
       }
     }
+
   }
 
   public filtersToggle(list: any) {
