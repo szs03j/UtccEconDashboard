@@ -5,7 +5,7 @@ import { FilterModel } from './filter-model';
 @Component({
   selector: 'app-mat-dc-chart',
   templateUrl: './material-dc-chart.component.html',
-  styleUrls: ['./material-dc-chart.component.css', '../../../node_modules/dc/style/dc.scss'],
+  styleUrls: ['./material-dc-chart.component.css', '../../../../node_modules/dc/style/dc.scss'],
   encapsulation: ViewEncapsulation.None
 })
 export class MaterialDcChartComponent extends DcChartComponent {
