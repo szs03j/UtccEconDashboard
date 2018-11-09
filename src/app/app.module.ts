@@ -5,7 +5,7 @@ import { UtccEconChartModule } from './production/utcc-econ-chart/utcc-econ-char
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
 
   ],
   imports: [

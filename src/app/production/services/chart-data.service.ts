@@ -215,6 +215,45 @@ export class ChartDataService {
     });
   });
 
+  public dailyExchangeRate = new DimGrpBroadcaster ( (dims, groups) => {
+    d3.csv('../../assets/data/dailyExchangeRate.csv').then( (data) => {
+      const ndx       = cf(data);
+      const dateDim   = ndx.dimension(function(d) {return d['Date']; });
+      const dateGrp 	= dateDim.group().reduce(
+        function(p, v) {
+          p[v['Country']] = {};
+          p[v['Country']]['currencyName'] = v['Currency'];
+          p[v['Country']]['amountUsd'] = v['Usd'];
+          return p;
+        },
+        function(p, v) {
+          p[v['Country']] = {};
+          p[v['Country']]['currencyName'] = v['Currency'];
+          p[v['Country']]['amountUsd'] = v['Usd'];
+          return p;
+        },
+        function() {
+          return {} as any;
+        }
+      );
+
+      const addDimOrGrp = function(key: string, col: Map<string, BehaviorSubject<any>>, item: any, isGroup: boolean) {
+        if (col[key]) {
+          col[key].next(item);
+        } else if (isGroup) {
+          col[key] = new BehaviorSubject<cf.Group<d3.DSVRowAny, cf.NaturallyOrderedValue, cf.NaturallyOrderedValue>>(item);
+        } else {
+          col[key] = new BehaviorSubject<cf.Dimension<d3.DSVRowAny, any>>(item);
+        }
+      };
+
+      const byDate = 'byDate';
+
+      addDimOrGrp(byDate, dims, dateDim, false );
+      addDimOrGrp(byDate, groups, dateGrp, true);
+    });
+  });
+
   public seaJson = new GeoJsonBroadcaster(
     (geoJson) => {
       d3.json('../assets/data/geosea.json').then(gj => {

@@ -10,6 +10,8 @@ import { Observable, zip, Subject } from 'rxjs';
 import { ChartDataService } from '../services/chart-data.service';
 import { FilterModel } from '../material-dc-chart/filter-model';
 import { ChartGroupModel } from '../chart-group/chart-group-model';
+import { MaterialDcNumberGroupModel } from '../material-dc-number-group/material-dc-number-group-model';
+import { NumberGroupChartModel } from '../number-group-chart/number-group-chart-model';
 
 @Component({
   selector: 'app-utcc-econ-chart-display',
@@ -50,6 +52,16 @@ export class UtccEconChartDisplayComponent implements OnInit, OnDestroy, AfterVi
 
     let options = {};
     switch (name) {
+      case 'number':
+      options = {
+        'height': height,
+        'width': width,
+        'formatNumber': numberFormat,
+        'clipPadding': 10,
+        'margins': {'top': 5, 'right': 0, 'bottom': 20, 'left': 30},
+        'useViewBoxResizing': useViewBoxResizing
+      };
+      break;
       case 'bar':
       options = {
         'height': height,
@@ -227,8 +239,8 @@ export class UtccEconChartDisplayComponent implements OnInit, OnDestroy, AfterVi
         'seriesAccessor': function(kv) { return kv.key[0]; },
         'keyAccessor': function(kv) {  return kv.key[1]; },
         'valueAccessor': function(kv) {  return +kv.value; },
-        'margins': {'top': 15, 'right': 5, 'bottom': 20, 'left': 25},
-        'legend': dc.legend().x(30).y(0).itemHeight(9).gap(8).horizontal(true).itemWidth(75).legendWidth(225),
+        'margins': {'top': 15, 'right': 5, 'bottom': 20, 'left': 28},
+        'legend': dc.legend().x(35).y(0).itemHeight(9).gap(8).horizontal(true).itemWidth(75).legendWidth(225),
         'useViewBoxResizing': useViewBoxResizing
         };
       break;
@@ -544,6 +556,52 @@ export class UtccEconChartDisplayComponent implements OnInit, OnDestroy, AfterVi
 
   private _loadFXGroup() {
     const fxGroup = new ChartGroupModel('Exchange Rate' );
+
+    const numDisplayGrp = new MaterialDcNumberGroupModel();
+    numDisplayGrp.title = 'Exchange Rate for 1 USD';
+
+    const numDisplayGrp2 = new MaterialDcNumberGroupModel();
+    numDisplayGrp2.title = 'Exchange Rate for 1 THB';
+
+    zip(this._cds.dailyExchangeRate.getGroup('byDate'), this._cds.dailyExchangeRate.getDim('byDate'))
+      .pipe(takeUntil(this._onDestroy$))
+      .subscribe(([group, dim]) => {
+        if ( group && dim) {
+          const top = group.top(1);
+          if ( top.length === 0 ) { return; }
+          const row = top[0];
+          numDisplayGrp.subtitle = 'as of ' + row.key;
+          numDisplayGrp2.subtitle = 'as of ' + row.key;
+          const thb = row.value['Thailand']['amountUsd'];
+          const countries = Object.keys(row.value);
+          countries.sort(d3.ascending);
+          countries.forEach( (d) => {
+            const currencyName = row.value[d]['currencyName'];
+            const chartModel = new NumberGroupChartModel(d);
+            const chartModel2 = new NumberGroupChartModel(d);
+            chartModel.title = d;
+            chartModel2.title = d;
+            chartModel.subtitle = currencyName;
+            chartModel2.subtitle = currencyName;
+            chartModel.chartOptions['number'] = new DcChartOptions('number', DcChartType.Number, this._getChartOptions('number'));
+            chartModel2.chartOptions['number'] = new DcChartOptions('number', DcChartType.Number, this._getChartOptions('number'));
+            chartModel.chartOptions['number'].options['valueAccessor'] = function (kv) { return kv.value[d]['amountUsd']; };
+            chartModel2.chartOptions['number'].options['valueAccessor'] = function (kv) { return kv.value[d]['amountUsd'] / thb; };
+            chartModel.selectedOption = 'number';
+            chartModel2.selectedOption = 'number';
+            chartModel.group = group;
+            chartModel2.group = group;
+            chartModel.dimension = dim;
+            chartModel2.dimension = dim;
+            numDisplayGrp.numberDisplays.push(chartModel);
+            numDisplayGrp2.numberDisplays.push(chartModel2);
+          });
+
+        }
+    });
+
+    fxGroup.chartModels.push(numDisplayGrp);
+    fxGroup.chartModels.push(numDisplayGrp2);
 
     const fx    = new MaterialDcChartModel('fx');
     fx.title    = 'Exchange Rate';

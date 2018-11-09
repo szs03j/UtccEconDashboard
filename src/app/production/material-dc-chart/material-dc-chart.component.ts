@@ -14,7 +14,6 @@ export class MaterialDcChartComponent extends DcChartComponent {
   @Input() public filterItems: Array<FilterModel> = new Array<FilterModel>();
 
   handleDimFilter(dim: any, fil: any) {
-
     if ( Array.isArray(fil)) {
       if ( fil.length < 1 ) {
         dim.filterAll();

@@ -20,7 +20,7 @@
           </ng-template>
 
           <ng-template [ngIf]="filterItems.length > 0" >
-              <mat-form-field fxFlex="0 1 50%" *ngFor="let item of filterItems">
+              <mat-form-field fxFlex="0 1 calc(50% - 32px)" *ngFor="let item of filterItems">
                 <mat-select  [placeholder]="item.name" [value]="item.selectDefault" (valueChange)="handleDimFilter(item.dimension, $event)" [multiple]="item.selectMultipleEnabled">
                   <mat-option *ngFor="let choice of item.group.all()" [value]="choice.key" >{{choice.key}}</mat-option>
                 </mat-select>

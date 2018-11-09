@@ -200,6 +200,9 @@ export class DcChartComponent implements AfterViewInit, OnChanges {
       case DcChartType.Composite:
         ch = dc.compositeChart(parent);
         break;
+      case DcChartType.Number:
+        ch = dc.numberDisplay(parent);
+        break;
     }
     return ch;
   }
