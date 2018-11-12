@@ -229,6 +229,87 @@ export class UtccEconChartDisplayComponent implements OnInit, OnDestroy, AfterVi
       };
       break;
 
+      case 'potentialBox':
+      const drawMarkup2 = function (chart) {
+
+        const lineFunction = d3.line()
+          .x(function(d) { return d.x; })
+          .y(function(d) { return d.y; })
+          .curve(d3.curveLinear);
+
+        const xVal = 0;
+        const xPos = chart.x()(xVal);
+        const vertLineData = [
+          {x: xPos, y: 0},
+          {x: xPos, y: chart.effectiveHeight()}
+        ];
+
+        const yVal = 0;
+        const yPos = chart.y()(yVal);
+        const horzLineData = [
+          {x: chart.x().range()[0], y: yPos },
+          {x: chart.x().range()[1], y: yPos }
+        ];
+
+        const chartBody = chart.chartBodyG();
+        let path2 = chartBody.selectAll('path.rcaAxisLine').data([horzLineData, vertLineData]);
+        path2 = path2
+          .enter()
+            .append('path')
+            .attr('class', 'rcaAxisLine')
+            .attr('stroke', 'black')
+            .attr('stroke-width', 1)
+            .style('stroke-dasharray', ('13,5'))
+          .merge(path2);
+        path2.attr('d', lineFunction);
+
+        const yLen = horzLineData[1].x - horzLineData[0].x;
+        const xOffset = yLen / 4;
+        const xLen = vertLineData[1].y - vertLineData[0].y;
+        const yOffset = xLen / 4;
+        const textData = [
+          { 'text': 'Intro', 'x': xPos - xOffset, 'y': yPos - yOffset },
+          { 'text': 'Star', 'x': xPos + xOffset, 'y': yPos - yOffset },
+          { 'text': 'Dog', 'x': xPos - xOffset, 'y': yPos + yOffset },
+          { 'text': 'Cow', 'x': xPos + xOffset, 'y': yPos + yOffset }];
+
+        let text = chartBody.selectAll('text').data(textData);
+        text = text
+          .enter()
+            .append('text')
+            .attr('x', function(d) { return d.x; })
+            .attr('y', function(d) { return d.y; })
+            .text( function(d) { return d.text; })
+            .attr( 'opacity', .65 );
+
+      };
+
+      options = {
+        'width': width,
+        'height': height,
+        'chart': function(c) { return dc.scatterPlot(c).symbolSize(6).highlightedSize(8); },
+        'elasticX': false,
+        'elasticY': false,
+        'brushOn': false,
+        'clipPadding': 10,
+        'x': d3.scaleLinear().domain([-3, 3]),
+        'xAxisLabel': '',
+        'y': d3.scaleLinear().domain([-2.5, 2.5]),
+        'seriesAccessor': function(kv) { return kv.value['Partner']; },
+        'keyAccessor': function(kv) { return +kv.value['x']; },
+        'valueAccessor': function(kv) {  return +kv.value['y']; },
+        'colorAccessor': function(kv) {  return kv.value['Partner']; },
+        'title': function(kv) {  return [ kv.value['Description'],
+            kv.value['Partner'],
+            'RCA: ' + numberFormat(kv.value['RCA']),
+            'Growth: ' + numberFormat(kv.value['Growth']) + '%'].join('\n'); },
+        'margins': {'top': 25, 'right': 5, 'bottom': 5, 'left': 5},
+        'legend': dc.legend().x(15).y(0).itemHeight(9).gap(8).horizontal(true).autoItemWidth(true),
+        'useViewBoxResizing': useViewBoxResizing,
+        'on': ['pretransition', function(chart) { drawMarkup2(chart); }]
+      };
+      break;
+
       case 'series':
       options = {
         'width': width,
@@ -543,6 +624,56 @@ export class UtccEconChartDisplayComponent implements OnInit, OnDestroy, AfterVi
 
     exportPotentialGroup.chartModels.push(exportPotentialLarge);
 
+    // Export Potential Box Chart ----------------------------------------------------------------------------
+    const exportPotentialBox  = new MaterialDcChartModel('exportPotentialBox');
+    exportPotentialBox.title  = 'Export Potential Box';
+    exportPotentialBox.subtitle = '';
+
+    this._cds.potentialExportBox.getDim('byPartnerHS2').pipe(takeUntil(this._onDestroy$)).subscribe(
+      (dim: any) => { if (dim) { exportPotentialBox.dimension = dim; } });
+
+    this._cds.potentialExportBox.getGroup('byPartnerHS2').pipe(takeUntil(this._onDestroy$)).subscribe(
+      (group: any) => { if (group) { exportPotentialBox.group = group;  } });
+
+    exportPotentialBox.chartOptions['potential'] = new DcChartOptions('plot', DcChartType.Series, this._getChartOptions('potentialBox'));
+    exportPotentialBox.selectedOption = 'potential';
+    exportPotentialBox.chartOptions['potential'].options['title'] = function(kv) {
+      return [ kv.value['Description'],
+      kv.value['Commodity'],
+      kv.value['Partner'] ].join('\n');
+    };
+
+    zip(this._cds.potentialExportBox.getGroup('byCountry'), this._cds.potentialExportBox.getDim('byCountry'))
+      .pipe(takeUntil(this._onDestroy$))
+      .subscribe(([group, dim]) => {
+        if ( group && dim) {
+          const fi = new FilterModel('from Country', group, dim);
+          fi.selectDefault = 'Thailand';
+          fi.selectMultipleEnabled = false;
+          fi.selectAllEnabled = false;
+          exportPotentialBox.filterItems.push( fi );
+          // need to do this so the array is updated in angular, otherwise angular doesn't know there is a change to the array
+          exportPotentialBox.filterItems = exportPotentialBox.filterItems.slice(0);
+        }
+      }
+    );
+
+    zip(this._cds.potentialExportBox.getGroup('byCommodity'), this._cds.potentialExportBox.getDim('byCommodity'))
+      .pipe(takeUntil(this._onDestroy$))
+      .subscribe(([group, dim]) => {
+        if ( group && dim) {
+          const fi = new FilterModel('by Subgroup', group, dim);
+          fi.selectDefault = 'Aircraft, spacecraft and parts thereof';
+          fi.selectMultipleEnabled = false;
+          fi.selectAllEnabled = false;
+          exportPotentialBox.filterItems.push( fi );
+          exportPotentialBox.filterItems = exportPotentialBox.filterItems.slice(0);
+        }
+      }
+    );
+
+    exportPotentialGroup.chartModels.push(exportPotentialBox);
+
     // Add the entire group of charts to be displayed
     this.chartGroups.push(exportPotentialGroup);
   }
@@ -650,6 +781,56 @@ export class UtccEconChartDisplayComponent implements OnInit, OnDestroy, AfterVi
     );
 
     importPotentialGroup.chartModels.push(importPotentialLarge);
+
+    // Import Potential Box Chart ----------------------------------------------------------------------------
+    const importPotentialBox  = new MaterialDcChartModel('importPotentialBox');
+    importPotentialBox.title  = 'Import Potential Box';
+    importPotentialBox.subtitle = '';
+
+    this._cds.potentialImportBox.getDim('byPartnerHS2').pipe(takeUntil(this._onDestroy$)).subscribe(
+      (dim: any) => { if (dim) { importPotentialBox.dimension = dim; } });
+
+    this._cds.potentialImportBox.getGroup('byPartnerHS2').pipe(takeUntil(this._onDestroy$)).subscribe(
+      (group: any) => { if (group) { importPotentialBox.group = group;  } });
+
+    importPotentialBox.chartOptions['potential'] = new DcChartOptions('plot', DcChartType.Series, this._getChartOptions('potentialBox'));
+    importPotentialBox.selectedOption = 'potential';
+    importPotentialBox.chartOptions['potential'].options['title'] = function(kv) {
+      return [ kv.value['Description'],
+      kv.value['Commodity'],
+      kv.value['Partner'] ].join('\n');
+    };
+
+    zip(this._cds.potentialImportBox.getGroup('byCountry'), this._cds.potentialImportBox.getDim('byCountry'))
+      .pipe(takeUntil(this._onDestroy$))
+      .subscribe(([group, dim]) => {
+        if ( group && dim) {
+          const fi = new FilterModel('to Country', group, dim);
+          fi.selectDefault = 'Thailand';
+          fi.selectMultipleEnabled = false;
+          fi.selectAllEnabled = false;
+          importPotentialBox.filterItems.push( fi );
+          // need to do this so the array is updated in angular, otherwise angular doesn't know there is a change to the array
+          importPotentialBox.filterItems = importPotentialBox.filterItems.slice(0);
+        }
+      }
+    );
+
+    zip(this._cds.potentialImportBox.getGroup('byCommodity'), this._cds.potentialImportBox.getDim('byCommodity'))
+      .pipe(takeUntil(this._onDestroy$))
+      .subscribe(([group, dim]) => {
+        if ( group && dim) {
+          const fi = new FilterModel('by Subgroup', group, dim);
+          fi.selectDefault  = 'Aircraft, spacecraft and parts thereof';
+          fi.selectMultipleEnabled = false;
+          fi.selectAllEnabled = false;
+          importPotentialBox.filterItems.push( fi );
+          importPotentialBox.filterItems = importPotentialBox.filterItems.slice(0);
+        }
+      }
+    );
+
+    importPotentialGroup.chartModels.push(importPotentialBox);
 
     this.chartGroups.push(importPotentialGroup);
   }

@@ -82,6 +82,14 @@ export class ChartDataService {
     this._loadPotentialLarge(dims, groups, '../../assets/data/importPotentialLarge.csv');
   });
 
+  public potentialExportBox = new DimGrpBroadcaster( (dims, groups) => {
+    this._loadPotentialBox(dims, groups, '../../assets/data/exportPotentialLarge.csv');
+  });
+
+  public potentialImportBox = new DimGrpBroadcaster( (dims, groups) => {
+    this._loadPotentialBox(dims, groups, '../../assets/data/importPotentialLarge.csv');
+  });
+
   public gdp = new DimGrpBroadcaster( (dims, groups) => {
     function remove_empty_bins(source_group) {
       return {
@@ -271,6 +279,86 @@ export class ChartDataService {
       });
     }
   );
+
+  private _loadPotentialBox = (dims, groups, filename) => {
+
+    function filter_bins(source_group, f) {
+      return {
+        all: function () {
+          return source_group.all().filter(function(d) {
+            return f(d);
+          });
+        }
+      };
+    }
+
+    const remEmpty = function(d) {
+      return  Math.abs(+d.value['RCA']) > 0.00001; // if using floating-point numbers
+    };
+
+    d3.csv(filename).then(function(data) {
+
+      const ndx   = cf(data);
+      const countryDim  = ndx.dimension( function(d) { return d['Reporter']; });
+      const commodityDim = ndx.dimension( function(d) { return d['Commodity']; });
+      const partnerHS2Dim = ndx.dimension( function(d) { return [d['Partner'], +d['HS2_Code']] as any; });
+
+      const countryGrp  = countryDim.group();
+      const commodityGrp     = commodityDim.group();
+
+      const partnerHS2Grp = filter_bins(partnerHS2Dim.group().reduce(
+        function(p, v) {
+          p['Growth'] += +v['Growth4Graph'];
+          p['RCA'] += +v['RCA4Graph'];
+          p['Description'] = v['Description'];
+          p['Partner'] = v['Partner'];
+          p['Commodity'] = v['Commodity'];
+          p['x'] = v['x'];
+          p['y'] = v['y'];
+          return p;
+        },
+        function(p, v) {
+          p['Growth'] -= +v['Growth4Graph'];
+          p['RCA'] -= +v['RCA4Graph'];
+          p['Description'] = v['Description'];
+          p['Partner'] = v['Partner'];
+          p['Commodity'] = v['Commodity'];
+          p['x'] = v['x'];
+          p['y'] = v['y'];
+          return p;
+        },
+        function() {
+          return {'Growth': 0, 'RCA': 0, 'Description': '', 'Partner': '', 'Commodity': '', 'x': '', 'y': '' } as any;
+        }
+        ), remEmpty);
+
+
+      //  console.log( partnerHS2Grp.all());
+
+      const addDimOrGrp = function(key: string, col: Map<string, BehaviorSubject<any>>, item: any, isGroup: boolean) {
+        if (col[key]) {
+          col[key].next(item);
+        } else if (isGroup) {
+          col[key] = new BehaviorSubject<cf.Group<d3.DSVRowAny, cf.NaturallyOrderedValue, cf.NaturallyOrderedValue>>(item);
+        } else {
+          col[key] = new BehaviorSubject<cf.Dimension<d3.DSVRowAny, any>>(item);
+        }
+      };
+
+      const byCountry = 'byCountry';
+      const byCommodity    = 'byCommodity';
+      const byPartnerHS2 = 'byPartnerHS2';
+
+      addDimOrGrp(byCountry, dims, countryDim, false );
+      addDimOrGrp(byCommodity, dims, commodityDim, false);
+      addDimOrGrp(byPartnerHS2, dims, partnerHS2Dim, false);
+
+      addDimOrGrp(byCountry, groups, countryGrp, true);
+      addDimOrGrp(byCommodity, groups, commodityGrp, true);
+      addDimOrGrp(byPartnerHS2, groups, partnerHS2Grp, true);
+
+    });
+  }
 
   private _loadPotentialLarge = (dims, groups, filename) => {
 
