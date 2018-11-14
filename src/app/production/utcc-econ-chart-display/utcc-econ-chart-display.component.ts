@@ -335,7 +335,7 @@ export class UtccEconChartDisplayComponent implements OnInit, OnDestroy, AfterVi
 
   private _loadExportsGroup() {
 
-    const exportsGroup = new ChartGroupModel('Exports');
+    const exportsGroup = new ChartGroupModel('Exports', 'exports');
 
     /* create exportsByCountry chart model */
     const exportsByCountry    = new MaterialDcChartModel('exportsByCountry');
@@ -427,7 +427,7 @@ export class UtccEconChartDisplayComponent implements OnInit, OnDestroy, AfterVi
   }
 
   private _loadImportsGroup() {
-    const importsGroup = new ChartGroupModel('Imports' );
+    const importsGroup = new ChartGroupModel('Imports', 'imports' );
 
     /* create importsByCountry chart model */
     const importsByCountry    = new MaterialDcChartModel('importsByCountry');
@@ -519,9 +519,9 @@ export class UtccEconChartDisplayComponent implements OnInit, OnDestroy, AfterVi
   }
 
   private _loadExportPotentialGroup() {
-    // Export Potential Small Chart ---------------------------------------------------------------------
-    const exportPotentialGroup = new ChartGroupModel('Export Potential' );
+    const exportPotentialGroup = new ChartGroupModel('Export Potential', 'export-potential' );
 
+    // Export Potential Small Chart ---------------------------------------------------------------------
     const exportPotential    = new MaterialDcChartModel('exportPotential');
     exportPotential.title    = 'Export Potential Groups';
     exportPotential.subtitle = '';
@@ -679,7 +679,7 @@ export class UtccEconChartDisplayComponent implements OnInit, OnDestroy, AfterVi
   }
 
   private _loadImportPotentialGroup() {
-    const importPotentialGroup = new ChartGroupModel('Import Potential' );
+    const importPotentialGroup = new ChartGroupModel('Import Potential', 'import-potential' );
 
     const importPotential    = new MaterialDcChartModel('importPotential');
     importPotential.title    = 'Import Potential Groups';
@@ -836,7 +836,7 @@ export class UtccEconChartDisplayComponent implements OnInit, OnDestroy, AfterVi
   }
 
   private _loadGdpGroup() {
-    const gdpGroup = new ChartGroupModel('GDP' );
+    const gdpGroup = new ChartGroupModel('GDP', 'gdp' );
 
     const gdp    = new MaterialDcChartModel('gdp');
     gdp.title    = 'GDP';
@@ -883,7 +883,7 @@ export class UtccEconChartDisplayComponent implements OnInit, OnDestroy, AfterVi
   }
 
   private _loadFXGroup() {
-    const fxGroup = new ChartGroupModel('Exchange Rate' );
+    const fxGroup = new ChartGroupModel('Exchange Rate', 'exchange-rate' );
 
     const numDisplayGrp = new MaterialDcNumberGroupModel();
     numDisplayGrp.title = 'Exchange Rate for 1 USD';

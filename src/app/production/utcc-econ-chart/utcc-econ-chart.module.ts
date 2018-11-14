@@ -22,6 +22,8 @@ import { MaterialDcChartComponent } from '../material-dc-chart/material-dc-chart
 import { ChartGroupComponent } from '../chart-group/chart-group.component';
 import { MaterialDcNumberGroupComponent } from '../material-dc-number-group/material-dc-number-group.component';
 import { NumberGroupChartComponent } from '../number-group-chart/number-group-chart.component';
+import { LoadingChartComponent } from '../loading-chart/loading-chart.component';
+
 
 @NgModule({
   imports: [
@@ -38,7 +40,7 @@ import { NumberGroupChartComponent } from '../number-group-chart/number-group-ch
     LayoutModule,
     MatListModule,
     MatSelectModule,
-    FlexLayoutModule,
+    FlexLayoutModule
   ],
   declarations: [
     UtccEconChartDisplayComponent,
@@ -46,7 +48,8 @@ import { NumberGroupChartComponent } from '../number-group-chart/number-group-ch
     MaterialDcChartComponent,
     ChartGroupComponent,
     MaterialDcNumberGroupComponent,
-    NumberGroupChartComponent
+    NumberGroupChartComponent,
+    LoadingChartComponent
   ],
   exports: [
     UtccEconChartDisplayComponent

@@ -27,6 +27,8 @@ export class ChartGroupComponent implements OnInit, OnDestroy, AfterViewInit {
   public get chartModels() { return this._gettersetter_chartModels; }
   private _gettersetter_chartModels = new Array<any>();
 
+  @Input() public id: string;
+
   // this allows the template to access the ChartGroupItemModelType enum like it was available and a constant
   public ChartGroupItemModelType = ChartGroupItemModelType;
 
