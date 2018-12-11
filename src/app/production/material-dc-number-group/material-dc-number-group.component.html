@@ -1,0 +1,34 @@
+
+<mat-card class="card" >
+    <mat-card-header class="header">
+      <mat-card-title fxLayout="row">
+        <div fxFlex="75%" >{{title}}</div>
+      </mat-card-title>
+      <mat-card-subtitle fxLayout="row" fxLayoutAlign="start" fxLayoutGap="32px" >
+        <div fxFlex="75%">{{subtitle}}</div>
+      </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+
+          <div fxLayout="row wrap"  >
+              <div *ngFor="let model of numberDisplays; let i = index;" [ngClass]="'bg'+ i + ' numDispContainer'" fxFlex="0 1 calc(33.3% - 10px)" >
+                  <app-number-group-chart
+                  [title]="model.title"
+                  [subtitle]="model.subtitle"
+                  [dimension]="model.dimension"
+                  [group]="model.group"
+                  selectedOption="number"
+                  (selectedOptionChange)="model.selectedOption = $event"
+                  (chartLoadedChange)="model.chartLoaded = $event"
+                  (chartChange)="model.chart = $event"
+                  [chartOptions]="model.chartOptions">
+                </app-number-group-chart>
+              </div>
+
+          </div>
+
+
+
+    </mat-card-content>
+  </mat-card>
+

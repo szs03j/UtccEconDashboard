@@ -6,5 +6,6 @@ export enum DcChartType {
   Line  = 'Line',
   Plot  = 'Plot',
   Series = 'Series',
-  Composite = 'Composite'
+  Composite = 'Composite',
+  Number = 'Number'
 }

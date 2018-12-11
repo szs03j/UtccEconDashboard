@@ -1,0 +1,16 @@
+.numGroupChartRoot {
+  text-align: center;
+  width: 100%;
+}
+
+.numGroupChartRoot h4 {
+  padding: 0;
+  margin: 0;
+  font-weight: normal;
+}
+
+.numGroupChartRoot h5 {
+  padding: 0;
+  margin: 0 0 5px 0;
+  font-weight: normal;
+}

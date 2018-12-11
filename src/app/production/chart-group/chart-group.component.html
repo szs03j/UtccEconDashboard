@@ -1,27 +1,29 @@
-<mat-toolbar color="primary" >
-  <button
-    type="button"
-    aria-label="Toggle sidenav"
-    mat-icon-button
-    *ngIf="isHandset$ | async">
-    <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-  </button>
-  <span>{{title}}</span>
-</mat-toolbar>
-<div class="grid" #grid fxLayout.lt-sm="column"  >
+
+<div class="grid" #grid fxLayout.lt-sm="column" [id]="id"  >
   <div class="item" *ngFor="let model of chartModels" >
-    <div class="item-content">
-      <app-mat-dc-chart
-      [title]="model.title"
-      [subtitle]="model.subtitle"
-      [dimension]="model.dimension"
-      [group]="model.group"
-      [selectedOption]="model.selectedOption"
-      (selectedOptionChange)="model.selectedOption = $event"
-      (chartLoadedChange)="model.chartLoaded = $event"
-      (chartChange)="model.chart = $event"
-      [chartOptions]="model.chartOptions"
-      [filterItems]="model.filterItems"></app-mat-dc-chart>
+    <div class="item-content"  >
+      <ng-container [ngSwitch]="model.modelType">
+        <app-mat-dc-chart
+          *ngSwitchCase="ChartGroupItemModelType.MaterialDcChart"
+          [title]="model.title"
+          [subtitle]="model.subtitle"
+          [dimension]="model.dimension"
+          [group]="model.group"
+          [selectedOption]="model.selectedOption"
+          (selectedOptionChange)="model.selectedOption = $event"
+          (chartLoadedChange)="model.chartLoaded = $event"
+          (chartChange)="model.chart = $event"
+          [chartOptions]="model.chartOptions"
+          [filterItems]="model.filterItems">
+        </app-mat-dc-chart>
+
+        <app-mat-dc-number-group
+          *ngSwitchCase="ChartGroupItemModelType.MaterialDcNumberGroup"
+          [title]="model.title"
+          [subtitle]="model.subtitle"
+          [numberDisplays]="model.numberDisplays">
+        </app-mat-dc-number-group>
+      </ng-container>
     </div>
   </div>
 </div>

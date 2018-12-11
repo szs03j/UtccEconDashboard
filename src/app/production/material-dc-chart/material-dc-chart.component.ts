@@ -11,10 +11,18 @@ import { FilterModel } from './filter-model';
 export class MaterialDcChartComponent extends DcChartComponent {
   @Input() public title: string;
   @Input() public subtitle: string;
-  @Input() public filterItems: Array<FilterModel> = new Array<FilterModel>();
+  @Input() public set filterItems(it: Array<FilterModel>) {
+    this._gettersetter_filterItems = it;
+    this._gettersetter_filterItems.forEach( (d) => {
+      if ( d.selectDefault ) {
+        this.handleDimFilter(d.dimension, d.selectDefault);
+      }
+    });
+  }
+  public get filterItems() { return this._gettersetter_filterItems; }
+  private _gettersetter_filterItems: Array<FilterModel> = new Array<FilterModel>();
 
   handleDimFilter(dim: any, fil: any) {
-
     if ( Array.isArray(fil)) {
       if ( fil.length < 1 ) {
         dim.filterAll();

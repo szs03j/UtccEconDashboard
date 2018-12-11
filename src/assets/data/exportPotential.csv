@@ -1,61 +1,242 @@
-Reporter,Partner,Group_Code,Description,Amount,Growth,RCA,AverageGrowth,Quadrant,QuadrantName
-Thailand,Cambodia,1,Animal,72926295.43,-27.45,0.95,9.81,3,DOG
-Thailand,Cambodia,2,Vegetable,34464361.35,12,0.14,9.81,4,COW
-Thailand,Cambodia,3,Food Products,916333029.03,5.89,2.24,9.81,2,INTRO
-Thailand,Cambodia,4,Minerals,163609209.48,0.31,7.7,9.81,2,INTRO
-Thailand,Cambodia,5,Fuels,953846886.2,23.4,5.18,9.81,1,STAR
-Thailand,Cambodia,6,Chemicals,323403574.18,15.69,1.32,9.81,1,STAR
-Thailand,Cambodia,7,Plastic or Rubber,299177465.28,10.76,0.46,9.81,4,COW
-Thailand,Cambodia,8,Hides and Skins,23715104.75,13.99,0.92,9.81,4,COW
-Thailand,Cambodia,9,Wood,211092689.97,9.49,0.87,9.81,3,DOG
-Thailand,Cambodia,10,Textiles and Clothing,31198104.13,1.32,1.09,9.81,2,INTRO
-Thailand,Cambodia,11,Footwear,936505293.25,26.36,2.83,9.81,1,STAR
-Thailand,Cambodia,12,Stone and Glass,142472456.1,19.76,0.59,9.81,4,COW
-Thailand,Cambodia,13,Metals,658091491.06,3.97,0.4,9.81,3,DOG
-Thailand,Cambodia,14,Machinery/Electrical,441954682.29,14.14,0.63,9.81,4,COW
-Thailand,Cambodia,15,Transportation,61192450.05,17.56,0.31,9.81,4,COW
-Thailand,Lao PDR,1,Animal,256995248.52,-16.63,4.48,1.34,2,INTRO
-Thailand,Lao PDR,2,Vegetable,75891974.76,-35.64,0.4,1.34,3,DOG
-Thailand,Lao PDR,3,Food Products,480446851.25,13.18,1.56,1.34,1,STAR
-Thailand,Lao PDR,4,Minerals,69245366.45,-15.85,4.35,1.34,2,INTRO
-Thailand,Lao PDR,5,Fuels,709802608.27,12.75,5.14,1.34,1,STAR
-Thailand,Lao PDR,6,Chemicals,334230464.49,14.05,1.82,1.34,1,STAR
-Thailand,Lao PDR,7,Plastic or Rubber,220166477.21,30.23,0.45,1.34,4,COW
-Thailand,Lao PDR,8,Hides and Skins,2093365.75,25.2,0.11,1.34,4,COW
-Thailand,Lao PDR,9,Wood,110678396.75,31.35,0.61,1.34,4,COW
-Thailand,Lao PDR,10,Textiles and Clothing,19050590.34,7.12,0.89,1.34,4,COW
-Thailand,Lao PDR,11,Footwear,138381330.7,-21.62,0.56,1.34,3,DOG
-Thailand,Lao PDR,12,Stone and Glass,238404990.97,-38.17,1.31,1.34,2,INTRO
-Thailand,Lao PDR,13,Metals,658305863.39,3.93,0.53,1.34,4,COW
-Thailand,Lao PDR,14,Machinery/Electrical,552159001.42,-7.75,1.04,1.34,2,INTRO
-Thailand,Lao PDR,15,Transportation,84520962.43,17.89,0.56,1.34,4,COW
-Thailand,Myanmar,1,Animal,49369497.53,40.06,0.79,5.77,4,COW
-Thailand,Myanmar,2,Vegetable,136906874.39,6.61,0.66,5.77,4,COW
-Thailand,Myanmar,3,Food Products,1022772644.75,-4.92,3.05,5.77,2,INTRO
-Thailand,Myanmar,4,Minerals,84029566.3,-51.82,4.84,5.77,2,INTRO
-Thailand,Myanmar,5,Fuels,414004312.12,39.03,2.75,5.77,1,STAR
-Thailand,Myanmar,6,Chemicals,447070420.56,11.34,2.23,5.77,1,STAR
-Thailand,Myanmar,7,Plastic or Rubber,276809790.77,7.12,0.52,5.77,4,COW
-Thailand,Myanmar,8,Hides and Skins,4799904.32,-17.85,0.23,5.77,3,DOG
-Thailand,Myanmar,9,Wood,268412095.62,0.89,1.36,5.77,2,INTRO
-Thailand,Myanmar,10,Textiles and Clothing,108158066.26,-8.37,4.63,5.77,2,INTRO
-Thailand,Myanmar,11,Footwear,114545562.32,4.51,0.42,5.77,3,DOG
-Thailand,Myanmar,12,Stone and Glass,313181469.33,31.94,1.58,5.77,1,STAR
-Thailand,Myanmar,13,Metals,656510773.59,-7.98,0.48,5.77,3,DOG
-Thailand,Myanmar,14,Machinery/Electrical,297605525.88,14.56,0.52,5.77,4,COW
-Thailand,Myanmar,15,Transportation,114611234.27,21.5,0.7,5.77,4,COW
-Thailand,Viet Nam,1,Animal,224011277.66,6.04,1.32,20.2,2,INTRO
-Thailand,Viet Nam,2,Vegetable,1160137336.54,99.96,2.07,20.2,1,STAR
-Thailand,Viet Nam,3,Food Products,825015530.09,1.46,0.91,20.2,3,DOG
-Thailand,Viet Nam,4,Minerals,64325101.79,-6.77,1.37,20.2,2,INTRO
-Thailand,Viet Nam,5,Fuels,1114485904.92,56.49,2.73,20.2,1,STAR
-Thailand,Viet Nam,6,Chemicals,889927723.58,26.19,1.64,20.2,1,STAR
-Thailand,Viet Nam,7,Plastic or Rubber,1319126275.46,23.72,0.92,20.2,4,COW
-Thailand,Viet Nam,8,Hides and Skins,229406715.2,43.63,4.01,20.2,1,STAR
-Thailand,Viet Nam,9,Wood,789174424.61,12.02,1.47,20.2,2,INTRO
-Thailand,Viet Nam,10,Textiles and Clothing,49994112.93,-2.33,0.79,20.2,3,DOG
-Thailand,Viet Nam,11,Footwear,141823628.31,3.13,0.19,20.2,3,DOG
-Thailand,Viet Nam,12,Stone and Glass,732154197.38,24.41,1.36,20.2,1,STAR
-Thailand,Viet Nam,13,Metals,2969989425.84,22.72,0.81,20.2,4,COW
-Thailand,Viet Nam,14,Machinery/Electrical,998369095.68,-5.02,0.64,20.2,3,DOG
-Thailand,Viet Nam,15,Transportation,153989054.65,-2.6,0.35,20.2,3,DOG
+"Reporter","Partner","Group_Code","Description","Value","Growth","Growth4Graph","AverageGrowth","RCA","RCA4Graph","Quadrant","x","y"
+"Cambodia","Lao PDR","1","Animal",89604.76,"-97.03940059",-97.03,-29.58,438.06,10.00,"COW",1,-1
+"Cambodia","Lao PDR","14","Machinery/Electrical",1453988.21,"18.75924675",18.75,-29.58,19.66,10.00,"STAR",2,1
+"Cambodia","Lao PDR","15","Transportation",98861.93,"178.2451758",100.00,-29.58,7.69,7.69,"STAR",1,1
+"Cambodia","Lao PDR","3","Food Products",49252.67,"-81.33713734",-81.33,-29.58,1.35,1.35,"COW",1,-1
+"Cambodia","Lao PDR","9","Wood",60394.36,"-88.28956771",-88.28,-29.58,0.05,0.05,"DOG",-1,-1
+"Cambodia","Myanmar","10","Textiles and Clothing",586.31,"-99.54132481",-99.54,-70.99,0.02,0.02,"DOG",-2,-1
+"Cambodia","Myanmar","12","Stone and Glass",1665.64,"-98.24339231",-98.24,-70.99,0.96,0.96,"DOG",-1,-1
+"Cambodia","Myanmar","13","Metals",60138.92,"-89.16304714",-89.16,-70.99,3.41,3.41,"COW",2,-1
+"Cambodia","Myanmar","15","Transportation",1759.86,"-92.31805436",-92.31,-70.99,0.75,0.75,"DOG",-1,-1
+"Cambodia","Myanmar","9","Wood",253444.23,"24.2842484",24.28,-70.99,1.20,1.20,"STAR",1,1
+"Cambodia","Thailand","1","Animal",7082.09,"-85.22710277",-85.22,-64.96,0.65,0.65,"DOG",-1,-1
+"Cambodia","Thailand","10","Textiles and Clothing",1140217.14,"-68.07573375",-68.07,-64.96,0.14,0.14,"DOG",-1,-1
+"Cambodia","Thailand","11","Footwear",4822193.87,"-97.14276955",-97.14,-64.96,10.42,10.00,"COW",1,-1
+"Cambodia","Thailand","12","Stone and Glass",1792845.88,"-60.27619515",-60.27,-64.96,3.55,3.55,"STAR",1,1
+"Cambodia","Thailand","13","Metals",49377836.28,"-66.60209637",-66.60,-64.96,9.55,9.55,"COW",1,-1
+"Cambodia","Thailand","14","Machinery/Electrical",1666074.91,"-24.35338801",-24.35,-64.96,0.42,0.42,"INTRO",-1,1
+"Cambodia","Thailand","15","Transportation",612399.34,"-66.19061223",-66.19,-64.96,0.89,0.89,"DOG",-1,-1
+"Cambodia","Thailand","2","Vegetable",12366840.32,"-10.34390557",-10.34,-64.96,3.24,3.24,"STAR",1,1
+"Cambodia","Thailand","3","Food Products",660570.39,"-79.334548",-79.33,-64.96,0.34,0.34,"DOG",-1,-1
+"Cambodia","Thailand","4","Minerals",221169.28,"-64.16996772",-64.16,-64.96,15.18,10.00,"STAR",1,1
+"Cambodia","Thailand","6","Chemicals",11048311.92,"-76.38954986",-76.38,-64.96,12.04,10.00,"COW",2,-1
+"Cambodia","Thailand","7","Plastic or Rubber",997961.92,"-70.84930584",-70.84,-64.96,0.27,0.27,"DOG",-2,-1
+"Cambodia","Thailand","8","Hides and Skins",550147.60,"-79.41775352",-79.41,-64.96,0.22,0.22,"DOG",-1,-1
+"Cambodia","Thailand","9","Wood",7987668.23,"-61.19163467",-61.19,-64.96,0.12,0.12,"INTRO",-1,1
+"Cambodia","Viet Nam","1","Animal",28213.29,"-95.7090418",-95.70,-72.53,3.00,3.00,"COW",1,-1
+"Cambodia","Viet Nam","10","Textiles and Clothing",828282.12,"-49.33388928",-49.33,-72.53,0.11,0.11,"INTRO",-1,1
+"Cambodia","Viet Nam","11","Footwear",4840147.75,"-69.38802103",-69.38,-72.53,12.15,10.00,"STAR",1,1
+"Cambodia","Viet Nam","12","Stone and Glass",2580774.93,"-73.06454658",-73.06,-72.53,5.93,5.93,"COW",1,-1
+"Cambodia","Viet Nam","13","Metals",9700166.02,"-32.62848591",-32.62,-72.53,2.17,2.17,"STAR",1,1
+"Cambodia","Viet Nam","14","Machinery/Electrical",298659.26,"-89.21425556",-89.21,-72.53,0.08,0.08,"DOG",-1,-1
+"Cambodia","Viet Nam","15","Transportation",1836258.51,"-75.52081705",-75.52,-72.53,3.11,3.11,"COW",1,-1
+"Cambodia","Viet Nam","2","Vegetable",178021.21,"-89.08108209",-89.08,-72.53,0.05,0.05,"DOG",-1,-1
+"Cambodia","Viet Nam","3","Food Products",12875809.12,"-73.39818596",-73.39,-72.53,7.73,7.73,"COW",1,-1
+"Cambodia","Viet Nam","6","Chemicals",2356.88,"-88.40522102",-88.40,-72.53,2.98441250601828e-03,2.98441250601828e-03,"DOG",-1,-1
+"Cambodia","Viet Nam","7","Plastic or Rubber",41255507.32,"-60.0244423",-60.02,-72.53,13.13,10.00,"STAR",1,1
+"Cambodia","Viet Nam","8","Hides and Skins",146847.77,"-70.42880416",-70.42,-72.53,0.06,0.06,"INTRO",-1,1
+"Cambodia","Viet Nam","9","Wood",5731552.68,"-76.75496188",-76.75,-72.53,0.10,0.10,"DOG",-1,-1
+"Lao PDR","Cambodia","10","Textiles and Clothing",400.00,"Infinity",100.00,59.00,2.65630450337561e-03,2.65630450337561e-03,"INTRO",-1,1
+"Lao PDR","Cambodia","11","Footwear",50.00,"Infinity",100.00,59.00,8.23227512082879e-05,8.23227512082879e-05,"INTRO",-1,2
+"Lao PDR","Cambodia","12","Stone and Glass",460.00,"Infinity",100.00,59.00,4.11608414783885e-04,4.11608414783885e-04,"INTRO",-1,2
+"Lao PDR","Cambodia","13","Metals",18838.00,"-77.75914994",-77.75,59.00,0.01,0.01,"DOG",-2,-1
+"Lao PDR","Cambodia","14","Machinery/Electrical",7778420.00,"21.33590198",21.33,59.00,95.81,10.00,"COW",1,-1
+"Lao PDR","Cambodia","15","Transportation",2544.00,"Infinity",100.00,59.00,0.01,0.01,"INTRO",-1,1
+"Lao PDR","Cambodia","2","Vegetable",2114950.00,"235.0537921",100.00,59.00,1.24,1.24,"STAR",1,1
+"Lao PDR","Cambodia","3","Food Products",185801.00,"-94.56550607",-94.56,59.00,0.15,0.15,"DOG",-1,-1
+"Lao PDR","Cambodia","6","Chemicals",349025.00,"182.7028997",100.00,59.00,0.79,0.79,"INTRO",-1,2
+"Lao PDR","Cambodia","7","Plastic or Rubber",3162.00,"Infinity",100.00,59.00,6.96617897876612e-03,6.96617897876612e-03,"INTRO",-1,1
+"Lao PDR","Cambodia","9","Wood",4380.00,"Infinity",100.00,59.00,6.67739296812099e-03,6.67739296812099e-03,"INTRO",-1,1
+"Lao PDR","Myanmar","3","Food Products",153480.00,"597.6363636",100.00,100.00,5.87,5.87,"STAR",1,1
+"Lao PDR","Myanmar","9","Wood",72995.00,"500.8808034",100.00,100.00,5.13,5.13,"STAR",1,1
+"Lao PDR","Thailand","1","Animal",2627669.00,"242.9684318",100.00,38.83,0.20,0.20,"INTRO",-1,1
+"Lao PDR","Thailand","10","Textiles and Clothing",14193621.00,"40.68051765",40.68,38.83,0.88,0.88,"INTRO",-1,1
+"Lao PDR","Thailand","11","Footwear",812378.00,"-29.20798143",-29.20,38.83,0.01,0.01,"DOG",-1,-1
+"Lao PDR","Thailand","12","Stone and Glass",361036430.90,"-9.140404971",-9.14,38.83,3.03,3.03,"COW",1,-1
+"Lao PDR","Thailand","13","Metals",406895455.00,"21.97814042",21.97,38.83,3.02,3.02,"COW",1,-1
+"Lao PDR","Thailand","14","Machinery/Electrical",1340454.00,"12887.63686",100.00,38.83,0.15,0.15,"INTRO",-1,1
+"Lao PDR","Thailand","15","Transportation",25987762.00,"48.24289055",48.24,38.83,1.64,1.64,"STAR",1,1
+"Lao PDR","Thailand","2","Vegetable",135193743.00,"-17.92443654",-17.92,38.83,0.74,0.74,"DOG",-1,-1
+"Lao PDR","Thailand","3","Food Products",43907751.00,"13.45445275",13.45,38.83,0.34,0.34,"DOG",-1,-1
+"Lao PDR","Thailand","4","Minerals",52158770.00,"1521.625899",100.00,38.83,0.19,0.19,"INTRO",-1,1
+"Lao PDR","Thailand","5","Fuels",6529178.00,"23318.8594",100.00,38.83,2.36,2.36,"STAR",1,1
+"Lao PDR","Thailand","6","Chemicals",32595419.00,"-19.72783559",-19.72,38.83,0.69,0.69,"DOG",-1,-1
+"Lao PDR","Thailand","7","Plastic or Rubber",1458388.00,"-65.78451536",-65.78,38.83,0.03,0.03,"DOG",-1,-1
+"Lao PDR","Thailand","8","Hides and Skins",582381.00,"218.3975726",100.00,38.83,1.23,1.23,"STAR",1,1
+"Lao PDR","Thailand","9","Wood",26981257.00,"166.2532095",100.00,38.83,0.38,0.38,"INTRO",-1,1
+"Lao PDR","Viet Nam","1","Animal",29172880.00,"-34.56413968",-34.56,33.59,3.71,3.71,"COW",1,-1
+"Lao PDR","Viet Nam","10","Textiles and Clothing",119681.00,"176.3548618",100.00,33.59,0.01,0.01,"INTRO",-1,1
+"Lao PDR","Viet Nam","11","Footwear",214522.00,"980.4149174",100.00,33.59,5.39414639056954e-03,5.39414639056954e-03,"INTRO",-1,1
+"Lao PDR","Viet Nam","12","Stone and Glass",6934700.00,"16.87942536",16.87,33.59,0.09,0.09,"DOG",-1,-1
+"Lao PDR","Viet Nam","13","Metals",14033619.00,"12.30090161",12.30,33.59,0.16,0.16,"DOG",-1,-1
+"Lao PDR","Viet Nam","14","Machinery/Electrical",401689.00,"-37.61624476",-37.61,33.59,0.07,0.07,"DOG",-1,-1
+"Lao PDR","Viet Nam","15","Transportation",8817759.00,"1625.293317",100.00,33.59,0.90,0.90,"INTRO",-1,1
+"Lao PDR","Viet Nam","2","Vegetable",151699292.00,"52.69021454",52.69,33.59,1.36,1.36,"STAR",1,1
+"Lao PDR","Viet Nam","3","Food Products",329568659.00,"24.64992552",24.64,33.59,4.17,4.17,"COW",1,-1
+"Lao PDR","Viet Nam","4","Minerals",21364912.00,"7.218997247",7.21,33.59,0.13,0.13,"DOG",-1,-1
+"Lao PDR","Viet Nam","5","Fuels",112728.00,"7316.315789",100.00,33.59,0.06,0.06,"INTRO",-1,1
+"Lao PDR","Viet Nam","6","Chemicals",44987497.00,"24.62742872",24.62,33.59,1.55,1.55,"COW",1,-1
+"Lao PDR","Viet Nam","7","Plastic or Rubber",69049456.00,"27.99526527",27.99,33.59,2.32,2.32,"COW",1,-1
+"Lao PDR","Viet Nam","9","Wood",8299131.00,"-23.78653148",-23.78,33.59,0.19,0.19,"DOG",-1,-1
+"Myanmar","Cambodia","1","Animal",299.42,"Infinity",100.00,71.98,2.74613588273634e-03,2.74613588273634e-03,"INTRO",-1,2
+"Myanmar","Cambodia","10","Textiles and Clothing",160.00,"Infinity",100.00,71.98,3.65168940268542e-03,3.65168940268542e-03,"INTRO",-1,1
+"Myanmar","Cambodia","13","Metals",45835.60,"15178.53333",100.00,71.98,0.95,0.95,"INTRO",-1,1
+"Myanmar","Cambodia","14","Machinery/Electrical",113708.28,"Infinity",100.00,71.98,1.38,1.38,"STAR",1,1
+"Myanmar","Cambodia","15","Transportation",610.00,"1893.464052",100.00,71.98,0.03,0.03,"INTRO",-1,1
+"Myanmar","Cambodia","2","Vegetable",78144.00,"-84.81726865",-84.81,71.98,0.17,0.17,"DOG",-2,-1
+"Myanmar","Cambodia","3","Food Products",1864134.23,"-5.577385358",-5.57,71.98,13.06,10.00,"COW",2,-1
+"Myanmar","Cambodia","4","Minerals",238.00,"Infinity",100.00,71.98,0.05,0.05,"INTRO",-1,2
+"Myanmar","Cambodia","6","Chemicals",44738.55,"Infinity",100.00,71.98,11.03,10.00,"STAR",1,1
+"Myanmar","Cambodia","8","Hides and Skins",913.40,"Infinity",100.00,71.98,0.05,0.05,"INTRO",-1,2
+"Myanmar","Cambodia","9","Wood",54600.00,"82.22231122",82.22,71.98,0.12,0.12,"INTRO",-1,1
+"Myanmar","Lao PDR","15","Transportation",1750.00,"-87.47412512",-87.47,6.26,2.44,2.44,"COW",1,-1
+"Myanmar","Lao PDR","9","Wood",81000.00,"15825.44532",100.00,6.26,4.97,4.97,"STAR",1,1
+"Myanmar","Thailand","1","Animal",244088274.10,"26.04849795",26.04,47.87,1.84,1.84,"COW",1,-1
+"Myanmar","Thailand","10","Textiles and Clothing",2024100.37,"219.2195208",100.00,47.87,0.03,0.03,"INTRO",-1,1
+"Myanmar","Thailand","11","Footwear",1443541.75,"-71.04120893",-71.04,47.87,0.01,0.01,"DOG",-2,-1
+"Myanmar","Thailand","12","Stone and Glass",126700466.80,"154.239478",100.00,47.87,0.69,0.69,"INTRO",-1,1
+"Myanmar","Thailand","13","Metals",79282675.32,"181.8203814",100.00,47.87,1.36,1.36,"STAR",1,1
+"Myanmar","Thailand","14","Machinery/Electrical",983622.47,"289.1610404",100.00,47.87,9.90785411134727e-03,9.90785411134727e-03,"INTRO",-1,1
+"Myanmar","Thailand","15","Transportation",29088152.93,"0.516780042",0.51,47.87,1.25,1.25,"COW",1,-1
+"Myanmar","Thailand","2","Vegetable",67105669.97,"-6.632740759",-6.63,47.87,0.12,0.12,"DOG",-1,-1
+"Myanmar","Thailand","3","Food Products",25150377.40,"2672.03673",100.00,47.87,0.14,0.14,"INTRO",-1,1
+"Myanmar","Thailand","4","Minerals",3312660.59,"154.3075004",100.00,47.87,0.61,0.61,"INTRO",-1,1
+"Myanmar","Thailand","5","Fuels",2035940372.00,"12.07112986",12.07,47.87,2.86,2.86,"COW",1,-1
+"Myanmar","Thailand","6","Chemicals",1497939.09,"161.0675014",100.00,47.87,0.30,0.30,"INTRO",-1,1
+"Myanmar","Thailand","7","Plastic or Rubber",9932624.03,"7.722188811",7.72,47.87,0.18,0.18,"DOG",-1,-1
+"Myanmar","Thailand","8","Hides and Skins",1701074.76,"12.59229432",12.59,47.87,0.09,0.09,"DOG",-1,-1
+"Myanmar","Thailand","9","Wood",45208647.04,"36.85237532",36.85,47.87,0.08,0.08,"DOG",-1,-1
+"Myanmar","Viet Nam","1","Animal",4481715.89,"-34.15257401",-34.15,21.69,0.72,0.72,"DOG",-1,-1
+"Myanmar","Viet Nam","10","Textiles and Clothing",41028.19,"18.99879401",18.99,21.69,0.01,0.01,"DOG",-1,-1
+"Myanmar","Viet Nam","11","Footwear",2412.00,"-76.95614789",-76.95,21.69,6.82096411747201e-04,6.82096411747201e-04,"DOG",-1,-1
+"Myanmar","Viet Nam","12","Stone and Glass",29812513.25,"111.249215",100.00,21.69,3.52,3.52,"STAR",1,1
+"Myanmar","Viet Nam","13","Metals",1433570.95,"142.8359405",100.00,21.69,0.53,0.53,"INTRO",-1,1
+"Myanmar","Viet Nam","14","Machinery/Electrical",32500000.00,"42468.79773",100.00,21.69,7.05,7.05,"STAR",1,1
+"Myanmar","Viet Nam","15","Transportation",2523602.82,"-8.102801053",-8.10,21.69,2.34,2.34,"COW",1,-1
+"Myanmar","Viet Nam","2","Vegetable",40674762.15,"0.412185111",0.41,21.69,1.57,1.57,"COW",1,-1
+"Myanmar","Viet Nam","3","Food Products",7538802.95,"76.52878415",76.52,21.69,0.93,0.93,"INTRO",-1,1
+"Myanmar","Viet Nam","4","Minerals",224317.64,"1128.469331",100.00,21.69,0.89,0.89,"INTRO",-1,1
+"Myanmar","Viet Nam","6","Chemicals",385219.30,"-57.17757295",-57.17,21.69,1.68,1.68,"COW",1,-1
+"Myanmar","Viet Nam","7","Plastic or Rubber",2451838.48,"372.4896059",100.00,21.69,0.97,0.97,"INTRO",-1,1
+"Myanmar","Viet Nam","8","Hides and Skins",878417.35,"-61.44799836",-61.44,21.69,1.02,1.02,"COW",1,-1
+"Myanmar","Viet Nam","9","Wood",1188558.16,"-54.4148816",-54.41,21.69,0.04,0.04,"DOG",-1,-1
+"Thailand","Cambodia","1","Animal",72926295.43,"-27.44558641",-27.44,9.81,0.95,0.95,"DOG",-1,-1
+"Thailand","Cambodia","10","Textiles and Clothing",31198104.13,"1.318546946",1.31,9.81,1.09,1.09,"COW",2,-1
+"Thailand","Cambodia","11","Footwear",936505293.30,"26.35740299",26.35,9.81,2.82,2.82,"STAR",1,1
+"Thailand","Cambodia","12","Stone and Glass",142472456.10,"19.76062463",19.76,9.81,0.58,0.58,"INTRO",-1,1
+"Thailand","Cambodia","13","Metals",658091491.10,"3.972793027",3.97,9.81,0.39,0.39,"DOG",-1,-1
+"Thailand","Cambodia","14","Machinery/Electrical",441954682.30,"14.14133585",14.14,9.81,0.62,0.62,"INTRO",-1,2
+"Thailand","Cambodia","15","Transportation",61192450.05,"17.56077546",17.56,9.81,0.30,0.30,"INTRO",-1,1
+"Thailand","Cambodia","2","Vegetable",34464361.35,"12.00153276",12.00,9.81,0.13,0.13,"INTRO",-1,1
+"Thailand","Cambodia","3","Food Products",916333029.00,"5.889789201",5.88,9.81,2.23,2.23,"COW",1,-1
+"Thailand","Cambodia","4","Minerals",163609209.50,"0.309845139",0.30,9.81,7.70,7.70,"COW",1,-1
+"Thailand","Cambodia","5","Fuels",953846886.20,"23.39599684",23.39,9.81,5.17,5.17,"STAR",1,1
+"Thailand","Cambodia","6","Chemicals",323403574.20,"15.68980234",15.68,9.81,1.31,1.31,"STAR",2,1
+"Thailand","Cambodia","7","Plastic or Rubber",299177465.30,"10.76214437",10.76,9.81,0.46,0.46,"INTRO",-1,1
+"Thailand","Cambodia","8","Hides and Skins",23715104.75,"13.99360834",13.99,9.81,0.91,0.91,"INTRO",-1,2
+"Thailand","Cambodia","9","Wood",211092690.00,"9.486899571",9.48,9.81,0.87,0.87,"DOG",-1,-1
+"Thailand","Lao PDR","1","Animal",256995248.50,"-16.62730965",-16.62,1.33,4.48,4.48,"COW",1,-1
+"Thailand","Lao PDR","10","Textiles and Clothing",19050590.34,"7.122781124",7.12,1.33,0.88,0.88,"INTRO",-1,1
+"Thailand","Lao PDR","11","Footwear",138381330.70,"-21.61524201",-21.61,1.33,0.55,0.55,"DOG",-1,-1
+"Thailand","Lao PDR","12","Stone and Glass",238404991.00,"-38.17043615",-38.17,1.33,1.30,1.30,"COW",1,-1
+"Thailand","Lao PDR","13","Metals",658305863.40,"3.930183083",3.93,1.33,0.52,0.52,"INTRO",-1,1
+"Thailand","Lao PDR","14","Machinery/Electrical",552159001.40,"-7.754130464",-7.75,1.33,1.04,1.04,"COW",1,-1
+"Thailand","Lao PDR","15","Transportation",84520962.43,"17.89214168",17.89,1.33,0.56,0.56,"INTRO",-1,1
+"Thailand","Lao PDR","2","Vegetable",75891974.76,"-35.64410452",-35.64,1.33,0.39,0.39,"DOG",-1,-1
+"Thailand","Lao PDR","3","Food Products",480446851.30,"13.17880387",13.17,1.33,1.56,1.56,"STAR",1,1
+"Thailand","Lao PDR","4","Minerals",69245366.45,"-15.85022346",-15.85,1.33,4.34,4.34,"COW",1,-1
+"Thailand","Lao PDR","5","Fuels",709802608.30,"12.74604154",12.74,1.33,5.13,5.13,"STAR",1,1
+"Thailand","Lao PDR","6","Chemicals",334230464.50,"14.04611931",14.04,1.33,1.81,1.81,"STAR",1,1
+"Thailand","Lao PDR","7","Plastic or Rubber",220166477.20,"30.2323055",30.23,1.33,0.45,0.45,"INTRO",-1,1
+"Thailand","Lao PDR","8","Hides and Skins",2093365.75,"25.20315342",25.20,1.33,0.10,0.10,"INTRO",-1,1
+"Thailand","Lao PDR","9","Wood",110678396.80,"31.34741546",31.34,1.33,0.60,0.60,"INTRO",-1,1
+"Thailand","Myanmar","1","Animal",49369497.53,"40.06074555",40.06,5.77,0.78,0.78,"INTRO",-1,1
+"Thailand","Myanmar","10","Textiles and Clothing",108158066.30,"-8.36834702",-8.36,5.77,4.63,4.63,"COW",1,-1
+"Thailand","Myanmar","11","Footwear",114545562.30,"4.505385887",4.50,5.77,0.42,0.42,"DOG",-1,-1
+"Thailand","Myanmar","12","Stone and Glass",313181469.30,"31.94294889",31.94,5.77,1.57,1.57,"STAR",1,1
+"Thailand","Myanmar","13","Metals",656510773.60,"-7.98070465",-7.98,5.77,0.48,0.48,"DOG",-1,-1
+"Thailand","Myanmar","14","Machinery/Electrical",297605525.90,"14.56228637",14.56,5.77,0.51,0.51,"INTRO",-1,1
+"Thailand","Myanmar","15","Transportation",114611234.30,"21.50125436",21.50,5.77,0.70,0.70,"INTRO",-1,1
+"Thailand","Myanmar","2","Vegetable",136906874.40,"6.612136515",6.61,5.77,0.66,0.66,"INTRO",-1,1
+"Thailand","Myanmar","3","Food Products",1022772645.00,"-4.921149721",-4.92,5.77,3.05,3.05,"COW",1,-1
+"Thailand","Myanmar","4","Minerals",84029566.30,"-51.81926247",-51.81,5.77,4.83,4.83,"COW",1,-1
+"Thailand","Myanmar","5","Fuels",414004312.10,"39.02731521",39.02,5.77,2.74,2.74,"STAR",1,1
+"Thailand","Myanmar","6","Chemicals",447070420.60,"11.33565639",11.33,5.77,2.23,2.23,"STAR",1,1
+"Thailand","Myanmar","7","Plastic or Rubber",276809790.80,"7.122954165",7.12,5.77,0.52,0.52,"INTRO",-1,1
+"Thailand","Myanmar","8","Hides and Skins",4799904.32,"-17.84876163",-17.84,5.77,0.22,0.22,"DOG",-1,-1
+"Thailand","Myanmar","9","Wood",268412095.60,"0.887444582",0.88,5.77,1.35,1.35,"COW",1,-1
+"Thailand","Viet Nam","1","Animal",224011277.70,"6.03541557",6.03,20.20,1.32,1.32,"COW",1,-1
+"Thailand","Viet Nam","10","Textiles and Clothing",49994112.93,"-2.330074981",-2.33,20.20,0.79,0.79,"DOG",-1,-1
+"Thailand","Viet Nam","11","Footwear",141823628.30,"3.133140225",3.13,20.20,0.19,0.19,"DOG",-1,-1
+"Thailand","Viet Nam","12","Stone and Glass",732154197.40,"24.40588056",24.40,20.20,1.36,1.36,"STAR",1,1
+"Thailand","Viet Nam","13","Metals",2969989426.00,"22.72117358",22.72,20.20,0.80,0.80,"INTRO",-1,1
+"Thailand","Viet Nam","14","Machinery/Electrical",998369095.70,"-5.016675916",-5.01,20.20,0.63,0.63,"DOG",-1,-1
+"Thailand","Viet Nam","15","Transportation",153989054.70,"-2.601957563",-2.60,20.20,0.34,0.34,"DOG",-1,-1
+"Thailand","Viet Nam","2","Vegetable",1160137337.00,"99.95929477",99.95,20.20,2.07,2.07,"STAR",1,1
+"Thailand","Viet Nam","3","Food Products",825015530.10,"1.458969568",1.45,20.20,0.91,0.91,"DOG",-1,-1
+"Thailand","Viet Nam","4","Minerals",64325101.79,"-6.765963481",-6.76,20.20,1.36,1.36,"COW",1,-1
+"Thailand","Viet Nam","5","Fuels",1114485905.00,"56.48878173",56.48,20.20,2.73,2.73,"STAR",1,1
+"Thailand","Viet Nam","6","Chemicals",889927723.60,"26.1874084",26.18,20.20,1.64,1.64,"STAR",1,1
+"Thailand","Viet Nam","7","Plastic or Rubber",1319126275.00,"23.71646015",23.71,20.20,0.92,0.92,"INTRO",-1,1
+"Thailand","Viet Nam","8","Hides and Skins",229406715.20,"43.62512397",43.62,20.20,4.00,4.00,"STAR",1,1
+"Thailand","Viet Nam","9","Wood",789174424.60,"12.02248955",12.02,20.20,1.47,1.47,"COW",1,-1
+"Viet Nam","Cambodia","1","Animal",6706116.59,"64.81692759",64.81,22.79,0.08,0.08,"INTRO",-1,1
+"Viet Nam","Cambodia","10","Textiles and Clothing",101547128.20,"23.64317076",23.64,22.79,0.42,0.42,"INTRO",-1,2
+"Viet Nam","Cambodia","11","Footwear",25999522.36,"-21.77717419",-21.77,22.79,0.78,0.78,"DOG",-1,-1
+"Viet Nam","Cambodia","12","Stone and Glass",676094244.30,"57.00626345",57.00,22.79,6.28,6.28,"STAR",1,1
+"Viet Nam","Cambodia","13","Metals",153037744.60,"33.19084882",33.19,22.79,0.13,0.13,"INTRO",-1,1
+"Viet Nam","Cambodia","14","Machinery/Electrical",52600023.58,"9.616594482",9.61,22.79,1.18,1.18,"COW",1,-1
+"Viet Nam","Cambodia","15","Transportation",81366492.39,"7.822415661",7.82,22.79,0.34,0.34,"DOG",-1,-1
+"Viet Nam","Cambodia","2","Vegetable",88532797.00,"14.80518597",14.80,22.79,0.47,0.47,"DOG",-1,-1
+"Viet Nam","Cambodia","3","Food Products",168766471.80,"-6.219801357",-6.21,22.79,2.53,2.53,"COW",1,-1
+"Viet Nam","Cambodia","4","Minerals",17115357.92,"-24.81365194",-24.81,22.79,1.20,1.20,"COW",2,-1
+"Viet Nam","Cambodia","5","Fuels",505213686.50,"15.80725909",15.80,22.79,9.43,9.43,"COW",1,-1
+"Viet Nam","Cambodia","6","Chemicals",260487745.50,"28.32891669",28.32,22.79,6.62,6.62,"STAR",2,1
+"Viet Nam","Cambodia","7","Plastic or Rubber",144350839.80,"12.40985586",12.40,22.79,1.57,1.57,"COW",2,-1
+"Viet Nam","Cambodia","8","Hides and Skins",31592596.58,"94.22918319",94.22,22.79,0.66,0.66,"INTRO",-1,1
+"Viet Nam","Cambodia","9","Wood",465683305.20,"33.10978323",33.10,22.79,1.10,1.10,"STAR",1,1
+"Viet Nam","Lao PDR","1","Animal",5941367.85,"-14.84428158",-14.84,3.10,0.38,0.38,"DOG",-1,-1
+"Viet Nam","Lao PDR","10","Textiles and Clothing",6752639.44,"-22.55251092",-22.55,3.10,0.15,0.15,"DOG",-1,-1
+"Viet Nam","Lao PDR","11","Footwear",9747551.70,"14.44168614",14.44,3.10,1.55,1.55,"STAR",1,1
+"Viet Nam","Lao PDR","12","Stone and Glass",134567564.00,"8.626647098",8.62,3.10,6.63,6.63,"STAR",1,1
+"Viet Nam","Lao PDR","13","Metals",40729652.08,"2.977051199",2.97,3.10,0.19,0.19,"DOG",-1,-1
+"Viet Nam","Lao PDR","14","Machinery/Electrical",47666287.49,"4.59106105",4.59,3.10,5.70,5.70,"STAR",1,1
+"Viet Nam","Lao PDR","15","Transportation",15891375.87,"-26.08680111",-26.08,3.10,0.36,0.36,"DOG",-1,-1
+"Viet Nam","Lao PDR","2","Vegetable",24815015.70,"44.22169468",44.22,3.10,0.70,0.70,"INTRO",-1,1
+"Viet Nam","Lao PDR","3","Food Products",47917275.66,"-1.40496832",-1.40,3.10,3.81,3.81,"COW",1,-1
+"Viet Nam","Lao PDR","4","Minerals",11131689.60,"-29.29402084",-29.29,3.10,4.14,4.14,"COW",1,-1
+"Viet Nam","Lao PDR","5","Fuels",99101665.67,"44.66826508",44.66,3.10,9.82,9.82,"STAR",1,1
+"Viet Nam","Lao PDR","6","Chemicals",37175862.78,"17.7913337",17.79,3.10,5.02,5.02,"STAR",1,1
+"Viet Nam","Lao PDR","7","Plastic or Rubber",23835356.41,"12.97552316",12.97,3.10,1.37,1.37,"STAR",1,1
+"Viet Nam","Lao PDR","8","Hides and Skins",460046.98,"3.002629769",3.00,3.10,0.05,0.05,"DOG",-1,-1
+"Viet Nam","Lao PDR","9","Wood",17889444.12,"-12.57660648",-12.57,3.10,0.22,0.22,"DOG",-1,-1
+"Viet Nam","Myanmar","1","Animal",733990.55,"44.47237351",44.47,18.11,0.03,0.03,"INTRO",-1,1
+"Viet Nam","Myanmar","10","Textiles and Clothing",25407005.27,"53.23079957",53.23,18.11,0.42,0.42,"INTRO",-1,1
+"Viet Nam","Myanmar","11","Footwear",10066805.16,"-7.263239701",-7.26,18.11,1.19,1.19,"COW",1,-1
+"Viet Nam","Myanmar","12","Stone and Glass",129076831.70,"62.99512931",62.99,18.11,4.74,4.74,"STAR",1,1
+"Viet Nam","Myanmar","13","Metals",217179264.20,"200.3857667",100.00,18.11,0.76,0.76,"INTRO",-1,1
+"Viet Nam","Myanmar","14","Machinery/Electrical",66376738.83,"45.1157807",45.11,18.11,5.91,5.91,"STAR",1,1
+"Viet Nam","Myanmar","15","Transportation",46205467.85,"10.53263397",10.53,18.11,0.78,0.78,"DOG",-1,-1
+"Viet Nam","Myanmar","2","Vegetable",7928106.05,"79.65871442",79.65,18.11,0.16,0.16,"INTRO",-1,1
+"Viet Nam","Myanmar","3","Food Products",45050673.48,"-2.171131185",-2.17,18.11,2.67,2.67,"COW",1,-1
+"Viet Nam","Myanmar","4","Minerals",1299380.50,"-51.5557565",-51.55,18.11,0.36,0.36,"DOG",-1,-1
+"Viet Nam","Myanmar","5","Fuels",584883.44,"-92.07944936",-92.07,18.11,0.04,0.04,"DOG",-1,-1
+"Viet Nam","Myanmar","6","Chemicals",56789131.10,"8.933974591",8.93,18.11,5.71,5.71,"COW",1,-1
+"Viet Nam","Myanmar","7","Plastic or Rubber",49274731.18,"25.55356894",25.55,18.11,2.12,2.12,"STAR",1,1
+"Viet Nam","Myanmar","8","Hides and Skins",8607053.93,"-19.91658662",-19.91,18.11,0.71,0.71,"DOG",-1,-1
+"Viet Nam","Myanmar","9","Wood",38316893.71,"14.28961301",14.28,18.11,0.36,0.36,"DOG",-1,-1
+"Viet Nam","Thailand","1","Animal",200278802.90,"4.02360975",4.02,23.22,1.45,1.45,"COW",1,-1
+"Viet Nam","Thailand","10","Textiles and Clothing",98894156.61,"25.81586955",25.81,23.22,0.24,0.24,"INTRO",-1,1
+"Viet Nam","Thailand","11","Footwear",43284969.07,"9.119521912",9.11,23.22,0.78,0.78,"DOG",-1,-1
+"Viet Nam","Thailand","12","Stone and Glass",448753386.70,"39.35547786",39.35,23.22,2.51,2.51,"STAR",1,1
+"Viet Nam","Thailand","13","Metals",2113487314.00,"39.11659649",39.11,23.22,1.13,1.13,"STAR",1,1
+"Viet Nam","Thailand","14","Machinery/Electrical",208116810.10,"8.679689748",8.67,23.22,2.82,2.82,"COW",1,-1
+"Viet Nam","Thailand","15","Transportation",199628010.50,"11.00873066",11.00,23.22,0.51,0.51,"DOG",-1,-1
+"Viet Nam","Thailand","2","Vegetable",230586766.40,"8.329597346",8.32,23.22,0.74,0.74,"DOG",-1,-1
+"Viet Nam","Thailand","3","Food Products",207062956.30,"-0.085513902",-0.08,23.22,1.87,1.87,"COW",1,-1
+"Viet Nam","Thailand","4","Minerals",4514629.57,"191.1752954",100.00,23.22,0.19,0.19,"INTRO",-1,1
+"Viet Nam","Thailand","5","Fuels",311300385.40,"40.67526565",40.67,23.22,3.50,3.50,"STAR",1,1
+"Viet Nam","Thailand","6","Chemicals",111528752.40,"22.91192857",22.91,23.22,1.70,1.70,"COW",1,-1
+"Viet Nam","Thailand","7","Plastic or Rubber",140430814.40,"19.76299143",19.76,23.22,0.92,0.92,"DOG",-1,-1
+"Viet Nam","Thailand","8","Hides and Skins",22716077.53,"-7.776901566",-7.77,23.22,0.28,0.28,"DOG",-1,-1
+"Viet Nam","Thailand","9","Wood",276968963.90,"27.49636559",27.49,23.22,0.39,0.39,"INTRO",-1,1

@@ -1,9 +1,10 @@
-import { MaterialDcChartModel } from '../material-dc-chart/material-dc-chart-model';
 
 export class ChartGroupModel {
-  constructor( t: string ) {
+  constructor( t: string, i: string ) {
     this.title = t;
+    this.id = i;
   }
   public title: string;
-  public chartModels = new Array<MaterialDcChartModel>();
+  public id: string;
+  public chartModels = new Array<any>();
 }

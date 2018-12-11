@@ -20,6 +20,10 @@ import { UtccEconChartDisplayComponent } from '../utcc-econ-chart-display/utcc-e
 import { DcChartComponent } from '../dc-chart/dc-chart.component';
 import { MaterialDcChartComponent } from '../material-dc-chart/material-dc-chart.component';
 import { ChartGroupComponent } from '../chart-group/chart-group.component';
+import { MaterialDcNumberGroupComponent } from '../material-dc-number-group/material-dc-number-group.component';
+import { NumberGroupChartComponent } from '../number-group-chart/number-group-chart.component';
+import { LoadingChartComponent } from '../loading-chart/loading-chart.component';
+
 
 @NgModule({
   imports: [
@@ -36,13 +40,16 @@ import { ChartGroupComponent } from '../chart-group/chart-group.component';
     LayoutModule,
     MatListModule,
     MatSelectModule,
-    FlexLayoutModule,
+    FlexLayoutModule
   ],
   declarations: [
     UtccEconChartDisplayComponent,
     DcChartComponent,
     MaterialDcChartComponent,
     ChartGroupComponent,
+    MaterialDcNumberGroupComponent,
+    NumberGroupChartComponent,
+    LoadingChartComponent
   ],
   exports: [
     UtccEconChartDisplayComponent

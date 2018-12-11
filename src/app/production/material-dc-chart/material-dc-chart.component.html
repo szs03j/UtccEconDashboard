@@ -2,12 +2,12 @@
 <mat-card class="card" >
     <mat-card-header class="header">
       <mat-card-title fXLayout="row">
-          <div fxFlex="75%" >{{title}}</div>
-          <mat-select fxFlex="25%" *ngIf="chartOptionsKeys.length > 1"  [(value)]="selectedOption"  >
+          <div fxFlex="85%" >{{title}}</div>
+          <mat-select fxFlex="20%" *ngIf="chartOptionsKeys.length > 1"  [(value)]="selectedOption"  >
             <mat-option  *ngFor="let co of chartOptionsKeys" [value]="co">{{ chartOptions[co].name }}</mat-option>
           </mat-select>
       </mat-card-title>
-      <mat-card-subtitle fxLayout="row" fxLayoutAlign="start" fxLayoutGap="32px" >
+      <mat-card-subtitle fxLayout="row" fxLayoutAlign="start" fxLayoutGap="16px" >
           <ng-template [ngIf]=" subtitle?.length > 0">
               <button fxFlex="33.3%" mat-icon-button [matMenuTriggerFor]="filterChoicesMenu" >
                   {{subtitle}} <mat-icon inline="true">expand_more</mat-icon>
@@ -20,7 +20,7 @@
           </ng-template>
 
           <ng-template [ngIf]="filterItems.length > 0" >
-              <mat-form-field fxFlex="0 1 50%" *ngFor="let item of filterItems">
+              <mat-form-field fxFlex="0 1 calc(50% - 16px)" *ngFor="let item of filterItems">
                 <mat-select  [placeholder]="item.name" [value]="item.selectDefault" (valueChange)="handleDimFilter(item.dimension, $event)" [multiple]="item.selectMultipleEnabled">
                   <mat-option *ngFor="let choice of item.group.all()" [value]="choice.key" >{{choice.key}}</mat-option>
                 </mat-select>
@@ -30,7 +30,6 @@
 
     </mat-card-header>
     <mat-card-content #chartRoot>
-
         <ng-template [ngIf]="!chartLoaded">
           <mat-progress-spinner
             class="chartLoadingSpinner"
@@ -38,7 +37,6 @@
             mode="indeterminate" >
           </mat-progress-spinner>
         </ng-template>
-
     </mat-card-content>
     <mat-card-actions *ngIf="subtitle?.length > 0">
       <mat-chip-list >

@@ -10,6 +10,8 @@ import { Observable, zip, Subject } from 'rxjs';
 import { ChartDataService } from '../services/chart-data.service';
 import { FilterModel } from '../material-dc-chart/filter-model';
 import { ChartGroupModel } from '../chart-group/chart-group-model';
+import { MaterialDcNumberGroupModel } from '../material-dc-number-group/material-dc-number-group-model';
+import { NumberGroupChartModel } from '../number-group-chart/number-group-chart-model';
 
 @Component({
   selector: 'app-utcc-econ-chart-display',
@@ -44,12 +46,22 @@ export class UtccEconChartDisplayComponent implements OnInit, OnDestroy, AfterVi
   private _getChartOptions(name: string) {
     const height  = 225;
     const width   = 300;
-    const useViewBoxResizing = true;
     const numberFormat = d3.format('.2f');
+    const useViewBoxResizing = true;
     const usdTitle = function(kv) { return kv.key + '\n' + numberFormat(kv.value) + ' billion USD'; };
 
     let options = {};
     switch (name) {
+      case 'number':
+      options = {
+        'height': height,
+        'width': width,
+        'formatNumber': numberFormat,
+        'clipPadding': 10,
+        'margins': {'top': 5, 'right': 0, 'bottom': 20, 'left': 30},
+        'useViewBoxResizing': useViewBoxResizing
+      };
+      break;
       case 'bar':
       options = {
         'height': height,
@@ -115,7 +127,8 @@ export class UtccEconChartDisplayComponent implements OnInit, OnDestroy, AfterVi
       case 'potential':
       const drawMarkup = function (chart) {
         const data = chart.group().all();
-        const avg = d3.mean(data, function(d) { return +d.value; });
+        // change from +d.value to chart.valueAccessor()(d);
+        const avg = d3.mean(data, function (d) { return chart.valueAccessor()(d); });
 
         const lineFunction = d3.line()
           .x(function(d) { return d.x; })
@@ -166,6 +179,7 @@ export class UtccEconChartDisplayComponent implements OnInit, OnDestroy, AfterVi
             .attr('y', function(d) { return d.y; })
             .text( function(d) { return d.text; })
             .attr( 'opacity', .65 );
+
       };
 
       const calcDomain = function (chart) {
@@ -178,12 +192,13 @@ export class UtccEconChartDisplayComponent implements OnInit, OnDestroy, AfterVi
         chart.x(d3.scaleLinear().domain(xDomain));
 
         const yMinMax = d3.extent(data, function (e) { return chart.valueAccessor()(e); });
-        const avg = d3.mean(data, function(d) { return +d.value; });
-        const yTop = yMinMax[1] - avg;
-        const yBot = avg - yMinMax[0];
+        const avg = d3.mean(data, function (e) { return chart.valueAccessor()(e); });
+        const yTop = yMinMax[1] !== yMinMax[0] ? yMinMax[1] - avg : 100;
+        const yBot = yMinMax[1] !== yMinMax[0] ? avg - yMinMax[0] : -100;
         const largerYDif = yTop > yBot ? yTop : yBot;
         const yDomain = [avg - largerYDif, avg + largerYDif];
         chart.y(d3.scaleLinear().domain(yDomain));
+
       };
 
       options = {
@@ -196,9 +211,9 @@ export class UtccEconChartDisplayComponent implements OnInit, OnDestroy, AfterVi
         'clipPadding': 10,
         'x': d3.scaleLinear(),
         'seriesAccessor': function(kv) { return kv.value['Partner']; },
-        'keyAccessor': function(kv) {  return +kv.value['RCA']; },
+        'keyAccessor': function(kv) { return +kv.value['RCA']; },
         'valueAccessor': function(kv) {  return +kv.value['Growth']; },
-        'colorAccessor': function(kv) { return kv.value['Partner']; },
+        'colorAccessor': function(kv) {  return kv.value['Partner']; },
         'title': function(kv) {  return [ kv.value['Description'],
             kv.value['Partner'],
             'RCA: ' + numberFormat(kv.value['RCA']),
@@ -211,6 +226,87 @@ export class UtccEconChartDisplayComponent implements OnInit, OnDestroy, AfterVi
           calcDomain(chart); }],
               ['preRedraw', function(chart) { calcDomain(chart); }],
               ['pretransition', function(chart) { drawMarkup(chart); }]]
+      };
+      break;
+
+      case 'potentialBox':
+      const drawMarkup2 = function (chart) {
+
+        const lineFunction = d3.line()
+          .x(function(d) { return d.x; })
+          .y(function(d) { return d.y; })
+          .curve(d3.curveLinear);
+
+        const xVal = 0;
+        const xPos = chart.x()(xVal);
+        const vertLineData = [
+          {x: xPos, y: 0},
+          {x: xPos, y: chart.effectiveHeight()}
+        ];
+
+        const yVal = 0;
+        const yPos = chart.y()(yVal);
+        const horzLineData = [
+          {x: chart.x().range()[0], y: yPos },
+          {x: chart.x().range()[1], y: yPos }
+        ];
+
+        const chartBody = chart.chartBodyG();
+        let path2 = chartBody.selectAll('path.rcaAxisLine').data([horzLineData, vertLineData]);
+        path2 = path2
+          .enter()
+            .append('path')
+            .attr('class', 'rcaAxisLine')
+            .attr('stroke', 'black')
+            .attr('stroke-width', 1)
+            .style('stroke-dasharray', ('13,5'))
+          .merge(path2);
+        path2.attr('d', lineFunction);
+
+        const yLen = horzLineData[1].x - horzLineData[0].x;
+        const xOffset = yLen / 4;
+        const xLen = vertLineData[1].y - vertLineData[0].y;
+        const yOffset = xLen / 4;
+        const textData = [
+          { 'text': 'Intro', 'x': xPos - xOffset, 'y': yPos - yOffset },
+          { 'text': 'Star', 'x': xPos + xOffset, 'y': yPos - yOffset },
+          { 'text': 'Dog', 'x': xPos - xOffset, 'y': yPos + yOffset },
+          { 'text': 'Cow', 'x': xPos + xOffset, 'y': yPos + yOffset }];
+
+        let text = chartBody.selectAll('text').data(textData);
+        text = text
+          .enter()
+            .append('text')
+            .attr('x', function(d) { return d.x; })
+            .attr('y', function(d) { return d.y; })
+            .text( function(d) { return d.text; })
+            .attr( 'opacity', .65 );
+
+      };
+
+      options = {
+        'width': width,
+        'height': height,
+        'chart': function(c) { return dc.scatterPlot(c).symbolSize(6).highlightedSize(8); },
+        'elasticX': false,
+        'elasticY': false,
+        'brushOn': false,
+        'clipPadding': 10,
+        'x': d3.scaleLinear().domain([-3, 3]),
+        'xAxisLabel': '',
+        'y': d3.scaleLinear().domain([-2.5, 2.5]),
+        'seriesAccessor': function(kv) { return kv.value['Partner']; },
+        'keyAccessor': function(kv) { return +kv.value['x']; },
+        'valueAccessor': function(kv) {  return +kv.value['y']; },
+        'colorAccessor': function(kv) {  return kv.value['Partner']; },
+        'title': function(kv) {  return [ kv.value['Description'],
+            kv.value['Partner'],
+            'RCA: ' + numberFormat(kv.value['RCA']),
+            'Growth: ' + numberFormat(kv.value['Growth']) + '%'].join('\n'); },
+        'margins': {'top': 25, 'right': 5, 'bottom': 5, 'left': 5},
+        'legend': dc.legend().x(15).y(0).itemHeight(9).gap(8).horizontal(true).autoItemWidth(true),
+        'useViewBoxResizing': useViewBoxResizing,
+        'on': ['pretransition', function(chart) { drawMarkup2(chart); }]
       };
       break;
 
@@ -227,8 +323,8 @@ export class UtccEconChartDisplayComponent implements OnInit, OnDestroy, AfterVi
         'seriesAccessor': function(kv) { return kv.key[0]; },
         'keyAccessor': function(kv) {  return kv.key[1]; },
         'valueAccessor': function(kv) {  return +kv.value; },
-        'margins': {'top': 15, 'right': 5, 'bottom': 20, 'left': 25},
-        'legend': dc.legend().x(30).y(0).itemHeight(9).gap(8).horizontal(true).itemWidth(75).legendWidth(225),
+        'margins': {'top': 15, 'right': 5, 'bottom': 20, 'left': 28},
+        'legend': dc.legend().x(35).y(0).itemHeight(9).gap(8).horizontal(true).itemWidth(75).legendWidth(225),
         'useViewBoxResizing': useViewBoxResizing
         };
       break;
@@ -239,7 +335,7 @@ export class UtccEconChartDisplayComponent implements OnInit, OnDestroy, AfterVi
 
   private _loadExportsGroup() {
 
-    const exportsGroup = new ChartGroupModel('Exports');
+    const exportsGroup = new ChartGroupModel('Exports', 'exports');
 
     /* create exportsByCountry chart model */
     const exportsByCountry    = new MaterialDcChartModel('exportsByCountry');
@@ -331,7 +427,7 @@ export class UtccEconChartDisplayComponent implements OnInit, OnDestroy, AfterVi
   }
 
   private _loadImportsGroup() {
-    const importsGroup = new ChartGroupModel('Imports' );
+    const importsGroup = new ChartGroupModel('Imports', 'imports' );
 
     /* create importsByCountry chart model */
     const importsByCountry    = new MaterialDcChartModel('importsByCountry');
@@ -423,10 +519,11 @@ export class UtccEconChartDisplayComponent implements OnInit, OnDestroy, AfterVi
   }
 
   private _loadExportPotentialGroup() {
-    const exportPotentialGroup = new ChartGroupModel('Export Potential' );
+    const exportPotentialGroup = new ChartGroupModel('Export Potential', 'export-potential' );
 
+    // Export Potential Small Chart ---------------------------------------------------------------------
     const exportPotential    = new MaterialDcChartModel('exportPotential');
-    exportPotential.title    = 'Export Potential';
+    exportPotential.title    = 'Export Potential Groups';
     exportPotential.subtitle = '';
 
     this._cds.potentialExport.getDim('byPartnerDesc').pipe(takeUntil(this._onDestroy$)).subscribe(
@@ -437,6 +534,7 @@ export class UtccEconChartDisplayComponent implements OnInit, OnDestroy, AfterVi
 
     exportPotential.chartOptions['potential'] = new DcChartOptions('plot', DcChartType.Series, this._getChartOptions('potential'));
     exportPotential.selectedOption = 'potential';
+
     zip(this._cds.potentialExport.getGroup('byCountry'), this._cds.potentialExport.getDim('byCountry'))
       .pipe(takeUntil(this._onDestroy$))
       .subscribe(([group, dim]) => {
@@ -446,24 +544,145 @@ export class UtccEconChartDisplayComponent implements OnInit, OnDestroy, AfterVi
           fi.selectMultipleEnabled = false;
           fi.selectAllEnabled = false;
           exportPotential.filterItems.push( fi );
+          exportPotential.filterItems = exportPotential.filterItems.slice(0);
         }
     });
 
     zip(this._cds.potentialExport.getGroup('byPartner'), this._cds.potentialExport.getDim('byPartner'))
       .pipe(takeUntil(this._onDestroy$))
       .subscribe(([group, dim]) => {
-        if ( group && dim) { exportPotential.filterItems.push( new FilterModel('to Partner', group, dim) ); }
+        if ( group && dim) {
+          exportPotential.filterItems.push( new FilterModel('to Partner', group, dim) );
+          exportPotential.filterItems = exportPotential.filterItems.slice(0);
+        }
     });
 
     exportPotentialGroup.chartModels.push(exportPotential);
+
+    // Export Potential Large Chart --------------------------------------------------------------------
+    const exportPotentialLarge  = new MaterialDcChartModel('exportPotentialLarge');
+    exportPotentialLarge.title  = 'Export Potential Subgroups';
+    exportPotentialLarge.subtitle = '';
+
+    this._cds.potentialExportLarge.getDim('byPartnerHS2').pipe(takeUntil(this._onDestroy$)).subscribe(
+      (dim: any) => { if (dim) { exportPotentialLarge.dimension = dim; } });
+
+    this._cds.potentialExportLarge.getGroup('byPartnerHS2').pipe(takeUntil(this._onDestroy$)).subscribe(
+      (group: any) => { if (group) { exportPotentialLarge.group = group;  } });
+
+    exportPotentialLarge.chartOptions['potential'] = new DcChartOptions('plot', DcChartType.Series, this._getChartOptions('potential'));
+    exportPotentialLarge.selectedOption = 'potential';
+    exportPotentialLarge.chartOptions['potential'].options['title'] = function(kv) {
+      return [ kv.value['Description'],
+      kv.value['Commodity'],
+      kv.value['Partner'],
+      'RCA: ' + d3.format('.2f')(kv.value['RCA']),
+      'Growth: ' + d3.format('.2f')(kv.value['Growth']) + '%'].join('\n'); };
+
+    zip(this._cds.potentialExportLarge.getGroup('byCountry'), this._cds.potentialExportLarge.getDim('byCountry'))
+      .pipe(takeUntil(this._onDestroy$))
+      .subscribe(([group, dim]) => {
+        if ( group && dim) {
+          const fi = new FilterModel('from Country', group, dim);
+          fi.selectDefault = 'Thailand';
+          fi.selectMultipleEnabled = false;
+          fi.selectAllEnabled = false;
+          exportPotentialLarge.filterItems.push( fi );
+          // need to do this so the array is updated in angular, otherwise angular doesn't know there is a change to the array
+          exportPotentialLarge.filterItems = exportPotentialLarge.filterItems.slice(0);
+        }
+      }
+    );
+
+    zip(this._cds.potentialExportLarge.getGroup('byPartner'), this._cds.potentialExportLarge.getDim('byPartner'))
+      .pipe(takeUntil(this._onDestroy$))
+      .subscribe(([group, dim]) => {
+        if ( group && dim) {
+          const fi = new FilterModel('to Partner', group, dim);
+         // fi.selectDefault = 'Cambodia';
+          fi.selectMultipleEnabled = true;
+          fi.selectAllEnabled = false;
+          exportPotentialLarge.filterItems.push( fi );
+          exportPotentialLarge.filterItems = exportPotentialLarge.filterItems.slice(0);
+        }
+      }
+    );
+
+    zip(this._cds.potentialExportLarge.getGroup('byDesc'), this._cds.potentialExportLarge.getDim('byDesc'))
+      .pipe(takeUntil(this._onDestroy$))
+      .subscribe(([group, dim]) => {
+        if ( group && dim) {
+          const fi = new FilterModel('by Group', group, dim);
+        // fi.selectDefault = 'Cambodia';
+          fi.selectMultipleEnabled = true;
+          fi.selectAllEnabled = false;
+          exportPotentialLarge.filterItems.push( fi );
+          exportPotentialLarge.filterItems = exportPotentialLarge.filterItems.slice(0);
+        }
+      }
+    );
+
+    exportPotentialGroup.chartModels.push(exportPotentialLarge);
+
+    // Export Potential Box Chart ----------------------------------------------------------------------------
+    const exportPotentialBox  = new MaterialDcChartModel('exportPotentialBox');
+    exportPotentialBox.title  = 'Export Potential Box';
+    exportPotentialBox.subtitle = '';
+
+    this._cds.potentialExportBox.getDim('byPartnerHS2').pipe(takeUntil(this._onDestroy$)).subscribe(
+      (dim: any) => { if (dim) { exportPotentialBox.dimension = dim; } });
+
+    this._cds.potentialExportBox.getGroup('byPartnerHS2').pipe(takeUntil(this._onDestroy$)).subscribe(
+      (group: any) => { if (group) { exportPotentialBox.group = group;  } });
+
+    exportPotentialBox.chartOptions['potential'] = new DcChartOptions('plot', DcChartType.Series, this._getChartOptions('potentialBox'));
+    exportPotentialBox.selectedOption = 'potential';
+    exportPotentialBox.chartOptions['potential'].options['title'] = function(kv) {
+      return [ kv.value['Description'],
+      kv.value['Commodity'],
+      kv.value['Partner'] ].join('\n');
+    };
+
+    zip(this._cds.potentialExportBox.getGroup('byCountry'), this._cds.potentialExportBox.getDim('byCountry'))
+      .pipe(takeUntil(this._onDestroy$))
+      .subscribe(([group, dim]) => {
+        if ( group && dim) {
+          const fi = new FilterModel('from Country', group, dim);
+          fi.selectDefault = 'Thailand';
+          fi.selectMultipleEnabled = false;
+          fi.selectAllEnabled = false;
+          exportPotentialBox.filterItems.push( fi );
+          // need to do this so the array is updated in angular, otherwise angular doesn't know there is a change to the array
+          exportPotentialBox.filterItems = exportPotentialBox.filterItems.slice(0);
+        }
+      }
+    );
+
+    zip(this._cds.potentialExportBox.getGroup('byCommodity'), this._cds.potentialExportBox.getDim('byCommodity'))
+      .pipe(takeUntil(this._onDestroy$))
+      .subscribe(([group, dim]) => {
+        if ( group && dim) {
+          const fi = new FilterModel('by Subgroup', group, dim);
+          fi.selectDefault = 'Aircraft, spacecraft and parts thereof';
+          fi.selectMultipleEnabled = false;
+          fi.selectAllEnabled = false;
+          exportPotentialBox.filterItems.push( fi );
+          exportPotentialBox.filterItems = exportPotentialBox.filterItems.slice(0);
+        }
+      }
+    );
+
+    exportPotentialGroup.chartModels.push(exportPotentialBox);
+
+    // Add the entire group of charts to be displayed
     this.chartGroups.push(exportPotentialGroup);
   }
 
   private _loadImportPotentialGroup() {
-    const importPotentialGroup = new ChartGroupModel('Import Potential' );
+    const importPotentialGroup = new ChartGroupModel('Import Potential', 'import-potential' );
 
     const importPotential    = new MaterialDcChartModel('importPotential');
-    importPotential.title    = 'Import Potential';
+    importPotential.title    = 'Import Potential Groups';
     importPotential.subtitle = '';
 
     this._cds.potentialImport.getDim('byPartnerDesc').pipe(takeUntil(this._onDestroy$)).subscribe(
@@ -483,21 +702,141 @@ export class UtccEconChartDisplayComponent implements OnInit, OnDestroy, AfterVi
           fi.selectMultipleEnabled = false;
           fi.selectAllEnabled = false;
           importPotential.filterItems.push( fi );
+          importPotential.filterItems = importPotential.filterItems.slice(0);
         }
     });
 
     zip(this._cds.potentialImport.getGroup('byPartner'), this._cds.potentialImport.getDim('byPartner'))
       .pipe(takeUntil(this._onDestroy$))
       .subscribe(([group, dim]) => {
-        if ( group && dim) { importPotential.filterItems.push( new FilterModel('from Partner', group, dim) ); }
+        if ( group && dim) {
+          importPotential.filterItems.push( new FilterModel('from Partner', group, dim) );
+          importPotential.filterItems = importPotential.filterItems.slice(0);
+        }
     });
 
     importPotentialGroup.chartModels.push(importPotential);
+
+    // Import Potential Large Chart --------------------------------------------------------------------
+    const importPotentialLarge  = new MaterialDcChartModel('importPotentialLarge');
+    importPotentialLarge.title  = 'Import Potential Subgroups';
+    importPotentialLarge.subtitle = '';
+
+    this._cds.potentialImportLarge.getDim('byPartnerHS2').pipe(takeUntil(this._onDestroy$)).subscribe(
+      (dim: any) => { if (dim) { importPotentialLarge.dimension = dim; } });
+
+    this._cds.potentialImportLarge.getGroup('byPartnerHS2').pipe(takeUntil(this._onDestroy$)).subscribe(
+      (group: any) => { if (group) { importPotentialLarge.group = group;  } });
+
+    importPotentialLarge.chartOptions['potential'] = new DcChartOptions('plot', DcChartType.Series, this._getChartOptions('potential'));
+    importPotentialLarge.selectedOption = 'potential';
+    importPotentialLarge.chartOptions['potential'].options['title'] = function(kv) {
+      return [ kv.value['Description'],
+      kv.value['Commodity'],
+      kv.value['Partner'],
+      'RCA: ' + d3.format('.2f')(kv.value['RCA']),
+      'Growth: ' + d3.format('.2f')(kv.value['Growth']) + '%'].join('\n'); };
+
+    zip(this._cds.potentialImportLarge.getGroup('byCountry'), this._cds.potentialImportLarge.getDim('byCountry'))
+      .pipe(takeUntil(this._onDestroy$))
+      .subscribe(([group, dim]) => {
+        if ( group && dim) {
+          const fi = new FilterModel('to Country', group, dim);
+          fi.selectDefault = 'Thailand';
+          fi.selectMultipleEnabled = false;
+          fi.selectAllEnabled = false;
+          importPotentialLarge.filterItems.push( fi );
+          // need to do this so the array is updated in angular, otherwise angular doesn't know there is a change to the array
+          importPotentialLarge.filterItems = importPotentialLarge.filterItems.slice(0);
+        }
+      }
+    );
+
+    zip(this._cds.potentialImportLarge.getGroup('byPartner'), this._cds.potentialImportLarge.getDim('byPartner'))
+      .pipe(takeUntil(this._onDestroy$))
+      .subscribe(([group, dim]) => {
+        if ( group && dim) {
+          const fi = new FilterModel('from Partner', group, dim);
+          // fi.selectDefault = 'Cambodia';
+          fi.selectMultipleEnabled = true;
+          fi.selectAllEnabled = false;
+          importPotentialLarge.filterItems.push( fi );
+          importPotentialLarge.filterItems = importPotentialLarge.filterItems.slice(0);
+        }
+      }
+    );
+
+    zip(this._cds.potentialImportLarge.getGroup('byDesc'), this._cds.potentialImportLarge.getDim('byDesc'))
+      .pipe(takeUntil(this._onDestroy$))
+      .subscribe(([group, dim]) => {
+        if ( group && dim) {
+          const fi = new FilterModel('by Group', group, dim);
+        // fi.selectDefault = 'Cambodia';
+          fi.selectMultipleEnabled = true;
+          fi.selectAllEnabled = false;
+          importPotentialLarge.filterItems.push( fi );
+          importPotentialLarge.filterItems = importPotentialLarge.filterItems.slice(0);
+        }
+      }
+    );
+
+    importPotentialGroup.chartModels.push(importPotentialLarge);
+
+    // Import Potential Box Chart ----------------------------------------------------------------------------
+    const importPotentialBox  = new MaterialDcChartModel('importPotentialBox');
+    importPotentialBox.title  = 'Import Potential Box';
+    importPotentialBox.subtitle = '';
+
+    this._cds.potentialImportBox.getDim('byPartnerHS2').pipe(takeUntil(this._onDestroy$)).subscribe(
+      (dim: any) => { if (dim) { importPotentialBox.dimension = dim; } });
+
+    this._cds.potentialImportBox.getGroup('byPartnerHS2').pipe(takeUntil(this._onDestroy$)).subscribe(
+      (group: any) => { if (group) { importPotentialBox.group = group;  } });
+
+    importPotentialBox.chartOptions['potential'] = new DcChartOptions('plot', DcChartType.Series, this._getChartOptions('potentialBox'));
+    importPotentialBox.selectedOption = 'potential';
+    importPotentialBox.chartOptions['potential'].options['title'] = function(kv) {
+      return [ kv.value['Description'],
+      kv.value['Commodity'],
+      kv.value['Partner'] ].join('\n');
+    };
+
+    zip(this._cds.potentialImportBox.getGroup('byCountry'), this._cds.potentialImportBox.getDim('byCountry'))
+      .pipe(takeUntil(this._onDestroy$))
+      .subscribe(([group, dim]) => {
+        if ( group && dim) {
+          const fi = new FilterModel('to Country', group, dim);
+          fi.selectDefault = 'Thailand';
+          fi.selectMultipleEnabled = false;
+          fi.selectAllEnabled = false;
+          importPotentialBox.filterItems.push( fi );
+          // need to do this so the array is updated in angular, otherwise angular doesn't know there is a change to the array
+          importPotentialBox.filterItems = importPotentialBox.filterItems.slice(0);
+        }
+      }
+    );
+
+    zip(this._cds.potentialImportBox.getGroup('byCommodity'), this._cds.potentialImportBox.getDim('byCommodity'))
+      .pipe(takeUntil(this._onDestroy$))
+      .subscribe(([group, dim]) => {
+        if ( group && dim) {
+          const fi = new FilterModel('by Subgroup', group, dim);
+          fi.selectDefault  = 'Aircraft, spacecraft and parts thereof';
+          fi.selectMultipleEnabled = false;
+          fi.selectAllEnabled = false;
+          importPotentialBox.filterItems.push( fi );
+          importPotentialBox.filterItems = importPotentialBox.filterItems.slice(0);
+        }
+      }
+    );
+
+    importPotentialGroup.chartModels.push(importPotentialBox);
+
     this.chartGroups.push(importPotentialGroup);
   }
 
   private _loadGdpGroup() {
-    const gdpGroup = new ChartGroupModel('GDP' );
+    const gdpGroup = new ChartGroupModel('GDP', 'gdp' );
 
     const gdp    = new MaterialDcChartModel('gdp');
     gdp.title    = 'GDP';
@@ -535,6 +874,7 @@ export class UtccEconChartDisplayComponent implements OnInit, OnDestroy, AfterVi
           fi.selectMultipleEnabled = false;
           fi.selectDefault = 'Thailand';
           gdp.filterItems.push( fi );
+          gdp.filterItems = gdp.filterItems.slice(0);
         }
     });
 
@@ -543,7 +883,56 @@ export class UtccEconChartDisplayComponent implements OnInit, OnDestroy, AfterVi
   }
 
   private _loadFXGroup() {
-    const fxGroup = new ChartGroupModel('Exchange Rate' );
+    const fxGroup = new ChartGroupModel('Exchange Rate', 'exchange-rate' );
+
+    const numDisplayGrp = new MaterialDcNumberGroupModel();
+    numDisplayGrp.title = 'Exchange Rate for 1 USD';
+
+    const numDisplayGrp2 = new MaterialDcNumberGroupModel();
+    numDisplayGrp2.title = 'Exchange Rate for 1 THB';
+
+    zip(this._cds.dailyExchangeRate.getGroup('byDate'), this._cds.dailyExchangeRate.getDim('byDate'))
+      .pipe(takeUntil(this._onDestroy$))
+      .subscribe(([group, dim]) => {
+        if ( group && dim) {
+          const top = group.top(1);
+          if ( top.length === 0 ) { return; }
+          const row = top[0];
+          numDisplayGrp.subtitle = 'as of ' + row.key;
+          numDisplayGrp2.subtitle = 'as of ' + row.key;
+          const thb = row.value['Thailand']['amountUsd'];
+          const countries = Object.keys(row.value);
+          const numDis1 = new Array<NumberGroupChartModel>();
+          const numDis2 = new Array<NumberGroupChartModel>();
+          countries.sort(d3.ascending);
+          countries.forEach( (d) => {
+            const currencyName = row.value[d]['currencyName'];
+            const chartModel = new NumberGroupChartModel(d);
+            const chartModel2 = new NumberGroupChartModel(d);
+            chartModel.title = d;
+            chartModel2.title = d;
+            chartModel.subtitle = currencyName;
+            chartModel2.subtitle = currencyName;
+            chartModel.chartOptions['number'] = new DcChartOptions('number', DcChartType.Number, this._getChartOptions('number'));
+            chartModel2.chartOptions['number'] = new DcChartOptions('number', DcChartType.Number, this._getChartOptions('number'));
+            chartModel.chartOptions['number'].options['valueAccessor'] = function (kv) { return kv.value[d]['amountUsd']; };
+            chartModel2.chartOptions['number'].options['valueAccessor'] = function (kv) { return kv.value[d]['amountUsd'] / thb; };
+            chartModel.selectedOption = 'number';
+            chartModel2.selectedOption = 'number';
+            chartModel.group = group;
+            chartModel2.group = group;
+            chartModel.dimension = dim;
+            chartModel2.dimension = dim;
+            numDis1.push(chartModel);
+            numDis2.push(chartModel2);
+          });
+          numDisplayGrp.numberDisplays = numDis1;
+          numDisplayGrp2.numberDisplays = numDis2;
+        }
+    });
+
+    fxGroup.chartModels.push(numDisplayGrp);
+    fxGroup.chartModels.push(numDisplayGrp2);
 
     const fx    = new MaterialDcChartModel('fx');
     fx.title    = 'Exchange Rate';
@@ -575,6 +964,7 @@ export class UtccEconChartDisplayComponent implements OnInit, OnDestroy, AfterVi
           const fi = new FilterModel('by Country', group, dim);
           fi.selectMultipleEnabled = true;
           fx.filterItems.push( fi );
+          fx.filterItems = fx.filterItems.slice(0); // must do this so angular recognizes that the array was updated
         }
     });
 

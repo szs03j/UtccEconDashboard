@@ -1,8 +1,11 @@
 import { Component, OnInit, OnDestroy, AfterViewInit, ElementRef, Input, ViewChild } from '@angular/core';
-import { MaterialDcChartModel } from '../material-dc-chart/material-dc-chart-model';
+// import { MaterialDcChartModel } from '../material-dc-chart/material-dc-chart-model';
 import { Subject, Observable } from 'rxjs';
 import { map, takeUntil } from 'rxjs/operators';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
+import { ChartGroupItemModelType } from './chart-group-item-model-type.enum';
+import { ChartGroupItemModel } from './chart-group-item-model';
+
 import * as muuri from 'muuri';
 
 @Component({
@@ -20,9 +23,14 @@ export class ChartGroupComponent implements OnInit, OnDestroy, AfterViewInit {
   private _muuriGrid: any;
 
   @Input() public title: string;
-  @Input() public set chartModels(cm: Array<MaterialDcChartModel>) { this._gettersetter_chartModels = cm; this._wireChartModels(); }
+  @Input() public set chartModels(cm: Array<any>) { this._gettersetter_chartModels = cm; this._wireChartModels(); }
   public get chartModels() { return this._gettersetter_chartModels; }
-  private _gettersetter_chartModels = new Array<MaterialDcChartModel>();
+  private _gettersetter_chartModels = new Array<any>();
+
+  @Input() public id: string;
+
+  // this allows the template to access the ChartGroupItemModelType enum like it was available and a constant
+  public ChartGroupItemModelType = ChartGroupItemModelType;
 
   public isHandset$: Observable<boolean> = this._breakpointObserver.observe(Breakpoints.Handset)
   .pipe(
@@ -41,8 +49,8 @@ export class ChartGroupComponent implements OnInit, OnDestroy, AfterViewInit {
     this._removeSub$.next();
   }
 
-  private _handleChartLoadedChange( model: MaterialDcChartModel ) {
-    if ( model.chartLoaded ) { this._muuriGrid.refreshItems(); this._muuriGrid.layout(); }
+  private _handleChartLoadedChange( chartLoaded: boolean ) {
+    if ( chartLoaded) { this._muuriGrid.refreshItems(); this._muuriGrid.layout(); }
   }
 
   private _wireChartModels() {
@@ -52,7 +60,7 @@ export class ChartGroupComponent implements OnInit, OnDestroy, AfterViewInit {
         d.chartLoadedChange()
           .pipe( takeUntil(this._removeSub$) )
           .subscribe(
-            (cl: boolean) => this._handleChartLoadedChange(d));
+            (cl: boolean) => this._handleChartLoadedChange(cl));
       }
     );
 
