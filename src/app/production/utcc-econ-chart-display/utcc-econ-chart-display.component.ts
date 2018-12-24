@@ -43,6 +43,11 @@ export class UtccEconChartDisplayComponent implements OnInit, OnDestroy, AfterVi
     this._onDestroy$.next();
   }
 
+  private _angleYearLabels( chart: any ) {
+    chart.select('g.axis.x').selectAll('text')
+      .attr('transform', function(d) { return 'translate(-15 10) rotate(-45)'; });
+  }
+
   private _getChartOptions(name: string) {
     const height  = 225;
     const width   = 300;
@@ -76,7 +81,7 @@ export class UtccEconChartDisplayComponent implements OnInit, OnDestroy, AfterVi
         'colors': d3.scaleOrdinal().domain(['positive', 'negative']).range(['#377eb8' , '#e6550d']),
         'renderHorizontalGridLines': true,
         'clipPadding': 10,
-        'margins': {'top': 5, 'right': 0, 'bottom': 20, 'left': 30},
+        'margins': {'top': 5, 'right': 0, 'bottom': 30, 'left': 30},
         'title': usdTitle,
         'useViewBoxResizing': useViewBoxResizing
       };
@@ -323,7 +328,7 @@ export class UtccEconChartDisplayComponent implements OnInit, OnDestroy, AfterVi
         'seriesAccessor': function(kv) { return kv.key[0]; },
         'keyAccessor': function(kv) {  return kv.key[1]; },
         'valueAccessor': function(kv) {  return +kv.value; },
-        'margins': {'top': 15, 'right': 5, 'bottom': 20, 'left': 28},
+        'margins': {'top': 30, 'right': 5, 'bottom': 30, 'left': 33},
         'legend': dc.legend().x(35).y(0).itemHeight(9).gap(8).horizontal(true).itemWidth(75).legendWidth(225),
         'useViewBoxResizing': useViewBoxResizing
         };
@@ -391,16 +396,18 @@ export class UtccEconChartDisplayComponent implements OnInit, OnDestroy, AfterVi
       (group: any) => { if (group) { exportsByYear.group = group;  } });
 
     exportsByYear.chartOptions['bar'] = new DcChartOptions('bar', DcChartType.Bar, this._getChartOptions('bar'));
+    exportsByYear.chartOptions['bar'].options['on'] = ['renderlet', this._angleYearLabels];
+
     exportsByYear.chartOptions['pie'] = new DcChartOptions('pie', DcChartType.Pie, this._getChartOptions('pie'));
-    this._cds.import.getGroup('byYearChg').pipe(takeUntil(this._onDestroy$)).subscribe(
+    this._cds.export.getGroup('byYearChg').pipe(takeUntil(this._onDestroy$)).subscribe(
       (group: any) => { if (group) {
         const opt = this._getChartOptions('bar');
         opt['group'] = group;
         exportsByYear.chartOptions['barPctChg'] = new DcChartOptions('% chg', DcChartType.Bar, opt);
-        exportsByYear.chartOptions['barPctChg'].options['on'] = ['preRender', function(chart) {
+        exportsByYear.chartOptions['barPctChg'].options['on'] = [['preRender', function(chart) {
           chart.yAxis().tickFormat(function(v) {return v + '%'; });
           chart.title( function(kv) { return d3.format('+.2%')(kv.value / 100); });
-        }];
+        }], ['renderlet', this._angleYearLabels]];
         // _clone creates a new instance which triggers updates in dcchartcomponent
         exportsByYear.chartOptions = this._clone(exportsByYear.chartOptions);
       }
@@ -483,16 +490,17 @@ export class UtccEconChartDisplayComponent implements OnInit, OnDestroy, AfterVi
       (group: any) => { if (group) { importsByYear.group = group;  } });
 
     importsByYear.chartOptions['bar'] = new DcChartOptions('bar', DcChartType.Bar, this._getChartOptions('bar'));
+    importsByYear.chartOptions['bar'].options['on'] = ['renderlet', this._angleYearLabels];
     importsByYear.chartOptions['pie'] = new DcChartOptions('pie', DcChartType.Pie, this._getChartOptions('pie'));
     this._cds.import.getGroup('byYearChg').pipe(takeUntil(this._onDestroy$)).subscribe(
       (group: any) => { if (group) {
         const opt = this._getChartOptions('bar');
         opt['group'] = group;
         importsByYear.chartOptions['barPctChg'] = new DcChartOptions('% chg', DcChartType.Bar, opt);
-        importsByYear.chartOptions['barPctChg'].options['on'] = ['preRender', function(chart) {
+        importsByYear.chartOptions['barPctChg'].options['on'] = [['preRender', function(chart) {
           chart.yAxis().tickFormat(function(v) {return v + '%'; });
           chart.title( function(kv) { return d3.format('+.2%')(kv.value / 100); });
-        }];
+        }], ['renderlet', this._angleYearLabels]];
         // _clone creates a new instance which triggers updates in dcchartcomponent
         importsByYear.chartOptions = this._clone(importsByYear.chartOptions);
       }
@@ -842,43 +850,128 @@ export class UtccEconChartDisplayComponent implements OnInit, OnDestroy, AfterVi
     gdp.title    = 'GDP';
     gdp.subtitle = '';
 
-    this._cds.gdp.getDim('byYear').pipe(takeUntil(this._onDestroy$)).subscribe(
-      (dim: any) => { if (dim) {  gdp.dimension = dim; } });
+    /* gdp by country */
+    const gdpByCountry    = new MaterialDcChartModel('gdpByCountry');
+    gdpByCountry.title    = 'GDP';
+    gdpByCountry.subtitle = 'by Country';
+    this._cds.gdp.getDim('byCountry').pipe(takeUntil(this._onDestroy$)).subscribe(
+      (dim: any) => { if (dim) { gdpByCountry.dimension = dim; } });
 
-    this._cds.gdp.getGroup('byYearUsd').pipe(takeUntil(this._onDestroy$)).subscribe(
-      (group: any) => { if (group) {  gdp.group = group;  } });
+    this._cds.gdp.getGroup('byCountry').pipe(takeUntil(this._onDestroy$)).subscribe(
+      (group: any) => { if (group) { gdpByCountry.group = group;  } });
 
-    gdp.chartOptions['bar'] = new DcChartOptions('bar', DcChartType.Bar, this._getChartOptions('bar'));
-    gdp.chartOptions['bar'].options['x'] = d3.scaleTime();
-    gdp.chartOptions['bar'].options['xUnits'] = d3.timeYears;
-    gdp.chartOptions['bar'].options['title'] = function(kv) {
-      return kv.key.getFullYear() +
-      '\n' + d3.format('.2f')(kv.value) + ' billion USD'; };
-    gdp.chartOptions['bar'].options['on'] = ['preRender', function(chart) {
-      const ext = d3.extent(chart.group().all(), function(kv) { return kv.key; });
-      const minDate = new Date( ext[0].getFullYear(), 0);
-      minDate.setHours( minDate.getHours() - 1 );
-      const maxDate = new Date( ext[1].getFullYear(), 0);
-      maxDate.setFullYear( maxDate.getFullYear() + 1 );
+    gdpByCountry.chartOptions['bar'] = new DcChartOptions('bar', DcChartType.Bar, this._getChartOptions('bar'));
 
-      chart.x(d3.scaleTime().domain([minDate, maxDate]));
-      chart.elasticX(false);
-      }];
-    gdp.selectedOption = 'bar';
+    const hh = function(chart) {
+      chart.select('g').attr('transform', 'translate(150 130)');
+    };
 
-    zip(this._cds.gdp.getGroup('byCountry'), this._cds.gdp.getDim('byCountry'))
-      .pipe(takeUntil(this._onDestroy$))
-      .subscribe(([group, dim]) => {
-        if ( group && dim) {
-          const fi = new FilterModel('by Country', group, dim);
-          fi.selectMultipleEnabled = false;
-          fi.selectDefault = 'Thailand';
-          gdp.filterItems.push( fi );
-          gdp.filterItems = gdp.filterItems.slice(0);
+    gdpByCountry.chartOptions['pie'] = new DcChartOptions('pie', DcChartType.Pie, this._getChartOptions('pie'));
+
+    const calcPct = function(chart) {
+      chart.selectAll('text.pie-slice').text(function(d) {
+        return Math.round((d.endAngle - d.startAngle) / (2 * Math.PI) * 100) + '%';
+      });
+    };
+
+    gdpByCountry.chartOptions['pie'].options['on'] = [['pretransition', calcPct], ['renderlet', hh]];
+    gdpByCountry.chartOptions['pie'].options['legend'] =
+      dc.legend().x(35).y(0).itemHeight(9).gap(8).horizontal(true).itemWidth(75).legendWidth(225);
+    gdpByCountry.chartOptions['pie'].options['externalRadiusPadding'] = 20;
+    gdpByCountry.chartOptions['pie'].options['ordinalColors'] = ['#d62728', '#9467bd', '#2ca02c', '#1f77b4', '#ff7f0e'];
+
+    this._cds.seaJson.getGeoJson().pipe(takeUntil(this._onDestroy$)).subscribe(
+      (geoJson: any) => {
+        if (geoJson) {
+          const mapOpt = this._getChartOptions('map');
+          mapOpt['projection'] =
+          d3.geoOrthographic().rotate([250, 0, 0]).fitExtent([[0, 0], [mapOpt['width'], mapOpt['height']]], geoJson );
+          mapOpt['overlayGeoJson'] = [geoJson['features'], 'state', function (d) { return d.properties.name; }];
+          gdpByCountry.chartOptions['map'] = new DcChartOptions('map', DcChartType.GeoChoropleth, mapOpt);
+          gdpByCountry.chartOptions = this._clone( gdpByCountry.chartOptions );
         }
-    });
+      }
+    );
+    gdpByCountry.selectedOption = 'pie';
+    gdpGroup.chartModels.push(gdpByCountry);
 
-    gdpGroup.chartModels.push(gdp);
+    /* create gdpByYear chart model */
+    const gdpByYear     = new MaterialDcChartModel('gdpByYear');
+    gdpByYear.title     = 'GDP';
+    gdpByYear.subtitle  = 'by Year';
+    this._cds.gdp.getDim('byYear').pipe(takeUntil(this._onDestroy$)).subscribe(
+      (dim: any) => { if (dim) { gdpByYear.dimension = dim; } });
+
+    this._cds.gdp.getGroup('byYear').pipe(takeUntil(this._onDestroy$)).subscribe(
+      (group: any) => { if (group) { gdpByYear.group = group;  } });
+
+    const cc = function (chart) {
+      chart.select('g.axis.x').selectAll('text')
+        .attr('transform', function(d) { return 'translate(-15 10) rotate(-45)'; })
+        .text(function(d, i) { if ( (i % 2) === 0) { return d; } return ''; });
+    };
+
+    gdpByYear.chartOptions['bar'] = new DcChartOptions('bar', DcChartType.Bar, this._getChartOptions('bar'));
+    gdpByYear.chartOptions['bar'].options['x'] = d3.scaleBand();
+    gdpByYear.chartOptions['bar'].options['xUnits'] = dc.units.ordinal;
+    gdpByYear.chartOptions['bar'].options['on'] = ['renderlet', cc];
+
+    this._cds.gdp.getGroup('byYearChg').pipe(takeUntil(this._onDestroy$)).subscribe(
+      (group: any) => { if (group) {
+        const opt = this._getChartOptions('bar');
+        opt['group'] = group;
+        gdpByYear.chartOptions['barPctChg'] = new DcChartOptions('% chg', DcChartType.Bar, opt);
+        gdpByYear.chartOptions['barPctChg'].options['on'] = [['preRender', function(chart) {
+          chart.yAxis().tickFormat(function(v) {return v + '%'; });
+          chart.title( function(kv) { return d3.format('+.2%')(kv.value / 100); });
+        }], ['renderlet', cc]];
+        // _clone creates a new instance which triggers updates in dcchartcomponent
+        gdpByYear.chartOptions = this._clone(gdpByYear.chartOptions);
+      }
+    });
+    gdpByYear.selectedOption = 'bar';
+    gdpGroup.chartModels.push(gdpByYear);
+
+    /*------- GDP BY COUNTRY YEAR ---------*/
+    const gdpByCountryYear     = new MaterialDcChartModel('gdpByCountryYear');
+    gdpByCountryYear.title     = 'GDP';
+    gdpByCountryYear.subtitle  = '';
+
+    this._cds.gdp.getDim('byCountryYear').pipe(takeUntil(this._onDestroy$)).subscribe(
+      (dim: any) => { if (dim) { gdpByCountryYear.dimension = dim; } });
+
+    this._cds.gdp.getGroup('byCountryYear').pipe(takeUntil(this._onDestroy$)).subscribe(
+      (group: any) => { if (group) {  gdpByCountryYear.group = group;  } });
+
+    gdpByCountryYear.chartOptions['line'] = new DcChartOptions('line', DcChartType.Series, this._getChartOptions('series'));
+    const calcDomain = function (chart) {
+      const ext = d3.extent(chart.group().all(), function(kv) { return kv.value; });
+      chart.y(d3.scaleLinear().domain(ext));
+    };
+
+    gdpByCountryYear.chartOptions['line'].options['x'] = d3.scaleLinear();
+    gdpByCountryYear.chartOptions['line'].options['xUnits'] = dc.units.integers;
+    gdpByCountryYear.chartOptions['line'].options['on'] = [
+      ['preRedraw', calcDomain],
+      ['renderlet', this._angleYearLabels],
+      ['preRender', function(chart) {
+      chart.yAxis().tickFormat(function(v) {return v + '%'; });
+      chart.title( function(kv) { return d3.format('+.2%')(kv.value / 100); });
+      chart.xAxis().tickFormat(function(e) {
+        if (Math.floor(e) !== e){
+            return;
+        }
+        return e;
+      });
+    }]];
+    gdpByCountryYear.chartOptions['line'].options['elasticY'] = false;
+    gdpByCountryYear.chartOptions['line'].options['keyAccessor'] = function(kv) { return +kv.key[1]; };
+    gdpByCountryYear.chartOptions['line'].options['title'] = function(d) {
+      return d.key[1] + ' : ' + parseFloat(d.value).toFixed(2); };
+    gdpByCountryYear.selectedOption = 'line';
+
+    gdpGroup.chartModels.push(gdpByCountryYear);
+
     this.chartGroups.push(gdpGroup);
   }
 
@@ -973,11 +1066,14 @@ export class UtccEconChartDisplayComponent implements OnInit, OnDestroy, AfterVi
   }
 
   private _loadData() {
+
     this._loadImportsGroup();
     this._loadExportsGroup();
     this._loadImportPotentialGroup();
     this._loadExportPotentialGroup();
+
     this._loadGdpGroup();
+
     this._loadFXGroup();
   }
 

@@ -101,21 +101,52 @@ export class ChartDataService {
       };
     }
 
+    function percentChangeGroup(source_group, primaryKeyFunc) {
+      return {
+        all: function () {
+          // return source_group.all();
+          let prevVal = null;
+          let pKey = null;
+          return source_group.all().map(function(d) {
+            let val = 0;
+            if ( prevVal !== null && prevVal !== 0 && pKey !== null && pKey === primaryKeyFunc(d) ) {
+              val = ((d.value - prevVal) / prevVal) * 100;
+            }
+            prevVal = d.value;
+            pKey = primaryKeyFunc(d);
+            return {key: d.key, value: val};
+          });
+        }
+      };
+    }
+
     d3.csv('../../assets/data/gdp.csv').then( (data) => {
       // clean the data
       data.forEach(function(d) {
         d['Local']  = +d['Local'];
         d['USD']    = +d['USD'];
-        d['Year']   = new Date(+d['Year'], 0);
+      //  d['YearNum']   = +d['Year'];
       });
 
       const unit        = 1000000000;
 
       const ndx         = cf(data);
       const countryDim  = ndx.dimension(function(d) {return d['Country']; });
-      const countryYearDim = ndx.dimension(function(d) {return [d['Country'], d['Year']] as any; });
       const yearDim     = ndx.dimension( function (d) { return d['Year']; } );
+      const countryYearDim = ndx.dimension(function(d) {return [d['Country'], d['Year']] as any; });
 
+      const countryGrp  = countryDim.group().reduceSum( function(d) { return +d['USD'] / unit; });
+      const yearGrp     = yearDim.group().reduceSum( function(d) { return +d['USD'] / unit; });
+      const yearChgGrp  = percentChangeGroup(yearGrp, function(d) { return 1; });
+      const countryYearGrp = percentChangeGroup(
+        remove_empty_bins(countryYearDim.group().reduceSum( function(d) { return +d['USD'] / unit; })),
+        function(d) { return d.key[0]; }
+      );
+
+
+//     const countryYearDim = ndx.dimension(function(d) {return [d['Country'], d['Year']] as any; });
+
+/*
       const yearUsdGrp2  = remove_empty_bins(yearDim.group().reduce(
         function(p, v) {
           p[v['Country']] = p[v['Country']] ? p[v['Country']] + (+v['USD'] / unit) : (+v['USD'] / unit);
@@ -129,7 +160,9 @@ export class ChartDataService {
           return {} as any;
         }
       ));
+*/
 
+/*
       const yearUsdGrp = yearDim.group().reduceSum( function(d) { return +d['USD'] / unit; });
 
       const yearLocalGrp  = yearDim.group().reduce(
@@ -145,9 +178,12 @@ export class ChartDataService {
           return {} as any;
         }
       );
+
+
       const usdGrp      = remove_empty_bins(countryYearDim.group().reduceSum( function(d) { return +d['USD'] / unit; }));
       const localGrp    = remove_empty_bins(countryYearDim.group().reduceSum( function(d) { return +d['Local'] / unit; }));
       const countryGrp 	    = countryDim.group();
+    */
 
       const addDimOrGrp = function(key: string, col: Map<string, BehaviorSubject<any>>, item: any, isGroup: boolean) {
         if (col[key]) {
@@ -162,22 +198,16 @@ export class ChartDataService {
       const byCountry = 'byCountry';
       const byCountryYear = 'byCountryYear';
       const byYear = 'byYear';
-      const byYearUsd = 'byYearUsd';
-      const byYearUsd2 = 'byYearUsd2';
-      const byYearLocal = 'byYearLocal';
-      const byUsd = 'byUsd';
-      const byLocal = 'byLocal';
+      const byYearChg = 'byYearChg';
 
       addDimOrGrp(byCountry, dims, countryDim, false );
       addDimOrGrp(byYear, dims, yearDim, false );
       addDimOrGrp(byCountryYear, dims, countryYearDim, false);
 
       addDimOrGrp(byCountry, groups, countryGrp, true);
-      addDimOrGrp(byYearUsd, groups, yearUsdGrp, true);
-      addDimOrGrp(byYearUsd2, groups, yearUsdGrp2, true);
-      addDimOrGrp(byYearLocal, groups, yearLocalGrp, true);
-      addDimOrGrp(byUsd, groups, usdGrp, true);
-      addDimOrGrp(byLocal, groups, localGrp, true);
+      addDimOrGrp(byYear, groups, yearGrp, true);
+      addDimOrGrp(byYearChg, groups, yearChgGrp, true);
+      addDimOrGrp(byCountryYear, groups, countryYearGrp, true);
 
     });
   });
