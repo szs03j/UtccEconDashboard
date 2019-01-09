@@ -1,0 +1,37 @@
+<div class="grid" #grid fxLayout.lt-sm="column"  >
+  <div *ngIf="chartExchangeUsd" class="item">
+    <div class="item-content"  >
+      <app-mat-dc-number-group
+        [title]="chartExchangeUsd.title"
+        [subtitle]="chartExchangeUsd.subtitle"
+        [numberDisplays]="chartExchangeUsd.numberDisplays">
+      </app-mat-dc-number-group>
+    </div>
+  </div>
+  <div *ngIf="chartExchangeThb" class="item">
+    <div class="item-content"  >
+      <app-mat-dc-number-group
+        [title]="chartExchangeThb.title"
+        [subtitle]="chartExchangeThb.subtitle"
+        [numberDisplays]="chartExchangeThb.numberDisplays">
+      </app-mat-dc-number-group>
+    </div>
+  </div>
+  <div *ngIf="chartExchangeRate" class="item">
+    <div class="item-content"  >
+      <app-mat-dc-chart
+        [title]="chartExchangeRate.title"
+        [subtitle]="chartExchangeRate.subtitle"
+        [dimension]="chartExchangeRate.dimension"
+        [group]="chartExchangeRate.group"
+        [chartGroup]="chartExchangeRate.chartGroup"
+        [selectedOption]="chartExchangeRate.selectedOption"
+        (selectedOptionChange)="chartExchangeRate.selectedOption = $event"
+        (chartLoadedChange)="chartExchangeRate.chartLoaded = $event"
+        (chartChange)="chartExchangeRate.chart = $event"
+        [chartOptions]="chartExchangeRate.chartOptions"
+        [filterItems]="chartExchangeRate.filterItems">
+      </app-mat-dc-chart>
+    </div>
+  </div>
+</div>

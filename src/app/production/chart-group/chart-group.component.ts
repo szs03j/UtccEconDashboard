@@ -38,6 +38,7 @@ export class ChartGroupComponent implements OnInit, OnDestroy, AfterViewInit {
   );
 
   ngOnInit() {
+
   }
 
   ngAfterViewInit() {

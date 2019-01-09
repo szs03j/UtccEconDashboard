@@ -1,0 +1,71 @@
+<div class="grid" #grid fxLayout.lt-sm="column"  >
+  <div *ngIf="chartByCountry" class="item">
+    <div class="item-content"  >
+      <app-mat-dc-chart
+        [title]="chartByCountry.title"
+        [subtitle]="chartByCountry.subtitle"
+        [dimension]="chartByCountry.dimension"
+        [group]="chartByCountry.group"
+        [chartGroup]="chartByCountry.chartGroup"
+        [selectedOption]="chartByCountry.selectedOption"
+        (selectedOptionChange)="chartByCountry.selectedOption = $event"
+        (chartLoadedChange)="chartByCountry.chartLoaded = $event"
+        (chartChange)="chartByCountry.chart = $event"
+        [chartOptions]="chartByCountry.chartOptions"
+        [filterItems]="chartByCountry.filterItems">
+      </app-mat-dc-chart>
+    </div>
+  </div>
+  <div *ngIf="chartByProduct" class="item">
+    <div class="item-content"  >
+      <app-mat-dc-chart
+        [title]="chartByProduct.title"
+        [subtitle]="chartByProduct.subtitle"
+        [dimension]="chartByProduct.dimension"
+        [group]="chartByProduct.group"
+        [chartGroup]="chartByProduct.chartGroup"
+        [selectedOption]="chartByProduct.selectedOption"
+        (selectedOptionChange)="chartByProduct.selectedOption = $event"
+        (chartLoadedChange)="chartByProduct.chartLoaded = $event"
+        (chartChange)="chartByProduct.chart = $event"
+        [chartOptions]="chartByProduct.chartOptions"
+        [filterItems]="chartByProduct.filterItems">
+      </app-mat-dc-chart>
+    </div>
+  </div>
+  <div *ngIf="chartByYear" class="item">
+    <div class="item-content"  >
+      <app-mat-dc-chart
+        [title]="chartByYear.title"
+        [subtitle]="chartByYear.subtitle"
+        [dimension]="chartByYear.dimension"
+        [group]="chartByYear.group"
+        [chartGroup]="chartByYear.chartGroup"
+        [selectedOption]="chartByYear.selectedOption"
+        (selectedOptionChange)="chartByYear.selectedOption = $event"
+        (chartLoadedChange)="chartByYear.chartLoaded = $event"
+        (chartChange)="chartByYear.chart = $event"
+        [chartOptions]="chartByYear.chartOptions"
+        [filterItems]="chartByYear.filterItems">
+      </app-mat-dc-chart>
+    </div>
+  </div>
+  <div *ngIf="chartByPartner" class="item">
+    <div class="item-content"  >
+      <app-mat-dc-chart
+        [title]="chartByPartner.title"
+        [subtitle]="chartByPartner.subtitle"
+        [dimension]="chartByPartner.dimension"
+        [group]="chartByPartner.group"
+        [chartGroup]="chartByPartner.chartGroup"
+        [selectedOption]="chartByPartner.selectedOption"
+        (selectedOptionChange)="chartByPartner.selectedOption = $event"
+        (chartLoadedChange)="chartByPartner.chartLoaded = $event"
+        (chartChange)="chartByPartner.chart = $event"
+        [chartOptions]="chartByPartner.chartOptions"
+        [filterItems]="chartByPartner.filterItems">
+      </app-mat-dc-chart>
+    </div>
+  </div>
+</div>
+

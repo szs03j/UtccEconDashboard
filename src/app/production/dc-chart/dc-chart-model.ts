@@ -11,6 +11,7 @@ export class DcChartModel {
   readonly name: string;
   public dimension: any;
   public group: any;
+  public chartGroup: string;
 
   public get selectedOption() { return this._gettersetter_selectedOption.getValue(); }
   public set selectedOption(so: string) { this._gettersetter_selectedOption.next(so); }

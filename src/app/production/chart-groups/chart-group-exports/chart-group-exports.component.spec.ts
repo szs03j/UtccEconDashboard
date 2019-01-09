@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LoadingChartComponent } from './loading-chart.component';
+import { ChartGroupExportsComponent } from './chart-group-exports.component';
 
-describe('LoadingChartComponent', () => {
-  let component: LoadingChartComponent;
-  let fixture: ComponentFixture<LoadingChartComponent>;
+describe('ChartGroupExportsComponent', () => {
+  let component: ChartGroupExportsComponent;
+  let fixture: ComponentFixture<ChartGroupExportsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LoadingChartComponent ]
+      declarations: [ ChartGroupExportsComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LoadingChartComponent);
+    fixture = TestBed.createComponent(ChartGroupExportsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

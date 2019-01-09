@@ -54,6 +54,11 @@ export class DcChartComponent implements AfterViewInit, OnChanges {
   public get group() { return this._gettersetter_group; }
   private _gettersetter_group: any;
 
+  /* var chartGroup */
+  @Input() public set chartGroup( cg: string ) { this._gettersetter_chartGroup = cg; }
+  public get chartGroup() { return this._gettersetter_chartGroup; }
+  private _gettersetter_chartGroup: string;
+
   /* var selectedChart */
   @Input() public get selectedOption() { return this._gettersetter_selectedOption; }
   public set selectedOption( nameIdx: string ) { this._gettersetter_selectedOption = nameIdx;  this._loadChart();  }
@@ -235,6 +240,7 @@ export class DcChartComponent implements AfterViewInit, OnChanges {
       set in the component. */
     if ( !sanitizedOptions['dimension'] ) { chart.dimension(this.dimension); }
     if ( !sanitizedOptions['group'] ) { chart.group(this.group); }
+    if ( !sanitizedOptions['chartGroup'] && this.chartGroup ) { chart.chartGroup(this.chartGroup); }
 
     chart.options(sanitizedOptions);
     if ( applyOnOptions ) { this._applyOnOptions(chart, options); }
