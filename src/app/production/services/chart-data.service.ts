@@ -6,6 +6,8 @@ import { DimGrpBroadcaster } from './dim-grp-broadcaster';
 import { GeoJsonBroadcaster } from './geo-json-broadcaster';
 import { strictEqual } from 'assert';
 import { stringify } from '@angular/compiler/src/util';
+import { DataSourceURL } from './datasourceURL';
+import { DataSource } from '@angular/cdk/table';
 
 @Injectable({
   providedIn: 'root'
@@ -31,7 +33,7 @@ export class ChartDataService {
   */
   public import = new DimGrpBroadcaster(
     (dims, groups) => {
-      this._loadImEx(dims, groups, '../assets/data/imports.csv' );
+      this._loadImEx(dims, groups, DataSourceURL.import );
     }
   );
 
@@ -51,7 +53,7 @@ export class ChartDataService {
   */
   public export = new DimGrpBroadcaster(
     (dims, groups) => {
-      this._loadImEx(dims, groups, '../assets/data/exports.csv' );
+      this._loadImEx(dims, groups, DataSourceURL.export );
     }
   );
 
@@ -67,27 +69,27 @@ export class ChartDataService {
     'byPartner'
   */
   public potentialExport = new DimGrpBroadcaster( (dims, groups) => {
-    this._loadPotential(dims, groups, '../../assets/data/exportPotential.csv');
+    this._loadPotential(dims, groups, DataSourceURL.potentialExport );
   });
 
   public potentialImport = new DimGrpBroadcaster( (dims, groups) => {
-    this._loadPotential(dims, groups, '../../assets/data/importPotential.csv');
+    this._loadPotential(dims, groups, DataSourceURL.potentialImport );
   });
 
   public potentialExportLarge = new DimGrpBroadcaster( (dims, groups) => {
-    this._loadPotentialLarge(dims, groups, '../../assets/data/exportPotentialLarge.csv');
+    this._loadPotentialLarge(dims, groups, DataSourceURL.potentialExportLarge);
   });
 
   public potentialImportLarge = new DimGrpBroadcaster( (dims, groups) => {
-    this._loadPotentialLarge(dims, groups, '../../assets/data/importPotentialLarge.csv');
+    this._loadPotentialLarge(dims, groups, DataSourceURL.potentialImportLarge);
   });
 
   public potentialExportBox = new DimGrpBroadcaster( (dims, groups) => {
-    this._loadPotentialBox(dims, groups, '../../assets/data/exportPotentialLarge.csv');
+    this._loadPotentialBox(dims, groups, DataSourceURL.potentialExportBox);
   });
 
   public potentialImportBox = new DimGrpBroadcaster( (dims, groups) => {
-    this._loadPotentialBox(dims, groups, '../../assets/data/importPotentialLarge.csv');
+    this._loadPotentialBox(dims, groups, DataSourceURL.potentialImportBox);
   });
 
   public gdp = new DimGrpBroadcaster( (dims, groups) => {
@@ -100,6 +102,7 @@ export class ChartDataService {
         }
       };
     }
+
 
     function percentChangeGroup(source_group, primaryKeyFunc) {
       return {
@@ -120,7 +123,7 @@ export class ChartDataService {
       };
     }
 
-    d3.csv('../../assets/data/gdp.csv').then( (data) => {
+    d3.csv(DataSourceURL.GDP).then( (data) => {
       // clean the data
       data.forEach(function(d) {
         d['Local']  = +d['Local'];
@@ -223,7 +226,7 @@ export class ChartDataService {
       };
     }
 
-    d3.csv('../../assets/data/exchangeRate.csv').then( (data) => {
+    d3.csv(DataSourceURL.exchangeRate).then( (data) => {
       // clean the data
       data.forEach(function(d) {
         d['Rate']  = +d['Rate'];
@@ -264,7 +267,7 @@ export class ChartDataService {
   });
 
   public dailyExchangeRate = new DimGrpBroadcaster ( (dims, groups) => {
-    d3.csv('../../assets/data/dailyExchangeRate.csv').then( (data) => {
+    d3.csv(DataSourceURL.dailyExchangeRate).then( (data) => {
       const ndx       = cf(data);
       const dateDim   = ndx.dimension(function(d) {return d['Date']; });
       const dateGrp 	= dateDim.group().reduce(
