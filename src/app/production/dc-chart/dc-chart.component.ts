@@ -81,7 +81,14 @@ export class DcChartComponent implements AfterViewInit, OnChanges {
   @Output() chartPreTransition: EventEmitter<any> = new EventEmitter<any>();
 
   /* private setters */
-  private _setChart( c: BaseMixin<any> ) { this._gettersetter_chart = c; this.chartChange.emit(this._gettersetter_chart); }
+  private _setChart( c: BaseMixin<any> ) {
+    if (this._gettersetter_chart) {
+      dc.deregisterChart(this._gettersetter_chart);
+      delete this._gettersetter_chart;
+    }
+    this._gettersetter_chart = c;
+    this.chartChange.emit(this._gettersetter_chart);
+  }
   private _setChartLoaded( isLoaded: boolean ) {
     this._gettersetter_chartLoaded = isLoaded; this.chartLoadedChange.emit(this._gettersetter_chartLoaded); }
 
@@ -132,7 +139,9 @@ export class DcChartComponent implements AfterViewInit, OnChanges {
       const optionInfo: DcChartOptions = this.chartOptions[this.selectedOption];
       if ( this._validateChartOptions(optionInfo) ) {
         let prevFilters: Array<any>;
-        if ( this.chart ) { prevFilters = this.chart.filters(); }
+        if ( this.chart ) {
+          prevFilters = this.chart.filters();
+        }
         this._setChart(this._getNewChart(optionInfo.chartType, this.chartElemRef.nativeElement));
         if ( this.chart) {
           this._setChartLoaded(true);
