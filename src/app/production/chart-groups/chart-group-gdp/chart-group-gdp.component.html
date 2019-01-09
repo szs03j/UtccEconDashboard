@@ -1,0 +1,53 @@
+<div class="grid" #grid fxLayout.lt-sm="column"  >
+  <div class="item">
+    <div class="item-content"  >
+      <app-mat-dc-chart
+        [title]="chartGdpByCountry.title"
+        [subtitle]="chartGdpByCountry.subtitle"
+        [dimension]="chartGdpByCountry.dimension"
+        [group]="chartGdpByCountry.group"
+        [chartGroup]="chartGdpByCountry.chartGroup"
+        [selectedOption]="chartGdpByCountry.selectedOption"
+        (selectedOptionChange)="chartGdpByCountry.selectedOption = $event"
+        (chartLoadedChange)="chartGdpByCountry.chartLoaded = $event"
+        (chartChange)="chartGdpByCountry.chart = $event"
+        [chartOptions]="chartGdpByCountry.chartOptions"
+        [filterItems]="chartGdpByCountry.filterItems">
+      </app-mat-dc-chart>
+    </div>
+  </div>
+  <div class="item">
+    <div class="item-content"  >
+      <app-mat-dc-chart
+        [title]="chartGdpByYear.title"
+        [subtitle]="chartGdpByYear.subtitle"
+        [dimension]="chartGdpByYear.dimension"
+        [group]="chartGdpByYear.group"
+        [chartGroup]="chartGdpByYear.chartGroup"
+        [selectedOption]="chartGdpByYear.selectedOption"
+        (selectedOptionChange)="chartGdpByYear.selectedOption = $event"
+        (chartLoadedChange)="chartGdpByYear.chartLoaded = $event"
+        (chartChange)="chartGdpByYear.chart = $event"
+        [chartOptions]="chartGdpByYear.chartOptions"
+        [filterItems]="chartGdpByYear.filterItems">
+      </app-mat-dc-chart>
+    </div>
+  </div>
+  <div class="item">
+    <div class="item-content"  >
+      <app-mat-dc-chart
+        [title]="chartGdpByCountryYear.title"
+        [subtitle]="chartGdpByCountryYear.subtitle"
+        [dimension]="chartGdpByCountryYear.dimension"
+        [group]="chartGdpByCountryYear.group"
+        [chartGroup]="chartGdpByCountryYear.chartGroup"
+        [selectedOption]="chartGdpByCountryYear.selectedOption"
+        (selectedOptionChange)="chartGdpByCountryYear.selectedOption = $event"
+        (chartLoadedChange)="chartGdpByCountryYear.chartLoaded = $event"
+        (chartChange)="chartGdpByCountryYear.chart = $event"
+        [chartOptions]="chartGdpByCountryYear.chartOptions"
+        [filterItems]="chartGdpByCountryYear.filterItems">
+      </app-mat-dc-chart>
+    </div>
+  </div>
+</div>

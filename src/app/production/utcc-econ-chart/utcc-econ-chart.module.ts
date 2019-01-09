@@ -22,9 +22,14 @@ import { MaterialDcChartComponent } from '../material-dc-chart/material-dc-chart
 import { ChartGroupComponent } from '../chart-group/chart-group.component';
 import { MaterialDcNumberGroupComponent } from '../material-dc-number-group/material-dc-number-group.component';
 import { NumberGroupChartComponent } from '../number-group-chart/number-group-chart.component';
-import { LoadingChartComponent } from '../loading-chart/loading-chart.component';
 
-
+import { MuuriGridGroupComponent } from '../chart-groups/muuri-grid-group/muuri-grid-group.component';
+import { ChartGroupGdpComponent } from '../chart-groups/chart-group-gdp/chart-group-gdp.component';
+import { ChartGroupImportsComponent } from '../chart-groups/chart-group-imports/chart-group-imports.component';
+import { ChartGroupExportsComponent } from '../chart-groups/chart-group-exports/chart-group-exports.component';
+import { ChartGroupImportPotentialComponent } from '../chart-groups/chart-group-import-potential/chart-group-import-potential.component';
+import { ChartGroupExportPotentialComponent } from '../chart-groups/chart-group-export-potential/chart-group-export-potential.component';
+import { ChartGroupForeignExchangeComponent } from '../chart-groups/chart-group-foreign-exchange/chart-group-foreign-exchange.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -49,10 +54,22 @@ import { LoadingChartComponent } from '../loading-chart/loading-chart.component'
     ChartGroupComponent,
     MaterialDcNumberGroupComponent,
     NumberGroupChartComponent,
-    LoadingChartComponent
+    MuuriGridGroupComponent,
+    ChartGroupGdpComponent,
+    ChartGroupImportsComponent,
+    ChartGroupExportsComponent,
+    ChartGroupImportPotentialComponent,
+    ChartGroupExportPotentialComponent,
+    ChartGroupForeignExchangeComponent
   ],
   exports: [
-    UtccEconChartDisplayComponent
+    UtccEconChartDisplayComponent,
+    ChartGroupGdpComponent,
+    ChartGroupExportPotentialComponent,
+    ChartGroupExportsComponent,
+    ChartGroupForeignExchangeComponent,
+    ChartGroupImportPotentialComponent,
+    ChartGroupImportsComponent
   ],
   providers: [ChartDataService]
 })
