@@ -9,10 +9,10 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import {MatSidenavModule} from '@angular/material/sidenav';
-import {MatSelectModule} from '@angular/material/select';
+import { MatSidenavModule} from '@angular/material/sidenav';
+import { MatSelectModule} from '@angular/material/select';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatListModule } from '@angular/material';
+import { MatListModule, MatDialogModule, MAT_DIALOG_DATA } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { ChartDataService } from '../services/chart-data.service';
@@ -30,6 +30,8 @@ import { ChartGroupExportsComponent } from '../chart-groups/chart-group-exports/
 import { ChartGroupImportPotentialComponent } from '../chart-groups/chart-group-import-potential/chart-group-import-potential.component';
 import { ChartGroupExportPotentialComponent } from '../chart-groups/chart-group-export-potential/chart-group-export-potential.component';
 import { ChartGroupForeignExchangeComponent } from '../chart-groups/chart-group-foreign-exchange/chart-group-foreign-exchange.component';
+import { ChartInfoDialogComponent } from '../chart-info-dialog/chart-info-dialog.component';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -45,7 +47,8 @@ import { ChartGroupForeignExchangeComponent } from '../chart-groups/chart-group-
     LayoutModule,
     MatListModule,
     MatSelectModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatDialogModule
   ],
   declarations: [
     UtccEconChartDisplayComponent,
@@ -60,7 +63,11 @@ import { ChartGroupForeignExchangeComponent } from '../chart-groups/chart-group-
     ChartGroupExportsComponent,
     ChartGroupImportPotentialComponent,
     ChartGroupExportPotentialComponent,
-    ChartGroupForeignExchangeComponent
+    ChartGroupForeignExchangeComponent,
+    ChartInfoDialogComponent
+  ],
+  entryComponents: [
+    ChartInfoDialogComponent
   ],
   exports: [
     UtccEconChartDisplayComponent,
@@ -71,7 +78,7 @@ import { ChartGroupForeignExchangeComponent } from '../chart-groups/chart-group-
     ChartGroupImportPotentialComponent,
     ChartGroupImportsComponent
   ],
-  providers: [ChartDataService]
+  providers: [ChartDataService, { provide: MAT_DIALOG_DATA, useValue: {} }]
 })
 export class UtccEconChartModule { }
 

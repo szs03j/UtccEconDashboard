@@ -13,12 +13,15 @@ import { ChartGroupModel } from '../chart-group/chart-group-model';
 import { MaterialDcNumberGroupModel } from '../material-dc-number-group/material-dc-number-group-model';
 import { NumberGroupChartModel } from '../number-group-chart/number-group-chart-model';
 
+/*
 @Component({
   selector: 'app-utcc-econ-chart-display',
   templateUrl: './utcc-econ-chart-display.component.html',
   styleUrls: ['./utcc-econ-chart-display.component.css']
 })
-export class UtccEconChartDisplayComponent implements OnInit, OnDestroy, AfterViewInit {
+export
+*/
+class UtccEconChartDisplayComponent implements OnInit, OnDestroy, AfterViewInit {
 
   constructor( private _cds: ChartDataService, private _breakpointObserver: BreakpointObserver ) { }
 
@@ -958,7 +961,7 @@ export class UtccEconChartDisplayComponent implements OnInit, OnDestroy, AfterVi
       chart.yAxis().tickFormat(function(v) {return v + '%'; });
       chart.title( function(kv) { return d3.format('+.2%')(kv.value / 100); });
       chart.xAxis().tickFormat(function(e) {
-        if (Math.floor(e) !== e){
+        if (Math.floor(e) !== e) {
             return;
         }
         return e;
