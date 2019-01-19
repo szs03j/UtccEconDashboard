@@ -1,0 +1,25 @@
+{
+"importsByCountry": { "title": "Imports by Country", "subtitle": "", "description": "ข้อมูลการนำเข้าของประเทศใน CLMV (เลือกประเทศ)" },
+"importsByProduct": { "title": "Imports by Product", "subtitle": "", "description": "มูลค่าสินค้านำเข้าสำคัญของประเทศใน CLMV (ที่ท่านเลือก)" },
+"importsByYear":    { "title": "Imports by Year", "subtitle": "", "description": "มูลค่าการนำเข้ารายปีของประเทศใน CLMV (ที่ท่านเลือก)" },
+"importsByPartner": { "title": "Imports by Partner", "subtitle": "", "description": "แหล่งนำเข้าสำคัญของประเทศใน CLMV (ที่ท่านเลือก)" },
+
+"exportsByCountry": { "title": "Exports by Country", "subtitle": "", "description": "ข้อมูลการส่งออกของประเทศใน CLMV (เลือกประเทศ)" },
+"exportsByProduct": { "title": "Exports by Product", "subtitle": "", "description": "มูลค่าสินค้าส่งออกสำคัญของประเทศใน CLMV (ที่ท่านเลือก)" },
+"exportsByYear":    { "title": "Exports by Year", "subtitle": "", "description": "มูลค่าการส่งออกรายปีของประเทศใน CLMV (ที่ท่านเลือก)" },
+"exportsByPartner": { "title": "Exports by Partner", "subtitle": "", "description": "ตลาดส่งออกสำคัญของประเทศใน CLMV (ที่ท่านเลือก)" },
+
+"importPotentialSubgroups": { "title": "Import Potential Subgroups", "subtitle": "", "description": "กลุ่มสินค้านำเข้า () ที่มีศักยภาพ " },
+"importPotentialGroups": { "title": "Import Potential Groups", "subtitle": "", "description": "ศักยภาพการนำเข้าของประเทศที่ท่านเลือก จากประเทศต่างๆใน CLMV ซึ่งสามารถระบุได้ว่าสินค้าในกลุ่มใดมีอัตราการนำเข้าและศักยภาพในการแข่งขันในตลาดของประเทศนั้นๆได้มากน้อยเพียงใด โดยที่ แกนตั้ง แสดงถึงอัตราการเจริญเติบโต (Growth rate) ของสินค้ากลุ่มนั้นๆ แกนนอน แสดงถึง ดัชนีความได้เปรียบโดยเปรียบเทียบที่ปรากฏ (Revealed Comparative Advantage: RCA) ซึ่งใช้วัดความสามารถในการแข่งขันของสินค้าของประเทศนั้นๆที่ท่านเลือก Intro หมายถึง กลุ่มสินค้านำเข้าที่มีอัตราการเติบโตสูงแต่ยังมีศักยภาพการแข่งขันยังต่ำ  Star หมายถึง กลุ่มสินค้านำเข้าที่มีอัตราการเติบโตสูงและมีศักยภาพการแข่งขันสูง Dog หมายถึง กลุ่มสินค้านำเข้าที่มีอัตราการเติบโตต่ำและมีศักยภาพการแข่งขันต่ำ Cow หมายถึง กลุ่มสินค้านำเข้าที่มีอัตราการเติบโตต่ำแต่มีศักยภาพการแข่งขันสูง " },
+"importPotentialBox":    { "title": "Import Potential Box", "subtitle": "", "description": "การเปรียบเทียบศักยภาพการแข่งขันของสินค้านำเข้า(ประเภทที่เลือก) จากประเทศต่างๆใน CLMV  " },
+
+"exportPotentialSubgroups": { "title": "Export Potential Subgroups", "subtitle": "", "description": "กลุ่มสินค้าส่งออก () ที่มีศักยภาพ " },
+"exportPotentialGroups": { "title": "Export Potential Groups", "subtitle": "", "description": "ศักยภาพการส่งออกของประเทศที่ท่านเลือก ไปยังประเทศต่างๆในCLMV ซึ่งสามารถระบุได้ว่าสินค้าในกลุ่มใดมีอัตราการส่งออกและศักยภาพในการแข่งขันในตลาดของประเทศนั้นๆได้มากน้อยเพียงใด โดยที่ แกนตั้ง แสดงถึงอัตราการเจริญเติบโต (Growth rate) ของสินค้ากลุ่มนั้นๆ แกนนอน แสดงถึง ดัชนีความได้เปรียบโดยเปรียบเทียบที่ปรากฏ (Revealed Comparative Advantage: RCA) ซึ่งใช้วัดความสามารถในการแข่งขันของสินค้าของประเทศนั้นๆที่ท่านเลือก Intro หมายถึง กลุ่มสินค้าส่งออกที่มีอัตราการเติบโตสูงแต่ยังมีศักยภาพการแข่งขันยังต่ำ  Star หมายถึง กลุ่มสินค้าส่งออกที่มีอัตราการเติบโตสูงและมีศักยภาพการแข่งขันสูง Dog หมายถึง กลุ่มสินค้าส่งออกที่มีอัตราการเติบโตต่ำและมีศักยภาพการแข่งขันต่ำ Cow หมายถึง กลุ่มสินค้าส่งออกที่มีอัตราการเติบโตต่ำแต่มีศักยภาพการแข่งขันสูง " },
+"exportPotentialBox":    { "title": "Export Potential Box", "subtitle": "", "description": "การเปรียบเทียบศักยภาพการแข่งขันของสินค้าส่งออก (ประเภทที่เลือก) ของประเทศที่ท่านเลือก ไปยังประเทศต่างๆใน CLMV" },
+
+"gdpByCountry": { "title": "GDP by Country", "subtitle": "", "description": "this is the chart description" },
+"gdpByYear": { "title": "GDP by Year", "subtitle": "", "description": "this is the chart description" },
+"gdpHistory":    { "title": "GDP History", "subtitle": "", "description": "this is the chart description" },
+
+"exchangeRate":    { "title": "Exchange Rate", "subtitle": "", "description": "การเปรียบเทียบการเปลี่ยนแปลงค่าเงินของประเทศต่างๆใน CLMV กับค่าเงินดอลล่าร์สหรัฐ ว่าแข็งค่าขึ้นหรืออ่อนค่าลงมากน้อยเพียงใด โดยมีค่าดัชนีหรือค่ากลางที่ 100  ถ้าค่าเงินมีค่าน้อยกว่า 100 เช่น 90.54 หมายถึง ค่าเงินของประเทศนั้นแข็งค่าขึ้นเมื่อเทียบกับเงินดอลล่าร์สหรัฐร้อยละ 9.46  เป็นต้น ถ้าค่าเงินมีค่ามากกว่า 100 เช่น 102.00 หมายถึง ค่าเงินของประเทศนั้นอ่อนค่าลงเมื่อเทียบกับเงินดอลล่าร์สหรัฐร้อยละ 2 เป็นต้น " }
+}

@@ -10,6 +10,8 @@ import { NumberChartGroupOptionDefaults, BarChartOptionDefaults, PieChartOptionD
   pieLabelsAsPctProportion, pieLegendSpacer, MapChartOptionDefaults,
   angleYearLabels, removeEveryOtherXAxisLabel, SeriesChartOptionDefaults } from '../../dc-chart/chart-option-defaults';
 import { MuuriGridGroupComponent } from '../muuri-grid-group/muuri-grid-group.component';
+import { ChartInfoDialogData } from '../../chart-info-dialog/chart-info-dialog-data';
+
 
 import { zip } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
@@ -29,6 +31,7 @@ export class ChartGroupForeignExchangeComponent extends MuuriGridGroupComponent 
   public chartExchangeUsd: MaterialDcNumberGroupModel;
   public chartExchangeThb: MaterialDcNumberGroupModel;
   public chartExchangeRate: MaterialDcChartModel;
+  public chartModels = new Array<MaterialDcChartModel>();
 
   ngOnInit() {
     this._loadChartExchangeUsd();
@@ -111,7 +114,7 @@ export class ChartGroupForeignExchangeComponent extends MuuriGridGroupComponent 
   private _loadChartExchangeRate() {
 
     // Set Title and Subtitle
-    this.chartExchangeRate    = new MaterialDcChartModel('fx');
+    this.chartExchangeRate    = new MaterialDcChartModel('exchangeRate');
     this.chartExchangeRate.title    = 'Exchange Rate';
     this.chartExchangeRate.subtitle = '';
     this.chartExchangeRate.chartGroup = 'exchangeRate';
@@ -161,6 +164,13 @@ export class ChartGroupForeignExchangeComponent extends MuuriGridGroupComponent 
     this.chartExchangeRate.chartLoadedChange()
       .pipe( takeUntil(this._onDestroy$) )
       .subscribe( (cl: boolean) => { if (cl) { this._refreshGridLayout(); } });
+
+    // Set Dialog Data
+    this._cds.info.getInfo(this.chartExchangeRate.name).pipe(takeUntil(this._onDestroy$)).subscribe(
+      (data: ChartInfoDialogData) => {  if (data) { this.chartExchangeRate.dialogData = data;  } });
+
+    // Add to array for easier display in view
+    this.chartModels.push(this.chartExchangeRate);
 
   }
 

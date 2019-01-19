@@ -48,7 +48,7 @@ export class MaterialDcChartComponent extends DcChartComponent {
 
   openDialog(): void {
     const dialogRef = this.dialog.open(ChartInfoDialogComponent, {
-      width: '300px',
+      width: '400px',
       data: this.dialogData
     });
   }

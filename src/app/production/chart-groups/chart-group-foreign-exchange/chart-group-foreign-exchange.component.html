@@ -17,21 +17,22 @@
       </app-mat-dc-number-group>
     </div>
   </div>
-  <div *ngIf="chartExchangeRate" class="item">
-    <div class="item-content"  >
-      <app-mat-dc-chart
-        [title]="chartExchangeRate.title"
-        [subtitle]="chartExchangeRate.subtitle"
-        [dimension]="chartExchangeRate.dimension"
-        [group]="chartExchangeRate.group"
-        [chartGroup]="chartExchangeRate.chartGroup"
-        [selectedOption]="chartExchangeRate.selectedOption"
-        (selectedOptionChange)="chartExchangeRate.selectedOption = $event"
-        (chartLoadedChange)="chartExchangeRate.chartLoaded = $event"
-        (chartChange)="chartExchangeRate.chart = $event"
-        [chartOptions]="chartExchangeRate.chartOptions"
-        [filterItems]="chartExchangeRate.filterItems">
-      </app-mat-dc-chart>
-    </div>
+  <div *ngFor="let model of chartModels" class="item">
+      <div class="item-content"  >
+        <app-mat-dc-chart
+          [title]="model.title"
+          [subtitle]="model.subtitle"
+          [dimension]="model.dimension"
+          [group]="model.group"
+          [chartGroup]="model.chartGroup"
+          [selectedOption]="model.selectedOption"
+          (selectedOptionChange)="model.selectedOption = $event"
+          (chartLoadedChange)="model.chartLoaded = $event"
+          (chartChange)="model.chart = $event"
+          [chartOptions]="model.chartOptions"
+          [filterItems]="model.filterItems"
+          [dialogData]="model.dialogData">
+        </app-mat-dc-chart>
+      </div>
   </div>
 </div>
