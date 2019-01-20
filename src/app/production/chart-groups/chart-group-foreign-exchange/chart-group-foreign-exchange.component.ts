@@ -115,7 +115,7 @@ export class ChartGroupForeignExchangeComponent extends MuuriGridGroupComponent 
 
     // Set Title and Subtitle
     this.chartExchangeRate    = new MaterialDcChartModel('exchangeRate');
-    this.chartExchangeRate.title    = 'Exchange Rate';
+    this.chartExchangeRate.title    = 'Currency Comparison';
     this.chartExchangeRate.subtitle = '';
     this.chartExchangeRate.chartGroup = 'exchangeRate';
 
