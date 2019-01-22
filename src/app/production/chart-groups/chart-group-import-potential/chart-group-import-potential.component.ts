@@ -9,6 +9,8 @@ import { BarChartOptionDefaults, PieChartOptionDefaults, XAxisType,
   angleYearLabels, removeEveryOtherXAxisLabel, potentialBoxMarkup,
   SeriesChartOptionDefaults, ScatterChartOptionDefaults, potentialMarkup, potentialCalcDomain } from '../../dc-chart/chart-option-defaults';
 import { MuuriGridGroupComponent } from '../muuri-grid-group/muuri-grid-group.component';
+import { ChartInfoDialogData } from '../../chart-info-dialog/chart-info-dialog-data';
+
 
 import { zip} from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
@@ -27,17 +29,19 @@ export class ChartGroupImportPotentialComponent extends MuuriGridGroupComponent 
   public chartPotentialGroups: MaterialDcChartModel;
   public chartPotentialSubgroups: MaterialDcChartModel;
   public chartPotentialBox: MaterialDcChartModel;
+  public chartModels = new Array<MaterialDcChartModel>();
 
   ngOnInit() {
-    this._loadChartPotentialBox();
+
     this._loadChartPotentialGroups();
     this._loadChartPotentialSubgroups();
+    this._loadChartPotentialBox();
   }
 
   private _loadChartPotentialGroups() {
 
     // Set Title and Subtitle
-    this.chartPotentialGroups          = new MaterialDcChartModel('ImportPotential');
+    this.chartPotentialGroups          = new MaterialDcChartModel('importPotentialGroups');
     this.chartPotentialGroups.title    = 'Import Potential Groups';
     this.chartPotentialGroups.subtitle = '';
     this.chartPotentialGroups.chartGroup = 'importGroups';
@@ -72,7 +76,7 @@ export class ChartGroupImportPotentialComponent extends MuuriGridGroupComponent 
       .pipe(takeUntil(this._onDestroy$))
       .subscribe(([group, dim]) => {
         if ( group && dim) {
-          const fi = new FilterModel('from Country', group, dim);
+          const fi = new FilterModel('to Country', group, dim);
           fi.selectDefault = 'Thailand';
           fi.selectMultipleEnabled = false;
           fi.selectAllEnabled = false;
@@ -86,7 +90,7 @@ export class ChartGroupImportPotentialComponent extends MuuriGridGroupComponent 
       .pipe(takeUntil(this._onDestroy$))
       .subscribe(([group, dim]) => {
         if ( group && dim) {
-          this.chartPotentialGroups.filterItems.push( new FilterModel('to Partner', group, dim) );
+          this.chartPotentialGroups.filterItems.push( new FilterModel('from Partner', group, dim) );
           this.chartPotentialGroups.filterItems = this.chartPotentialGroups.filterItems.slice(0);
         }
     });
@@ -98,12 +102,19 @@ export class ChartGroupImportPotentialComponent extends MuuriGridGroupComponent 
     this.chartPotentialGroups.chartLoadedChange()
       .pipe( takeUntil(this._onDestroy$) )
       .subscribe( (cl: boolean) => { if (cl) { this._refreshGridLayout(); } });
+
+    // Set Dialog Data
+    this._cds.info.getInfo(this.chartPotentialGroups.name).pipe(takeUntil(this._onDestroy$)).subscribe(
+      (data: ChartInfoDialogData) => {  if (data) { this.chartPotentialGroups.dialogData = data;  } });
+
+    // Add to array for easier display in view
+    this.chartModels.push(this.chartPotentialGroups);
   }
 
   private _loadChartPotentialSubgroups() {
 
     // Set Title and Subtitle
-    this.chartPotentialSubgroups          = new MaterialDcChartModel('ImportPotentialSubgroups');
+    this.chartPotentialSubgroups          = new MaterialDcChartModel('importPotentialSubgroups');
     this.chartPotentialSubgroups .title    = 'Import Potential Subgrps';
     this.chartPotentialSubgroups .subtitle = '';
     this.chartPotentialSubgroups.chartGroup = 'importSubgroups';
@@ -139,7 +150,7 @@ export class ChartGroupImportPotentialComponent extends MuuriGridGroupComponent 
       .pipe(takeUntil(this._onDestroy$))
       .subscribe(([group, dim]) => {
         if ( group && dim) {
-          const fi = new FilterModel('from Country', group, dim);
+          const fi = new FilterModel('to Country', group, dim);
           fi.selectDefault = 'Thailand';
           fi.selectMultipleEnabled = false;
           fi.selectAllEnabled = false;
@@ -153,7 +164,7 @@ export class ChartGroupImportPotentialComponent extends MuuriGridGroupComponent 
       .pipe(takeUntil(this._onDestroy$))
       .subscribe(([group, dim]) => {
         if ( group && dim) {
-          this.chartPotentialSubgroups.filterItems.push( new FilterModel('to Partner', group, dim) );
+          this.chartPotentialSubgroups.filterItems.push( new FilterModel('from Partner', group, dim) );
           this.chartPotentialSubgroups.filterItems = this.chartPotentialSubgroups.filterItems.slice(0);
         }
     });
@@ -180,12 +191,19 @@ export class ChartGroupImportPotentialComponent extends MuuriGridGroupComponent 
     this.chartPotentialSubgroups.chartLoadedChange()
       .pipe( takeUntil(this._onDestroy$) )
       .subscribe( (cl: boolean) => { if (cl) { this._refreshGridLayout(); } });
+
+    // Set Dialog Data
+    this._cds.info.getInfo(this.chartPotentialSubgroups.name).pipe(takeUntil(this._onDestroy$)).subscribe(
+      (data: ChartInfoDialogData) => {  if (data) { this.chartPotentialSubgroups.dialogData = data;  } });
+
+    // Add to array for easier display in view
+    this.chartModels.push(this.chartPotentialSubgroups);
   }
 
   private _loadChartPotentialBox() {
 
     // Set Title and Subtitle
-    this.chartPotentialBox  = new MaterialDcChartModel('ImportPotentialBox');
+    this.chartPotentialBox  = new MaterialDcChartModel('importPotentialBox');
     this.chartPotentialBox.title  = 'Import Potential Box';
     this.chartPotentialBox.subtitle = '';
     this.chartPotentialBox.chartGroup = 'importBox';
@@ -209,10 +227,8 @@ export class ChartGroupImportPotentialComponent extends MuuriGridGroupComponent 
     plotOptions['keyAccessor']    = function(kv) { return +kv.value['x']; };
     plotOptions['valueAccessor']  = function(kv) {  return +kv.value['y']; };
     plotOptions['colorAccessor']  = function(kv) {  return kv.value['Partner']; };
-    plotOptions['title'] = function(kv) {  return [ kv.value['Description'],
-        kv.value['Partner'],
-        'RCA: ' + d3.format('.2f')(kv.value['RCA']),
-        'Growth: ' + d3.format('.2f')(kv.value['Growth']) + '%'].join('\n'); };
+    plotOptions['title'] = function(kv) {  return [ kv.value['Commodity'],
+        kv.value['Partner']].join('\n'); };
     plotOptions['margins'] = {'top': 25, 'right': 5, 'bottom': 5, 'left': 5};
 
     this.chartPotentialBox.chartOptions['potential'] = new DcChartOptions('plot', DcChartType.Series, plotOptions);
@@ -222,7 +238,7 @@ export class ChartGroupImportPotentialComponent extends MuuriGridGroupComponent 
       .pipe(takeUntil(this._onDestroy$))
       .subscribe(([group, dim]) => {
         if ( group && dim) {
-          const fi = new FilterModel('from Country', group, dim);
+          const fi = new FilterModel('to Country', group, dim);
           fi.selectDefault = 'Thailand';
           fi.selectMultipleEnabled = false;
           fi.selectAllEnabled = false;
@@ -255,6 +271,13 @@ export class ChartGroupImportPotentialComponent extends MuuriGridGroupComponent 
     this.chartPotentialBox.chartLoadedChange()
       .pipe( takeUntil(this._onDestroy$) )
       .subscribe( (cl: boolean) => { if (cl) { this._refreshGridLayout(); } });
+
+    // Set Dialog Data
+    this._cds.info.getInfo(this.chartPotentialBox.name).pipe(takeUntil(this._onDestroy$)).subscribe(
+      (data: ChartInfoDialogData) => {  if (data) { this.chartPotentialBox.dialogData = data;  } });
+
+    // Add to array for easier display in view
+    this.chartModels.push(this.chartPotentialBox);
   }
 
 }

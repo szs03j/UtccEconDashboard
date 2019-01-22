@@ -1,6 +1,16 @@
-<h2 mat-dialog-title>Imports by Country Chart</h2>
-<mat-dialog-content>Nunc rhoncus ipsum eu condimentum feugiat. Ut vitae tristique ligula. Nam laoreet dictum pretium. Phasellus egestas nulla a quam laoreet, eu pretium urna facilisis. Fusce sit amet fermentum lacus. Vivamus commodo porta urna posuere consectetur. Pellentesque vitae arcu tellus. </mat-dialog-content>
+<mat-toolbar color="primary"><h2 mat-dialog-title> {{data?.title}} </h2> </mat-toolbar>
+<mat-dialog-content>
+  <div *ngIf="data; else loading">
+    <p *ngFor="let p of data.description"> {{p}} </p>
+  </div>
+  <ng-template #loading>
+      <mat-progress-spinner
+        class="loadingSpinner"
+        color="primary"
+        mode="indeterminate" >
+      </mat-progress-spinner>
+  </ng-template>
+</mat-dialog-content>
 <mat-dialog-actions>
   <button mat-button mat-dialog-close>Close</button>
 </mat-dialog-actions>
-

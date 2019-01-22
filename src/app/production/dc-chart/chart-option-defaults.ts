@@ -38,6 +38,7 @@ export class ChartOptionDefaults {
   public elasticY = true;
   public brushOn  = false;
   public clipPadding = 10;
+
 }
 
 export class BarChartOptionDefaults extends ChartOptionDefaults {
@@ -47,8 +48,11 @@ export class BarChartOptionDefaults extends ChartOptionDefaults {
   public centerBar  = false;
   public colors     = d3.scaleOrdinal().domain(['positive', 'negative']).range(['#377eb8' , '#e6550d']);
   public renderHorizontalGridLines = true;
-  public margins    = {'top': 5, 'right': 0, 'bottom': 30, 'left': 30};
+  public margins    = {'top': 5, 'right': 0, 'bottom': 30, 'left': 40};
+  public title  = titleUsd;
+  public yAxisLabel = 'Billion USD';
   public colorAccessor = (d) =>  (d.value >= 0) ? 'positive' : 'negative';
+
 }
 
 export class PieChartOptionDefaults extends ChartOptionDefaults {
@@ -57,6 +61,8 @@ export class PieChartOptionDefaults extends ChartOptionDefaults {
   }
   public slicesCap  = 8;
   public margins    = {'top': 0, 'right': 0, 'bottom': 0, 'left': 0};
+  public title = titleUsd;
+
 }
 
 export class RowChartOptionDefaults extends ChartOptionDefaults {
@@ -65,7 +71,9 @@ export class RowChartOptionDefaults extends ChartOptionDefaults {
   }
   public renderVerticalGridLines = true;
   public cap      = 8;
-  public margins  = {'top': 0, 'right': 0, 'bottom': 0, 'left': 0};
+  public margins  = {'top': 0, 'right': 0, 'bottom': 20, 'left': 10};
+  public title = titleUsd;
+  public othersLabel = 'Others';
 }
 
 export class MapChartOptionDefaults extends ChartOptionDefaults {
@@ -75,6 +83,7 @@ export class MapChartOptionDefaults extends ChartOptionDefaults {
   public colors = d3.scaleQuantize().range(
     ['#E2F2FF', '#C4E4FF', '#9ED2FF', '#81C5FF', '#6BBAFF', '#51AEFF', '#36A2FF', '#1E96FF', '#0089FF', '#0061B5'] );
   public colorDomain    = [0, 1500];
+  public title = titleUsd;
   public colorAccessor  = function(d) {  return d ? +d : 0; };
 }
 
@@ -260,6 +269,11 @@ export function potentialCalcDomain (chart) {
 export function removeEveryOtherXAxisLabel (chart) {
   chart.select('g.axis.x').selectAll('text')
     .text(function(d, i) { if ( (i % 2) === 0) { return d; } return ''; });
+}
+
+// used as the title function in charts that display usd
+export function titleUsd ( kv ) {
+  return kv.key + '\n' + d3.format('.2f')(kv.value) + ' billion USD';
 }
 
 

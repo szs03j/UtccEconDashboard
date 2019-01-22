@@ -88,7 +88,7 @@ export class DcChartComponent implements AfterViewInit, OnChanges {
   /* private setters */
   private _setChart( c: BaseMixin<any> ) {
     if (this._gettersetter_chart) {
-      dc.deregisterChart(this._gettersetter_chart);
+      dc.deregisterChart(this._gettersetter_chart, this.chartGroup);
       delete this._gettersetter_chart;
     }
     this._gettersetter_chart = c;

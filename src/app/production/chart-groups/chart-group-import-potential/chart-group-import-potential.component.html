@@ -1,53 +1,20 @@
 <div class="grid" #grid fxLayout.lt-sm="column"  >
-  <div class="item">
-    <div class="item-content"  >
-      <app-mat-dc-chart
-        [title]="chartPotentialGroups.title"
-        [subtitle]="chartPotentialGroups.subtitle"
-        [dimension]="chartPotentialGroups.dimension"
-        [group]="chartPotentialGroups.group"
-        [chartGroup]="chartPotentialGroups.chartGroup"
-        [selectedOption]="chartPotentialGroups.selectedOption"
-        (selectedOptionChange)="chartPotentialGroups.selectedOption = $event"
-        (chartLoadedChange)="chartPotentialGroups.chartLoaded = $event"
-        (chartChange)="chartPotentialGroups.chart = $event"
-        [chartOptions]="chartPotentialGroups.chartOptions"
-        [filterItems]="chartPotentialGroups.filterItems">
-      </app-mat-dc-chart>
-    </div>
-  </div>
-  <div *ngIf="chartPotentialSubgroups" class="item">
-    <div class="item-content"  >
-      <app-mat-dc-chart
-        [title]="chartPotentialSubgroups.title"
-        [subtitle]="chartPotentialSubgroups.subtitle"
-        [dimension]="chartPotentialSubgroups.dimension"
-        [group]="chartPotentialSubgroups.group"
-        [chartGroup]="chartPotentialSubgroups.chartGroup"
-        [selectedOption]="chartPotentialSubgroups.selectedOption"
-        (selectedOptionChange)="chartPotentialSubgroups.selectedOption = $event"
-        (chartLoadedChange)="chartPotentialSubgroups.chartLoaded = $event"
-        (chartChange)="chartPotentialSubgroups.chart = $event"
-        [chartOptions]="chartPotentialSubgroups.chartOptions"
-        [filterItems]="chartPotentialSubgroups.filterItems">
-      </app-mat-dc-chart>
-    </div>
-  </div>
-  <div *ngIf="chartPotentialBox" class="item">
-    <div class="item-content"  >
-      <app-mat-dc-chart
-        [title]="chartPotentialBox.title"
-        [subtitle]="chartPotentialBox.subtitle"
-        [dimension]="chartPotentialBox.dimension"
-        [group]="chartPotentialBox.group"
-        [chartGroup]="chartPotentialBox.chartGroup"
-        [selectedOption]="chartPotentialBox.selectedOption"
-        (selectedOptionChange)="chartPotentialBox.selectedOption = $event"
-        (chartLoadedChange)="chartPotentialBox.chartLoaded = $event"
-        (chartChange)="chartPotentialBox.chart = $event"
-        [chartOptions]="chartPotentialBox.chartOptions"
-        [filterItems]="chartPotentialBox.filterItems">
-      </app-mat-dc-chart>
-    </div>
+  <div *ngFor="let model of chartModels" class="item">
+      <div class="item-content"  >
+        <app-mat-dc-chart
+          [title]="model.title"
+          [subtitle]="model.subtitle"
+          [dimension]="model.dimension"
+          [group]="model.group"
+          [chartGroup]="model.chartGroup"
+          [selectedOption]="model.selectedOption"
+          (selectedOptionChange)="model.selectedOption = $event"
+          (chartLoadedChange)="model.chartLoaded = $event"
+          (chartChange)="model.chart = $event"
+          [chartOptions]="model.chartOptions"
+          [filterItems]="model.filterItems"
+          [dialogData]="model.dialogData">
+        </app-mat-dc-chart>
+      </div>
   </div>
 </div>

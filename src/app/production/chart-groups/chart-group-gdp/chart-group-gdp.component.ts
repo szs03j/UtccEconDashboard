@@ -7,6 +7,8 @@ import { BarChartOptionDefaults, PieChartOptionDefaults, XAxisType,
   pieLabelsAsPctProportion, pieLegendSpacer, MapChartOptionDefaults,
   angleYearLabels, removeEveryOtherXAxisLabel, SeriesChartOptionDefaults } from '../../dc-chart/chart-option-defaults';
 import { MuuriGridGroupComponent } from '../muuri-grid-group/muuri-grid-group.component';
+import { ChartInfoDialogData } from '../../chart-info-dialog/chart-info-dialog-data';
+
 
 import { takeUntil } from 'rxjs/operators';
 import * as d3 from 'd3';
@@ -25,6 +27,7 @@ export class ChartGroupGdpComponent extends MuuriGridGroupComponent implements O
   public chartGdpByCountry: MaterialDcChartModel;
   public chartGdpByYear: MaterialDcChartModel;
   public chartGdpByCountryYear: MaterialDcChartModel;
+  public chartModels = new Array<MaterialDcChartModel>();
 
   private _sharedChartGroup = 'gdp';
 
@@ -83,6 +86,13 @@ export class ChartGroupGdpComponent extends MuuriGridGroupComponent implements O
     this.chartGdpByCountry.chartLoadedChange()
       .pipe( takeUntil(this._onDestroy$) )
       .subscribe( (cl: boolean) => { if (cl) { this._refreshGridLayout(); } });
+
+    // Set Dialog Data
+    this._cds.info.getInfo(this.chartGdpByCountry.name).pipe(takeUntil(this._onDestroy$)).subscribe(
+      (data: ChartInfoDialogData) => {  if (data) { this.chartGdpByCountry.dialogData = data;  } });
+
+    // Add to array for easier display in view
+    this.chartModels.push(this.chartGdpByCountry);
   }
 
   private _loadChartGdpByYear() {
@@ -130,12 +140,19 @@ export class ChartGroupGdpComponent extends MuuriGridGroupComponent implements O
       .pipe( takeUntil(this._onDestroy$) )
       .subscribe( (cl: boolean) => { if (cl) { this._refreshGridLayout(); } });
 
+    // Set Dialog Data
+    this._cds.info.getInfo(this.chartGdpByYear.name).pipe(takeUntil(this._onDestroy$)).subscribe(
+      (data: ChartInfoDialogData) => {  if (data) { this.chartGdpByYear.dialogData = data;  } });
+
+    // Add to array for easier display in view
+    this.chartModels.push(this.chartGdpByYear);
+
   }
 
   private _loadChartGdpByCountryYear() {
 
     // Set Title and Subtitle
-    this.chartGdpByCountryYear     = new MaterialDcChartModel('gdpByCountryYear');
+    this.chartGdpByCountryYear     = new MaterialDcChartModel('gdpHistory');
     this.chartGdpByCountryYear.title     = 'GDP';
     this.chartGdpByCountryYear.subtitle  = '';
     this.chartGdpByCountryYear.chartGroup = this._sharedChartGroup;
@@ -185,6 +202,12 @@ export class ChartGroupGdpComponent extends MuuriGridGroupComponent implements O
       .pipe( takeUntil(this._onDestroy$) )
       .subscribe( (cl: boolean) => { if (cl) { this._refreshGridLayout(); } });
 
+    // Set Dialog Data
+    this._cds.info.getInfo(this.chartGdpByCountryYear.name).pipe(takeUntil(this._onDestroy$)).subscribe(
+      (data: ChartInfoDialogData) => {  if (data) { this.chartGdpByCountryYear.dialogData = data;  } });
+
+    // Add to array for easier display in view
+    this.chartModels.push(this.chartGdpByCountryYear);
   }
 
 }
