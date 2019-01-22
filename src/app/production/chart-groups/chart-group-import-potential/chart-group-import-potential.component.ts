@@ -182,6 +182,7 @@ export class ChartGroupImportPotentialComponent extends MuuriGridGroupComponent 
         this.chartPotentialSubgroups.filterItems = this.chartPotentialSubgroups.filterItems.slice(0);
       }
     }
+
   );
 
     // Set Default Option when chart is displayed (this is the chartOptions key)

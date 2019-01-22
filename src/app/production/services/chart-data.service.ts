@@ -426,6 +426,7 @@ export class ChartDataService {
       const countryGrp  = countryDim.group();
       const descGrp     = descDim.group();
 
+
       const partnerHS2Grp = filter_bins(partnerHS2Dim.group().reduce(
         function(p, v) {
           p['Growth'] += +v['Growth4Graph'];
