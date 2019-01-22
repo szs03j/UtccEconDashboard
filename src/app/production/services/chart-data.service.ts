@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import * as d3 from 'd3';
 import * as cf from 'crossfilter2';
 import { DimGrpBroadcaster } from './dim-grp-broadcaster';
@@ -8,6 +8,8 @@ import { strictEqual } from 'assert';
 import { stringify } from '@angular/compiler/src/util';
 import { DataSourceURL } from './datasourceURL';
 import { DataSource } from '@angular/cdk/table';
+import { ChartInfoBroadcaster } from './chart-info-broadcaster';
+
 
 @Injectable({
   providedIn: 'root'
@@ -16,6 +18,8 @@ import { DataSource } from '@angular/cdk/table';
 export class ChartDataService {
 
   constructor() { }
+
+  public info = new ChartInfoBroadcaster(DataSourceURL.descriptions);
 
   /*
   valid dims:
@@ -307,7 +311,7 @@ export class ChartDataService {
 
   public seaJson = new GeoJsonBroadcaster(
     (geoJson) => {
-      d3.json('../assets/data/geosea.json').then(gj => {
+      d3.json(DataSourceURL.geosea).then(gj => {
         geoJson.next(gj as d3.ExtendedGeometryCollection<d3.GeoGeometryObjects>);
       });
     }

@@ -1,5 +1,5 @@
 export class ChartInfoDialogData {
-  constructor(t: string, s: string, d: string) {
+  constructor(t: string, s: string, d: Array<string>) {
     this.title = t;
     this.subtitle = s;
     this.description = d;
@@ -7,5 +7,5 @@ export class ChartInfoDialogData {
 
   title: string;
   subtitle: string;
-  description: string;
+  description: Array<string>;
 }

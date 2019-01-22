@@ -11,6 +11,7 @@ import { MuuriGridGroupComponent } from '../muuri-grid-group/muuri-grid-group.co
 import { takeUntil } from 'rxjs/operators';
 import * as d3 from 'd3';
 import * as dc from 'dc';
+import { ChartInfoDialogData } from '../../chart-info-dialog/chart-info-dialog-data';
 
 @Component({
   selector: 'app-chart-group-imports',
@@ -27,12 +28,14 @@ export class ChartGroupImportsComponent extends MuuriGridGroupComponent implemen
   public chartByProduct: MaterialDcChartModel;
   public chartByPartner: MaterialDcChartModel;
 
+  public chartModels = new Array<MaterialDcChartModel>();
+
   private _sharedChartGroup = 'imports';
 
   ngOnInit() {
     this._loadChartByCountry();
-    this._loadChartByYear();
     this._loadChartByProduct();
+    this._loadChartByYear();
     this._loadChartByPartner();
   }
 
@@ -72,6 +75,10 @@ export class ChartGroupImportsComponent extends MuuriGridGroupComponent implemen
       }
     );
 
+    // Set Dialog Data
+    this._cds.info.getInfo(this.chartByCountry.name).pipe(takeUntil(this._onDestroy$)).subscribe(
+      (data: ChartInfoDialogData) => { if (data) { this.chartByCountry.dialogData = data;  } });
+
     // Set Default Option when chart is displayed (this is the chartOptions key)
     this.chartByCountry.selectedOption = 'map';
 
@@ -79,6 +86,9 @@ export class ChartGroupImportsComponent extends MuuriGridGroupComponent implemen
     this.chartByCountry.chartLoadedChange()
       .pipe( takeUntil(this._onDestroy$) )
       .subscribe( (cl: boolean) => { if (cl) { this._refreshGridLayout(); } });
+
+
+    this.chartModels.push(this.chartByCountry);
   }
 
   private _loadChartByYear() {
@@ -112,6 +122,7 @@ export class ChartGroupImportsComponent extends MuuriGridGroupComponent implemen
         opt['group'] = group;
         this.chartByYear.chartOptions['barPctChg'] = new DcChartOptions('% chg', DcChartType.Bar, opt);
         opt['on'] = [['preRender', function(chart) {
+          chart.yAxisLabel('Percent Change');
           chart.yAxis().tickFormat(function(v) {return v + '%'; });
           chart.title( function(kv) { return d3.format('+.2%')(kv.value / 100); });
         }], ['renderlet', angleYearLabels]];
@@ -127,12 +138,18 @@ export class ChartGroupImportsComponent extends MuuriGridGroupComponent implemen
     this.chartByYear.chartLoadedChange()
       .pipe( takeUntil(this._onDestroy$) )
       .subscribe( (cl: boolean) => { if (cl) { this._refreshGridLayout(); } });
+
+    // Set Dialog Data
+    this._cds.info.getInfo(this.chartByYear.name).pipe(takeUntil(this._onDestroy$)).subscribe(
+      (data: ChartInfoDialogData) => {  if (data) { this.chartByYear.dialogData = data;  } });
+
+    this.chartModels.push(this.chartByYear);
   }
 
   private _loadChartByProduct() {
 
     // Set Title and Subtitle
-    this.chartByProduct     = new MaterialDcChartModel('importsByDesc');
+    this.chartByProduct     = new MaterialDcChartModel('importsByProduct');
     this.chartByProduct.title     = 'Imports';
     this.chartByProduct.subtitle  = 'by Product';
     this.chartByProduct.chartGroup = this._sharedChartGroup;
@@ -159,6 +176,11 @@ export class ChartGroupImportsComponent extends MuuriGridGroupComponent implemen
       .pipe( takeUntil(this._onDestroy$) )
       .subscribe( (cl: boolean) => { if (cl) { this._refreshGridLayout(); } });
 
+    // Set Dialog Data
+    this._cds.info.getInfo(this.chartByProduct.name).pipe(takeUntil(this._onDestroy$)).subscribe(
+      (data: ChartInfoDialogData) => {  if (data) { this.chartByProduct.dialogData = data;  } });
+
+    this.chartModels.push(this.chartByProduct);
   }
 
   private _loadChartByPartner() {
@@ -190,5 +212,11 @@ export class ChartGroupImportsComponent extends MuuriGridGroupComponent implemen
     this.chartByPartner.chartLoadedChange()
       .pipe( takeUntil(this._onDestroy$) )
       .subscribe( (cl: boolean) => { if (cl) { this._refreshGridLayout(); } });
+
+    // Set Dialog Data
+    this._cds.info.getInfo(this.chartByPartner.name).pipe(takeUntil(this._onDestroy$)).subscribe(
+      (data: ChartInfoDialogData) => {  if (data) { this.chartByPartner.dialogData = data;  } });
+
+    this.chartModels.push(this.chartByPartner);
   }
 }

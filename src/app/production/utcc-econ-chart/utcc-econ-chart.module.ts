@@ -7,6 +7,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatExpansionModule } from '@angular/material/expansion';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule} from '@angular/material/sidenav';
@@ -48,7 +49,8 @@ import { ChartInfoDialogComponent } from '../chart-info-dialog/chart-info-dialog
     MatListModule,
     MatSelectModule,
     FlexLayoutModule,
-    MatDialogModule
+    MatDialogModule,
+    MatExpansionModule
   ],
   declarations: [
     UtccEconChartDisplayComponent,
