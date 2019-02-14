@@ -1,0 +1,21 @@
+/* muuri styles */
+
+/* Sidenav styles */
+.sidenav-container {
+    height: 100%;
+  }
+  
+  .sidenav {
+    width: 200px;
+  }
+  
+  .mat-drawer-container {
+    overflow: visible;
+  }
+  
+  .mat-drawer-content {
+    overflow: visible;
+  }
+  
+  
+  

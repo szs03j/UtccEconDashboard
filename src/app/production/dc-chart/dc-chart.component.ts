@@ -7,7 +7,8 @@ import { Component,
   ViewChild,
   ElementRef,
   EventEmitter,
-  Output} from '@angular/core';
+  Output,
+  ChangeDetectorRef} from '@angular/core';
 import * as dc from 'dc';
 import { BaseMixin } from 'dc';
 import { DcChartOptions } from './dc-chart-options';
@@ -21,7 +22,7 @@ import { Dict } from '../dict';
   encapsulation: ViewEncapsulation.None
 })
 export class DcChartComponent implements AfterViewInit, OnChanges {
-  constructor() { }
+  constructor(private _cd: ChangeDetectorRef) { }
 
   @ViewChild('chartRoot') private chartElemRef: ElementRef;
 
@@ -100,7 +101,7 @@ export class DcChartComponent implements AfterViewInit, OnChanges {
   ngAfterViewInit() {
     this._viewInit = true;
     this._loadChart();
-
+    this._cd.detectChanges();
   }
 
   ngOnChanges(changes: SimpleChanges) {
