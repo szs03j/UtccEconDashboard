@@ -6,9 +6,7 @@ import { NumberGroupChartModel } from '../../number-group-chart/number-group-cha
 import { FilterModel } from '../../material-dc-chart/filter-model';
 import { DcChartOptions } from '../../dc-chart/dc-chart-options';
 import { DcChartType } from '../../dc-chart/dc-chart-type.enum';
-import { NumberChartGroupOptionDefaults, BarChartOptionDefaults, PieChartOptionDefaults, XAxisType,
-  pieLabelsAsPctProportion, pieLegendSpacer, MapChartOptionDefaults,
-  angleYearLabels, removeEveryOtherXAxisLabel, SeriesChartOptionDefaults } from '../../dc-chart/chart-option-defaults';
+import { NumberChartGroupOptionDefaults, XAxisType, SeriesChartOptionDefaults } from '../../dc-chart/chart-option-defaults';
 import { MuuriGridGroupComponent } from '../muuri-grid-group/muuri-grid-group.component';
 import { ChartInfoDialogData } from '../../chart-info-dialog/chart-info-dialog-data';
 
@@ -16,7 +14,6 @@ import { ChartInfoDialogData } from '../../chart-info-dialog/chart-info-dialog-d
 import { zip } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import * as d3 from 'd3';
-import * as dc from 'dc';
 
 @Component({
   selector: 'app-chart-group-foreign-exchange',
@@ -37,6 +34,7 @@ export class ChartGroupForeignExchangeComponent extends MuuriGridGroupComponent 
     this._loadChartExchangeUsd();
     this._loadChartExchangeThb();
     this._loadChartExchangeRate();
+
   }
 
   private _loadChartExchangeUsd() {

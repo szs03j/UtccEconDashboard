@@ -9,7 +9,7 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatButtonModule } from '@angular/material/button';
-import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatToolbarModule, MatToolbar } from '@angular/material/toolbar';
 import { MatSidenavModule} from '@angular/material/sidenav';
 import { MatSelectModule} from '@angular/material/select';
 import { LayoutModule } from '@angular/cdk/layout';
@@ -78,7 +78,8 @@ import { ChartInfoDialogComponent } from '../chart-info-dialog/chart-info-dialog
     ChartGroupExportsComponent,
     ChartGroupForeignExchangeComponent,
     ChartGroupImportPotentialComponent,
-    ChartGroupImportsComponent
+    ChartGroupImportsComponent,
+    MatToolbar
   ],
   providers: [ChartDataService, { provide: MAT_DIALOG_DATA, useValue: {} }]
 })

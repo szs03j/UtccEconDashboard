@@ -1,4 +1,4 @@
-import { Component, Input, Inject, ViewEncapsulation } from '@angular/core';
+import { Component, Input, ChangeDetectorRef, ViewEncapsulation } from '@angular/core';
 import { DcChartComponent } from '../dc-chart/dc-chart.component';
 import { FilterModel } from './filter-model';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
@@ -8,11 +8,11 @@ import { ChartInfoDialogData } from '../chart-info-dialog/chart-info-dialog-data
 @Component({
   selector: 'app-mat-dc-chart',
   templateUrl: './material-dc-chart.component.html',
-  styleUrls: ['./material-dc-chart.component.css', '../../../../node_modules/dc/style/dc.scss'],
+  styleUrls: ['./material-dc-chart.component.css', '../../../assets/css/dc.min.css'],
   encapsulation: ViewEncapsulation.None
 })
 export class MaterialDcChartComponent extends DcChartComponent {
-  constructor(public dialog: MatDialog) { super(); }
+  constructor(public dialog: MatDialog, public cd: ChangeDetectorRef) { super(cd); }
 
   @Input() public dialogData: ChartInfoDialogData;
   @Input() public title: string;
@@ -25,8 +25,14 @@ export class MaterialDcChartComponent extends DcChartComponent {
       }
     });
   }
+
+  public displaySpinner = false;
   public get filterItems() { return this._gettersetter_filterItems; }
   private _gettersetter_filterItems: Array<FilterModel> = new Array<FilterModel>();
+
+  handleChartLoadedChange(state: boolean) {
+    this.displaySpinner = !state;
+  }
 
   handleDimFilter(dim: any, fil: any) {
     if ( Array.isArray(fil)) {
