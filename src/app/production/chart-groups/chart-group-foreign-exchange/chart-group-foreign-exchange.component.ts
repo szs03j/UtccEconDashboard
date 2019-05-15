@@ -141,7 +141,8 @@ export class ChartGroupForeignExchangeComponent extends MuuriGridGroupComponent 
     seriesOptions['on'] = [['preRender', calcDomain], ['preRedraw', calcDomain]];
     seriesOptions['elasticY'] = false;
     seriesOptions['title'] = function(d) {
-      return d.key[1].getDate() + '-' + d.key[1].getMonth()  + '-' + d.key[1].getFullYear() + ' : ' + parseFloat(d.value).toFixed(2); };
+      const m = d.key[1].getMonth() + 1;
+      return d.key[1].getDate() + '-' + m + '-' + d.key[1].getFullYear() + ' : ' + parseFloat(d.value).toFixed(2); };
 
     // Load Dropdown Filter by Country
     zip(this._cds.exchangeRate.getGroup('byCountry'), this._cds.exchangeRate.getDim('byCountry'))

@@ -313,35 +313,35 @@ export class DcChartComponent implements AfterViewInit, OnChanges {
 
   /* registered with the _chart.on('filter') */
 
-  private _handleChartRenderlet(chart: any, filter: any): void {
+  protected _handleChartRenderlet(chart: any, filter: any): void {
     this.chartRenderlet.emit({chart: chart, filter: filter});
   }
 
-  private _handleChartPreTransition(chart: any, filter: any): void {
+  protected _handleChartPreTransition(chart: any, filter: any): void {
     this.chartPreTransition.emit({chart: chart, filter: filter});
   }
 
-  private _handleChartPreRender(chart: any ): void {
+  protected _handleChartPreRender(chart: any ): void {
     this.chartPreRender.emit({ chart: chart });
   }
 
-  private _handleChartPostRender(chart: any): void {
+  protected _handleChartPostRender(chart: any): void {
     this.chartPostRender.emit({ chart: chart });
   }
 
-  private _handleChartPreRedraw(chart: any): void {
+  protected _handleChartPreRedraw(chart: any): void {
     this.chartPreRedraw.emit({ chart: chart });
   }
 
-  private _handleChartPostRedraw(chart: any): void {
+  protected _handleChartPostRedraw(chart: any): void {
     this.chartPostRedraw.emit({ chart: chart });
   }
 
-  private _handleChartFiltered(chart: any, filter: any): void {
+  protected _handleChartFiltered(chart: any, filter: any): void {
     this.chartFiltered.emit({chart: chart, filter: filter});
   }
 
-  private _handleChartZoomed(chart: any, filter: any): void {
+  protected _handleChartZoomed(chart: any, filter: any): void {
     this.chartZoomed.emit({chart: chart, filter: filter});
   }
 

@@ -1,6 +1,12 @@
 <mat-toolbar color="primary"><h2 mat-dialog-title> {{data?.title}} </h2> </mat-toolbar>
 <mat-dialog-content>
   <div *ngIf="data; else loading">
+    <p>
+      <span>Download CSV data for chart: </span>
+      <a mat-icon-button color="primary" [href]="'/assets/data/' + data.dlFilename">
+          <mat-icon >get_app</mat-icon>
+      </a>
+    </p>
     <p *ngFor="let p of data.description"> {{p}} </p>
   </div>
   <ng-template #loading>

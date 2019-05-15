@@ -15,12 +15,12 @@ import { MatSelectModule} from '@angular/material/select';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatListModule, MatDialogModule, MAT_DIALOG_DATA } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { ScrollDispatchModule } from '@angular/cdk/scrolling';
 
 import { ChartDataService } from '../services/chart-data.service';
 import { UtccEconChartDisplayComponent } from '../utcc-econ-chart-display/utcc-econ-chart-display.component';
 import { DcChartComponent } from '../dc-chart/dc-chart.component';
 import { MaterialDcChartComponent } from '../material-dc-chart/material-dc-chart.component';
-import { ChartGroupComponent } from '../chart-group/chart-group.component';
 import { MaterialDcNumberGroupComponent } from '../material-dc-number-group/material-dc-number-group.component';
 import { NumberGroupChartComponent } from '../number-group-chart/number-group-chart.component';
 
@@ -50,13 +50,13 @@ import { ChartInfoDialogComponent } from '../chart-info-dialog/chart-info-dialog
     MatSelectModule,
     FlexLayoutModule,
     MatDialogModule,
-    MatExpansionModule
+    MatExpansionModule,
+    ScrollDispatchModule
   ],
   declarations: [
     UtccEconChartDisplayComponent,
     DcChartComponent,
     MaterialDcChartComponent,
-    ChartGroupComponent,
     MaterialDcNumberGroupComponent,
     NumberGroupChartComponent,
     MuuriGridGroupComponent,

@@ -1,14 +1,11 @@
 
-import { ChartGroupItemModel } from '../chart-group/chart-group-item-model';
-import { ChartGroupItemModelType } from '../chart-group/chart-group-item-model-type.enum';
 import { Observable, merge } from 'rxjs';
 import { NumberGroupChartModel } from '../number-group-chart/number-group-chart-model';
 
-export class MaterialDcNumberGroupModel implements ChartGroupItemModel {
+export class MaterialDcNumberGroupModel {
   public title;
   public subtitle;
 
-  public readonly modelType = ChartGroupItemModelType.MaterialDcNumberGroup;
   public numberDisplays: Array<NumberGroupChartModel> = new Array<NumberGroupChartModel>();
 
   // merging all of the subcharts 'chartloadedchange()' observables into 1 observable
