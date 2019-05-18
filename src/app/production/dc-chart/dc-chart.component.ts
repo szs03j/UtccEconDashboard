@@ -77,14 +77,14 @@ export class DcChartComponent implements AfterViewInit, OnChanges {
   public get keepFilters() { return this._gettersetter_keepFilters; }
   private _gettersetter_keepFilters = true;
 
-  @Output() chartFiltered:      EventEmitter<any> = new EventEmitter<any>(true);
-  @Output() chartPreRender:     EventEmitter<any> = new EventEmitter<any>();
-  @Output() chartPostRender:    EventEmitter<any> = new EventEmitter<any>();
-  @Output() chartPreRedraw:     EventEmitter<any> = new EventEmitter<any>();
-  @Output() chartPostRedraw:    EventEmitter<any> = new EventEmitter<any>();
-  @Output() chartRenderlet:     EventEmitter<any> = new EventEmitter<any>();
-  @Output() chartZoomed:        EventEmitter<any> = new EventEmitter<any>();
-  @Output() chartPreTransition: EventEmitter<any> = new EventEmitter<any>();
+  @Output() chartFilteredChange:      EventEmitter<any> = new EventEmitter<any>(true);
+  @Output() chartPreRenderChange:     EventEmitter<any> = new EventEmitter<any>();
+  @Output() chartPostRenderChange:    EventEmitter<any> = new EventEmitter<any>();
+  @Output() chartPreRedrawChange:     EventEmitter<any> = new EventEmitter<any>();
+  @Output() chartPostRedrawChange:    EventEmitter<any> = new EventEmitter<any>();
+  @Output() chartRenderletChange:     EventEmitter<any> = new EventEmitter<any>();
+  @Output() chartZoomedChange:        EventEmitter<any> = new EventEmitter<any>();
+  @Output() chartPreTransitionChange: EventEmitter<any> = new EventEmitter<any>();
 
   /* private setters */
   private _setChart( c: BaseMixin<any> ) {
@@ -313,36 +313,36 @@ export class DcChartComponent implements AfterViewInit, OnChanges {
 
   /* registered with the _chart.on('filter') */
 
-  protected _handleChartRenderlet(chart: any, filter: any): void {
-    this.chartRenderlet.emit({chart: chart, filter: filter});
+  private _handleChartRenderlet(chart: any, filter: any): void {
+    this.chartRenderletChange.emit({chart: chart, filter: filter});
   }
 
-  protected _handleChartPreTransition(chart: any, filter: any): void {
-    this.chartPreTransition.emit({chart: chart, filter: filter});
+  private _handleChartPreTransition(chart: any, filter: any): void {
+    this.chartPreTransitionChange.emit({chart: chart, filter: filter});
   }
 
-  protected _handleChartPreRender(chart: any ): void {
-    this.chartPreRender.emit({ chart: chart });
+  private _handleChartPreRender(chart: any ): void {
+    this.chartPreRenderChange.emit({ chart: chart });
   }
 
-  protected _handleChartPostRender(chart: any): void {
-    this.chartPostRender.emit({ chart: chart });
+  private _handleChartPostRender(chart: any): void {
+    this.chartPostRenderChange.emit({ chart: chart });
   }
 
-  protected _handleChartPreRedraw(chart: any): void {
-    this.chartPreRedraw.emit({ chart: chart });
+  private _handleChartPreRedraw(chart: any): void {
+    this.chartPreRedrawChange.emit({ chart: chart });
   }
 
-  protected _handleChartPostRedraw(chart: any): void {
-    this.chartPostRedraw.emit({ chart: chart });
+  private _handleChartPostRedraw(chart: any): void {
+    this.chartPostRedrawChange.emit({ chart: chart });
   }
 
-  protected _handleChartFiltered(chart: any, filter: any): void {
-    this.chartFiltered.emit({chart: chart, filter: filter});
+  private _handleChartFiltered(chart: any, filter: any): void {
+    this.chartFilteredChange.emit({chart: chart, filter: filter});
   }
 
-  protected _handleChartZoomed(chart: any, filter: any): void {
-    this.chartZoomed.emit({chart: chart, filter: filter});
+  private _handleChartZoomed(chart: any, filter: any): void {
+    this.chartZoomedChange.emit({chart: chart, filter: filter});
   }
 
 }

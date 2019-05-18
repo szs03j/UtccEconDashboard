@@ -10,6 +10,7 @@
         [selectedOption]="model.selectedOption"
         (selectedOptionChange)="model.selectedOption = $event"
         (chartLoadedChange)="model.chartLoaded = $event"
+        (chartFilteredChange)="model.chartFilteredChange = $event"
         (chartChange)="model.chart = $event"
         [chartOptions]="model.chartOptions"
         [filterItems]="model.filterItems"

@@ -81,6 +81,10 @@ export class ChartGroupExportsComponent extends MuuriGridGroupComponent implemen
       .pipe( takeUntil(this._onDestroy$) )
       .subscribe( (cl: boolean) => { if (cl) { this._refreshGridLayout(); } });
 
+    this.chartByCountry.chartFilteredChange()
+      .pipe( takeUntil(this._onDestroy$) )
+      .subscribe( (cl: any) => { if (cl) { this._refreshGridLayout(); } });
+
     // Set Dialog Data
     this._cds.info.getInfo(this.chartByCountry.name).pipe(takeUntil(this._onDestroy$)).subscribe(
       (data: ChartInfoDialogData) => {  if (data) { this.chartByCountry.dialogData = data;  } });
@@ -137,6 +141,10 @@ export class ChartGroupExportsComponent extends MuuriGridGroupComponent implemen
       .pipe( takeUntil(this._onDestroy$) )
       .subscribe( (cl: boolean) => { if (cl) { this._refreshGridLayout(); } });
 
+    this.chartByYear.chartFilteredChange()
+      .pipe( takeUntil(this._onDestroy$) )
+      .subscribe( (cl: any) => { if (cl) { this._refreshGridLayout(); } });
+
     // Set Dialog Data
     this._cds.info.getInfo(this.chartByYear.name).pipe(takeUntil(this._onDestroy$)).subscribe(
       (data: ChartInfoDialogData) => {  if (data) { this.chartByYear.dialogData = data;  } });
@@ -174,6 +182,10 @@ export class ChartGroupExportsComponent extends MuuriGridGroupComponent implemen
     this.chartByProduct.chartLoadedChange()
       .pipe( takeUntil(this._onDestroy$) )
       .subscribe( (cl: boolean) => { if (cl) { this._refreshGridLayout(); } });
+
+    this.chartByProduct.chartFilteredChange()
+      .pipe( takeUntil(this._onDestroy$) )
+      .subscribe( (cl: any) => { if (cl) { this._refreshGridLayout(); } });
 
     // Set Dialog Data
     this._cds.info.getInfo(this.chartByProduct.name).pipe(takeUntil(this._onDestroy$)).subscribe(
@@ -213,6 +225,10 @@ export class ChartGroupExportsComponent extends MuuriGridGroupComponent implemen
     this.chartByPartner.chartLoadedChange()
       .pipe( takeUntil(this._onDestroy$) )
       .subscribe( (cl: boolean) => { if (cl) { this._refreshGridLayout(); } });
+
+    this.chartByPartner.chartFilteredChange()
+      .pipe( takeUntil(this._onDestroy$) )
+      .subscribe( (cl: any) => { if (cl) { this._refreshGridLayout(); } });
 
     // Set Dialog Data
     this._cds.info.getInfo(this.chartByPartner.name).pipe(takeUntil(this._onDestroy$)).subscribe(

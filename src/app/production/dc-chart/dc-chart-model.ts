@@ -25,9 +25,15 @@ export class DcChartModel {
   public set chart( c: BaseMixin<any> ) { this._gettersetter_chart.next(c); }
   private _gettersetter_chart = new BehaviorSubject<BaseMixin<any>>(null);
 
+  public get chartFiltered() { return this._gettersetter_chartFiltered.getValue(); }
+  public set chartFiltered( c: any ) { this._gettersetter_chartFiltered.next(c); }
+  private _gettersetter_chartFiltered = new BehaviorSubject<any>(null);
+
   public chartOptions = new Dict<DcChartOptions>();
 
   public selectedOptionChange(): Observable<string> { return this._gettersetter_selectedOption.asObservable(); }
   public chartLoadedChange(): Observable<boolean> { return this._gettersetter_chartLoaded.asObservable(); }
   public chartChange(): Observable<BaseMixin<any>> { return this._gettersetter_chart.asObservable(); }
+  public chartFilteredChange(): Observable<any> { return this._gettersetter_chartFiltered.asObservable(); }
+
 }

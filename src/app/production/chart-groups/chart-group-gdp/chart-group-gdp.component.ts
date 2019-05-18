@@ -87,6 +87,10 @@ export class ChartGroupGdpComponent extends MuuriGridGroupComponent implements O
       .pipe( takeUntil(this._onDestroy$) )
       .subscribe( (cl: boolean) => { if (cl) { this._refreshGridLayout(); } });
 
+    this.chartGdpByCountry.chartFilteredChange()
+      .pipe( takeUntil(this._onDestroy$) )
+      .subscribe( (cl: any) => { if (cl) { this._refreshGridLayout(); } });
+
     // Set Dialog Data
     this._cds.info.getInfo(this.chartGdpByCountry.name).pipe(takeUntil(this._onDestroy$)).subscribe(
       (data: ChartInfoDialogData) => {  if (data) { this.chartGdpByCountry.dialogData = data;  } });
@@ -139,6 +143,10 @@ export class ChartGroupGdpComponent extends MuuriGridGroupComponent implements O
     this.chartGdpByYear.chartLoadedChange()
       .pipe( takeUntil(this._onDestroy$) )
       .subscribe( (cl: boolean) => { if (cl) { this._refreshGridLayout(); } });
+
+    this.chartGdpByYear.chartFilteredChange()
+      .pipe( takeUntil(this._onDestroy$) )
+      .subscribe( (cl: any) => { if (cl) { this._refreshGridLayout(); } });
 
     // Set Dialog Data
     this._cds.info.getInfo(this.chartGdpByYear.name).pipe(takeUntil(this._onDestroy$)).subscribe(

@@ -9,6 +9,7 @@
         [chartGroup]="model.chartGroup"
         [selectedOption]="model.selectedOption"
         (selectedOptionChange)="model.selectedOption = $event"
+        (chartFilteredChange)="model.chartFiltered = $event"
         (chartLoadedChange)="model.chartLoaded = $event"
         (chartChange)="model.chart = $event"
         [chartOptions]="model.chartOptions"

@@ -88,6 +88,10 @@ export class ChartGroupImportsComponent extends MuuriGridGroupComponent implemen
       .subscribe( (cl: boolean) => { if (cl) { this._refreshGridLayout(); } });
 
 
+    this.chartByCountry.chartFilteredChange()
+      .pipe( takeUntil(this._onDestroy$) )
+      .subscribe( (cl: any) => { if (cl) { this._refreshGridLayout(); } });
+
     this.chartModels.push(this.chartByCountry);
   }
 
@@ -138,6 +142,10 @@ export class ChartGroupImportsComponent extends MuuriGridGroupComponent implemen
     this.chartByYear.chartLoadedChange()
       .pipe( takeUntil(this._onDestroy$) )
       .subscribe( (cl: boolean) => { if (cl) { this._refreshGridLayout(); } });
+    
+    this.chartByYear.chartFilteredChange()
+      .pipe( takeUntil(this._onDestroy$) )
+      .subscribe( (cl: any) => { if (cl) { this._refreshGridLayout(); } });
 
     // Set Dialog Data
     this._cds.info.getInfo(this.chartByYear.name).pipe(takeUntil(this._onDestroy$)).subscribe(
@@ -176,6 +184,10 @@ export class ChartGroupImportsComponent extends MuuriGridGroupComponent implemen
       .pipe( takeUntil(this._onDestroy$) )
       .subscribe( (cl: boolean) => { if (cl) { this._refreshGridLayout(); } });
 
+    this.chartByProduct.chartFilteredChange()
+      .pipe( takeUntil(this._onDestroy$) )
+      .subscribe( (cl: any) => { if (cl) { this._refreshGridLayout(); } });
+
     // Set Dialog Data
     this._cds.info.getInfo(this.chartByProduct.name).pipe(takeUntil(this._onDestroy$)).subscribe(
       (data: ChartInfoDialogData) => {  if (data) { this.chartByProduct.dialogData = data;  } });
@@ -212,6 +224,10 @@ export class ChartGroupImportsComponent extends MuuriGridGroupComponent implemen
     this.chartByPartner.chartLoadedChange()
       .pipe( takeUntil(this._onDestroy$) )
       .subscribe( (cl: boolean) => { if (cl) { this._refreshGridLayout(); } });
+
+    this.chartByPartner.chartFilteredChange()
+      .pipe( takeUntil(this._onDestroy$) )
+      .subscribe( (cl: any) => { if (cl) { this._refreshGridLayout(); } });
 
     // Set Dialog Data
     this._cds.info.getInfo(this.chartByPartner.name).pipe(takeUntil(this._onDestroy$)).subscribe(
