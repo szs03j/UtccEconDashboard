@@ -15,7 +15,8 @@ const DataSourceURLDev = {
     exchangeRate: '../../assets/data/exchangeRate.csv',
     dailyExchangeRate: '../../assets/data/dailyExchangeRate.csv',
     geosea: '../assets/data/geosea.json',
-    descriptions: '../assets/data/chartDescriptions.json'
+    descriptions: '../assets/data/chartDescriptions.json',
+    dlFilenamePrefix: '/assets/data/' // used in the chart-info-dialog component to point to the correct 'download csv' location
 };
 
 const SERVER_URL = 'https://s3-ap-southeast-1.amazonaws.com/utcc-postprocessed/data/';
@@ -33,7 +34,8 @@ const DataSourceURLProd = {
     exchangeRate: SERVER_URL + 'exchangeRate.csv',
     dailyExchangeRate: SERVER_URL + 'dailyExchangeRate.csv',
     geosea: SERVER_URL + 'geosea.json',
-    descriptions: SERVER_URL + 'chartDescriptions.json'
+    descriptions: SERVER_URL + 'chartDescriptions.json',
+    dlFilenamePrefix: SERVER_URL // used in the chart-info-dialog component to point to the correct 'download csv' location
 };
 
 

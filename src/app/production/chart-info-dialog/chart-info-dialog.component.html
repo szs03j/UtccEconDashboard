@@ -3,7 +3,7 @@
   <div *ngIf="data; else loading">
     <p>
       <span>Download CSV data for chart: </span>
-      <a mat-icon-button color="primary" [href]="'/assets/data/' + data.dlFilename">
+      <a mat-icon-button color="accent" [href]="DataSourceURL.dlFilenamePrefix + data.dlFilename">
           <mat-icon >get_app</mat-icon>
       </a>
     </p>

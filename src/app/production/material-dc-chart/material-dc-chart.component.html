@@ -6,7 +6,7 @@
           <mat-select fxFlex="20%" *ngIf="chartOptionsKeys.length > 1"  [(value)]="selectedOption"  >
             <mat-option  *ngFor="let co of chartOptionsKeys" [value]="co">{{ chartOptions[co].name }}</mat-option>
           </mat-select>
-          <button  mat-icon-button color="primary"  (click)="openDialog()">
+          <button  mat-icon-button color="accent"  (click)="openDialog()">
               <mat-icon >contact_support</mat-icon>
           </button>
       </mat-card-title>

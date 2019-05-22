@@ -1,6 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import { ChartInfoDialogData } from './chart-info-dialog-data';
+import { DataSourceURL } from '../services/datasourceURL';
 
 
 @Component({
@@ -13,6 +14,8 @@ export class ChartInfoDialogComponent implements OnInit {
   constructor(
     public dialogRef: MatDialogRef<ChartInfoDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: ChartInfoDialogData) {}
+
+  public DataSourceURL = DataSourceURL;
 
   onNoClick(): void {
     this.dialogRef.close();
